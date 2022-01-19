@@ -3,11 +3,12 @@
 
 int main(void)
 {
+    int n;
     do
     {
-    int n = get_int("Height: ");
+        n = get_int("Height: ");
     }
-    while(n < 8 && n >= 0);
+    while(n < 8);
 
     for(int i=1; i <= n; i++)
     {
