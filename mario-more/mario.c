@@ -9,19 +9,22 @@ int main(void)
         n = get_int("Height: ");
     }
     while (!(n <= 8 && n > 0));
-
-    for(int i=1; i <= n; i++)
+    //Variable i controls line by line
+    for (int i = 1; i <= n; i++)
     {
-        for(int j=(n-i); j > 0; j--)
+        //Prints the leading spaces which decreses by 1 per line
+        for (int j = (n - i); j > 0; j--)
         {
             printf(" ");
         }
-        for(int k=(n+1-i); k <= n ; k++)
+        //Prints the number of "#" which increases by 1 per line
+        for (int k = (n + 1 - i); k <= n ; k++)
         {
             printf("#");
         }
-            printf("  ");
-        for(int m=(n+1-i); m <= n ; m++)
+        printf("  ");
+        //Prints the number of "#" after the center spacing which increases by 1 per line
+        for (int m = (n + 1 - i); m <= n ; m++)
         {
             printf("#");
         }
