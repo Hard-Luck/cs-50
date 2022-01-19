@@ -11,7 +11,7 @@ int main(void)
             printf(" ");
         for(int k=1; k >= n ; k++)
         {
-            printf("1");
+            printf("#");
         }
         }
         printf(" \n");
