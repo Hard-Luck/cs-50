@@ -28,13 +28,13 @@ int sumdigit(long card,int len)
     {
         for (int i = 1; i < len; i += 2)
         {
-            int card_odd = card;
+            long card_odd = card;
             sum += (card_odd % 10);
             card_odd /= 100;
         for (int j = 1; j < len; j += 2)
         {
-            int card_ev = card;
-            printf("/d",card_ev)
+            long card_ev = card;
+            printf("%ld",card_ev);
             sum += ((card_ev % 100)/10);
             card_ev /= 100;
         }
