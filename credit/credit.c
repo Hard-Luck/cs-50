@@ -25,15 +25,15 @@ int sumdigit(long card,int len)
 {
     int sum = 0;
     if (len % 2 == 0)
+    long card_odd = card;
+    long card_ev = card;
     {
         for (int i = 1; i < len; i += 2)
         {
-            long card_odd = card;
             sum += (card_odd % 10);
             card_odd /= 100;
         for (int j = 1; j < len; j += 2)
         {
-            long card_ev = card;
             printf("%ld",card_ev);
             sum += ((card_ev % 100)/10);
             card_ev /= 100;
