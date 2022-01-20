@@ -13,7 +13,17 @@ int main(void)
         printf("INVALID\n");
         test = 0;
     }
+    
 }
+
+
+
+
+
+
+
+
+
 
 
 int length(long card)
