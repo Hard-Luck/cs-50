@@ -49,7 +49,15 @@ int length(long card)
 
 string check_type(long card, int length)
     {
-        
+        first_one = card/pow(10,length-1)
+        first_two = card/pow(10,length-2);
+        if ((length == 13 || length == 16) && first_one == 4)
+        {
+            return "VISA"
+        if ((length == 15) && (first_one == 34 || first_one == 37)
+        {
+            return "AMEX"
+        }
     }
 
 int sumdigit(long card,int len)
