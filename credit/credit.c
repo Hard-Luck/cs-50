@@ -51,7 +51,6 @@ string check_type(long card, int length)
         int first_two = card/pow(10,length-2);
         if ((length == 13 || length == 16) && first_one == 4)
         {
-            printf("%d/n",first_one);
             return "VISA";
         }
         else if ((length == 15) && (first_two == 34 || first_two == 37))
@@ -75,7 +74,6 @@ int sumdigit(long card,int len)
     long card_odd = card;
     long card_ev = card;
     if (len % 2 == 0)
-
     {
         for (int i = 1; i < len; i += 2)
         {
@@ -92,6 +90,22 @@ int sumdigit(long card,int len)
             card_ev /= 100;
         }
         }
+    else
+    {
+        for (int i = 1; i < len; i += 2)
+        {
+            sum += (card_odd % 10);
+            card_odd /= 100;
+        for (int j = 1; j < len; j += 2)
+        {
+            int digits = (2*(card_ev % 100)/10);
+            if (digits > 10)
+            {
+                digits =((digits % 10) + (digits / 10));
+            }
+            sum += digits;
+            card_ev /= 100;
+    }
     }
     return sum;
 }
