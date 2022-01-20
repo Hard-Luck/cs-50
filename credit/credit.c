@@ -67,6 +67,7 @@ string check_type(long card, int length)
         {
             return "INVALID";
         }
+        }
     }
 
 int sumdigit(long card,int len)
