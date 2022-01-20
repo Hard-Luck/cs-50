@@ -8,7 +8,10 @@ int main(void)
 {
     long card = get_long("Enter card number: ");
     int x = length(card);
-    printf("%d\n",x);
+    if (x != 13 || x != 15 || x != 16)
+    {
+        test = 0
+    }
 }
 
 
