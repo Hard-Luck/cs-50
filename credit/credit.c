@@ -53,11 +53,11 @@ string check_type(long card, int length)
         {
             return "VISA";
         }
-        else if ((length == 15) && (first_two == 34 || first_two == 37))
+        else if ((length == 15) && ((first_two == 34) || (first_two == 37)))
         {
             return "AMEX";
         }
-        else if ((length == 16) && (first_two > 50 && first_two <= 55))
+        else if ((length == 16) && ((first_two > 50) && (first_two <= 55)))
         {
             return "MASTERCARD";
         }
