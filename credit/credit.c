@@ -11,15 +11,17 @@ int main(void)
     long card = get_long("Enter card number: ");
     int x = length(card);
     if ((x == 13 || x == 15 || x == 16))
-    int checksum = sumdigit(card, x);
-    if (!(checksum % 10 == 0))
     {
-        printf("INVALID\n");
-        test = 0;
-    }
-    else
-    {
-        printf("%s\n",check_type(card,x));
+        int checksum = sumdigit(card, x);
+        if (!(checksum % 10 == 0))
+        {
+            printf("INVALID\n");
+            test = 0;
+        }
+        else
+        {
+            printf("%s\n",check_type(card,x));
+        }
     }
 
 }
