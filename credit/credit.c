@@ -1,11 +1,15 @@
-#include <sdtio.h>
+#include <stdio.h>
 #include <cs50.h>
 #include <math.h>
 
 int test = 1;
 
-do
+int main(void)
 {
-    string card = get_string("Enter card number: ")
+    long card = get_long("Enter card number: ");
+    int count = 0;
+    while (card != 0)
+    {
+        card /= 10
+    }
 }
-while ()
