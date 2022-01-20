@@ -10,7 +10,7 @@ int main(void)
     int x = length(card);
     if (!(x == 13 || x == 15 || x == 16))
     {
-        printf("INVALID");
+        printf("INVALID\n");
         test = 0;
     }
 }
