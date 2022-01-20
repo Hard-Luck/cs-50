@@ -93,25 +93,25 @@ int sumdigit(long card, int len)
             }
             sum += digits;
             card_ev /= 100;
-    }
-}
-else
-{
-    for (int a = 1; a <= len; a += 2)
-    {
-        sum += (card_odd % 10);
-        card_odd /= 100;
-    }
-    for (int b = 2; b < len; b += 2)
-    {
-        int digits = (2 * ((card_ev % 100) / 10));
-        if (digits >= 10)
-        {
-            digits =((digits % 10) + (digits / 10));
         }
-        sum += digits;
-        card_ev /= 100;
     }
-}
-return sum;
+        else
+        {
+            for (int a = 1; a <= len; a += 2)
+            {
+                sum += (card_odd % 10);
+                card_odd /= 100;
+            }
+            for (int b = 2; b < len; b += 2)
+            {
+                int digits = (2 * ((card_ev % 100) / 10));
+                if (digits >= 10)
+                {
+                    digits =((digits % 10) + (digits / 10));
+                }
+                sum += digits;
+                card_ev /= 100;
+            }
+        }
+    return sum;
 }
