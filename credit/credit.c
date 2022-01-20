@@ -55,6 +55,7 @@ string check_type(long card, int length)
         if ((length == 13 || length == 16) && first_one == 4)
         {
             return "VISA";
+        }
         else if ((length == 15) && (first_two == 34 || first_two == 37))
         {
             return "AMEX";
@@ -67,8 +68,8 @@ string check_type(long card, int length)
         {
             return "INVALID";
         }
-        }
     }
+
 
 int sumdigit(long card,int len)
 {
