@@ -4,7 +4,7 @@
 
 int test = 1;
 int length(long card);
-int sumdigit(long card,int len);
+int sumdigit(long card, int len);
 string check_type(long card, int length);
 int main(void)
 {
