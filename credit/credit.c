@@ -10,6 +10,8 @@ int main(void)
     int count = 0;
     while (card != 0)
     {
-        card /= 10
+        card = card/10;
+        count++;
     }
+    printf("%d",count);
 }
