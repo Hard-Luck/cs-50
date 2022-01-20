@@ -28,7 +28,8 @@ int sumdigit(long card,int len)
     {
         for (int i = len-1; i > 1; i -= 1)
         {
-            sum += 2*(card/pow(10,i));
+            int card_odd = card
+            sum += (card/pow(10,i));
             card %= pow(10,i)
         for (int j = len-2; j > 0; j -= 1)
         {
