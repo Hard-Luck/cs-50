@@ -12,11 +12,13 @@ string check_type(long card, int length);
 
 int main(void)
 {
+    //asking for user input, user enters card number
     long card = get_long("Enter card number: ");
     int x = length(card);
     //check the length of the card is permissable if not return "INVALID"
     if ((x == 13 || x == 15 || x == 16))
     {
+        //uses sumdigit function to get a return value
         int checksum = sumdigit(card, x);
         if (checksum % 10 == 0)
         {
@@ -59,20 +61,24 @@ string check_type(long card, int length)
 {
     int first_one = card / pow(10, length - 1);
     int first_two = card / pow(10, length - 2);
+    // If length is 13/16 and the first digit of the card or 4 then return VISA
     if ((length == 13 || length == 16) && first_one == 4)
     {
         return "VISA";
     }
+    // If length is 15 and the first 2 digits of the card or 34/37 then return AMEX
     else if ((length == 15) && ((first_two == 34) || (first_two == 37)))
     {
         return "AMEX";
     }
+    //// If length is 15 and the first 2 digits of the card or between 51 and 55 then return Mastercard
     else if ((length == 16) && ((first_two > 50) && (first_two <= 55)))
     {
         return "MASTERCARD";
     }
     else
     {
+        //If all else has not passed then card number is invalid
         return "INVALID";
     }
 }
