@@ -26,11 +26,11 @@ int sumdigit(long card,int len)
     int sum = 0;
     if (len % 2 == 0)
     {
-        for (int i = len-1; i > 1; i -= 1)
+        for (int i = 1; i < len; i += 2)
         {
             int card_odd = card
-            sum += ((card_odd % 100)/10);
-            card_odd %= 10
+            sum += ((card_odd %10);
+            card_odd /= 100
         for (int j = len-2; j > 0; j -= 1)
         {
             sum += (card/pow(10,i));
