@@ -51,44 +51,44 @@ int length(long card)
 
 string check_type(long card, int length)
 {
-int first_one = card / pow(10, length - 1);
-int first_two = card / pow(10, length - 2);
-if ((length == 13 || length == 16) && first_one == 4)
-{
-    return "VISA";
-}
-else if ((length == 15) && ((first_two == 34) || (first_two == 37)))
-{
-    return "AMEX";
-}
-else if ((length == 16) && ((first_two > 50) && (first_two <= 55)))
-{
-    return "MASTERCARD";
-}
-else
-{
-    return "INVALID";
-}
+    int first_one = card / pow(10, length - 1);
+    int first_two = card / pow(10, length - 2);
+    if ((length == 13 || length == 16) && first_one == 4)
+    {
+        return "VISA";
+    }
+    else if ((length == 15) && ((first_two == 34) || (first_two == 37)))
+    {
+        return "AMEX";
+    }
+    else if ((length == 16) && ((first_two > 50) && (first_two <= 55)))
+    {
+        return "MASTERCARD";
+    }
+    else
+    {
+        return "INVALID";
+    }
 }
 
 
 int sumdigit(long card, int len)
 {
-int sum = 0;
-long card_odd = card;
-long card_ev = card;
-if (len % 2 == 0)
-{
-    for (int i = 1; i < len; i += 2)
+    int sum = 0;
+    long card_odd = card;
+    long card_ev = card;
+    if (len % 2 == 0)
     {
-        sum += (card_odd % 10);
-        card_odd /= 100;
-    for (int j = 1; j < len; j += 2)
-    {
-        int digits = (2 * ((card_ev % 100) / 10));
-        if (digits >= 10)
+        for (int i = 1; i < len; i += 2)
         {
-            digits =((digits % 10) + (digits / 10));
+            sum += (card_odd % 10);
+            card_odd /= 100;
+        for (int j = 1; j < len; j += 2)
+        {
+            int digits = (2 * ((card_ev % 100) / 10));
+            if (digits >= 10)
+        {
+        digits =((digits % 10) + (digits / 10));
         }
         sum += digits;
         card_ev /= 100;
