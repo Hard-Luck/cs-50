@@ -54,6 +54,7 @@ string check_type(long card, int length)
         int first_two = card/pow(10,length-2);
         if ((length == 13 || length == 16) && first_one == 4)
         {
+            printf("%d/n",first_one);
             return "VISA";
         }
         else if ((length == 15) && (first_two == 34 || first_two == 37))
