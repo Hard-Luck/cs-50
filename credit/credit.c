@@ -83,16 +83,16 @@ int sumdigit(long card, int len)
         {
             sum += (card_odd % 10);
             card_odd /= 100;
+        }
         for (int j = 1; j < len; j += 2)
         {
             int digits = (2 * ((card_ev % 100) / 10));
             if (digits >= 10)
-        {
-        digits =((digits % 10) + (digits / 10));
-        }
-        sum += digits;
-        card_ev /= 100;
-    }
+            {
+                digits =((digits % 10) + (digits / 10));
+            }
+            sum += digits;
+            card_ev /= 100;
     }
 }
 else
