@@ -13,13 +13,29 @@ int main(void)
         printf("INVALID\n");
         test = 0;
     }
-    
+
 }
 
 
 
 
+int sumdigit(long card,int len)
+{
+    int sum = 0;
+    if (len % 2 == 0)
+    {
+        for (i = 0; i < len; i += 2)
+        {
+            
+        }
+    }
 
+    while (card != 0)
+    {
+        card = card/10;
+        count++;
+    }
+    return count;
 
 
 
