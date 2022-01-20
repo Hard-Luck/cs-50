@@ -54,9 +54,13 @@ string check_type(long card, int length)
         if ((length == 13 || length == 16) && first_one == 4)
         {
             return "VISA"
-        if ((length == 15) && (first_one == 34 || first_one == 37)
+        else if ((length == 15) && (first_two == 34 || first_two == 37)
         {
             return "AMEX"
+        }
+        else if ((length == 16) && (first_two > 50 && first_two <= 55)
+        {
+            return "MASTERCARD"
         }
     }
 
