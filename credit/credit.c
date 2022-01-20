@@ -83,8 +83,12 @@ int sumdigit(long card,int len)
             card_odd /= 100;
         for (int j = 1; j < len; j += 2)
         {
-            //printf("%ld",card_ev);
-            sum += 2*((card_ev % 100)/10);
+            int digits = (2*(card_ev % 100)/10);
+            if (digits > 10)
+            {
+                digits =((digits % 10) + (digits / 10));
+            }
+            sum += digits;
             card_ev /= 100;
         }
         }
