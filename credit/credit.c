@@ -15,6 +15,15 @@ int main(void)
         test = 0;
     }
     int checksum = sumdigit(card, x);
+    if (!(checksum % 10 == 0))
+    {
+        printf("INVALID\n");
+        test = 0;
+    }
+    else
+    {
+        printf("VALID\n");
+    }
 
 }
 
@@ -36,11 +45,10 @@ int sumdigit(long card,int len)
         for (int j = 1; j < len; j += 2)
         {
             //printf("%ld",card_ev);
-            sum += ((card_ev % 100)/10);
+            sum += 2*((card_ev % 100)/10);
             card_ev /= 100;
         }
         }
-    printf("%d",sum);
     }
     return sum;
 }
