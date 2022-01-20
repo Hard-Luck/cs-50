@@ -4,6 +4,7 @@
 
 int test = 1;
 int length(long card);
+int sumdigit(long card,int len);
 int main(void)
 {
     long card = get_long("Enter card number: ");
@@ -24,19 +25,13 @@ int sumdigit(long card,int len)
     int sum = 0;
     if (len % 2 == 0)
     {
-        for (i = 0; i < len; i += 2)
+        for (int i = len-1; i > 0; i -= 2)
         {
-            
+            sum += card/pow(10,i);
         }
     }
-
-    while (card != 0)
-    {
-        card = card/10;
-        count++;
-    }
-    return count;
-
+    return sum;
+}
 
 
 
