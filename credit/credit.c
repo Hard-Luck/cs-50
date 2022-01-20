@@ -30,6 +30,28 @@ int main(void)
 
 
 
+
+
+
+
+
+
+int length(long card)
+{
+    int count = 0;
+    while (card != 0)
+    {
+        card = card/10;
+        count++;
+    }
+    return count;
+}
+
+string check_type(long card, int length)
+    {
+        
+    }
+
 int sumdigit(long card,int len)
 {
     int sum = 0;
@@ -51,19 +73,4 @@ int sumdigit(long card,int len)
         }
     }
     return sum;
-}
-
-
-
-
-
-int length(long card)
-{
-    int count = 0;
-    while (card != 0)
-    {
-        card = card/10;
-        count++;
-    }
-    return count;
 }
