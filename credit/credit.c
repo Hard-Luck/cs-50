@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <math.h>
+//Included <math> to use pow(d,d)
 
-int test = 1;
+
+
 int length(long card);
 int sumdigit(long card, int len);
 string check_type(long card, int length);
+//introducing the functions
+
 int main(void)
 {
     long card = get_long("Enter card number: ");
@@ -37,7 +41,7 @@ int main(void)
 
 
 
-
+//funtuin that outputs an interger representing the length of the input
 int length(long card)
 {
     int count = 0;
@@ -49,6 +53,7 @@ int length(long card)
     return count;
 }
 
+//function to determine which type of card (if any) has been inputted
 string check_type(long card, int length)
 {
     int first_one = card / pow(10, length - 1);
@@ -71,12 +76,13 @@ string check_type(long card, int length)
     }
 }
 
-
+//function to check sum the inputted digits by incrementing and "chopping off the end numbers"
 int sumdigit(long card, int len)
 {
     int sum = 0;
     long card_odd = card;
     long card_ev = card;
+    //for card lengths of even length
     if (len % 2 == 0)
     {
         for (int i = 1; i < len; i += 2)
@@ -89,29 +95,30 @@ int sumdigit(long card, int len)
             int digits = (2 * ((card_ev % 100) / 10));
             if (digits >= 10)
             {
-                digits =((digits % 10) + (digits / 10));
+                digits = ((digits % 10) + (digits / 10));
             }
             sum += digits;
             card_ev /= 100;
         }
     }
-        else
+    // for odd length
+    else
+    {
+        for (int a = 1; a <= len; a += 2)
         {
-            for (int a = 1; a <= len; a += 2)
-            {
-                sum += (card_odd % 10);
-                card_odd /= 100;
-            }
-            for (int b = 2; b < len; b += 2)
-            {
-                int digits = (2 * ((card_ev % 100) / 10));
-                if (digits >= 10)
-                {
-                    digits =((digits % 10) + (digits / 10));
-                }
-                sum += digits;
-                card_ev /= 100;
-            }
+            sum += (card_odd % 10);
+            card_odd /= 100;
         }
+        for (int b = 2; b < len; b += 2)
+        {
+            int digits = (2 * ((card_ev % 100) / 10));
+            if (digits >= 10)
+            {
+                digits = ((digits % 10) + (digits / 10));
+            }
+            sum += digits;
+            card_ev /= 100;
+        }
+    }
     return sum;
 }
