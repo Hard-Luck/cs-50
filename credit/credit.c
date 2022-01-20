@@ -35,7 +35,7 @@ int sumdigit(long card,int len)
             card_odd /= 100;
         for (int j = 1; j < len; j += 2)
         {
-            printf("%ld",card_ev);
+            //printf("%ld",card_ev);
             sum += ((card_ev % 100)/10);
             card_ev /= 100;
         }
