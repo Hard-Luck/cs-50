@@ -24,9 +24,10 @@ int main(void)
 int sumdigit(long card,int len)
 {
     int sum = 0;
-    if (len % 2 == 0)
     long card_odd = card;
     long card_ev = card;
+    if (len % 2 == 0)
+
     {
         for (int i = 1; i < len; i += 2)
         {
