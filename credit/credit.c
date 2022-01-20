@@ -101,7 +101,7 @@ int sumdigit(long card,int len)
         for (int b = 2; b < len; b += 2)
         {
             int digits = (2*((card_ev % 100)/10));
-            if (digits > 10)
+            if (digits >= 10)
             {
                 digits =((digits % 10) + (digits / 10));
             }
