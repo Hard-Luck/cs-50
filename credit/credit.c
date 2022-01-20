@@ -5,6 +5,7 @@
 int test = 1;
 int length(long card);
 int sumdigit(long card,int len);
+string check_type(long card, int length);
 int main(void)
 {
     long card = get_long("Enter card number: ");
@@ -22,7 +23,7 @@ int main(void)
     }
     else
     {
-        printf("VALID\n");
+        printf("%s\n",check_type(card,x));
     }
 
 }
@@ -49,18 +50,22 @@ int length(long card)
 
 string check_type(long card, int length)
     {
-        first_one = card/pow(10,length-1)
-        first_two = card/pow(10,length-2);
+        int first_one = card/pow(10,length-1);
+        int first_two = card/pow(10,length-2);
         if ((length == 13 || length == 16) && first_one == 4)
         {
-            return "VISA"
-        else if ((length == 15) && (first_two == 34 || first_two == 37)
+            return "VISA";
+        else if ((length == 15) && (first_two == 34 || first_two == 37))
         {
-            return "AMEX"
+            return "AMEX";
         }
-        else if ((length == 16) && (first_two > 50 && first_two <= 55)
+        else if ((length == 16) && (first_two > 50 && first_two <= 55))
         {
-            return "MASTERCARD"
+            return "MASTERCARD";
+        }
+        else
+        {
+            return "INVALID";
         }
     }
 
