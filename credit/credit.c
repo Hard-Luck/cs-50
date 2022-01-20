@@ -97,7 +97,7 @@ int sumdigit(long card,int len)
     }
     else
     {
-        for (int a = 1; a < len; a += 2)
+        for (int a = 1; a <= len; a += 2)
         {
             sum += (card_odd % 10);
             card_odd /= 100;
