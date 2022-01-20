@@ -13,14 +13,13 @@ int main(void)
     if ((x == 13 || x == 15 || x == 16))
     {
         int checksum = sumdigit(card, x);
-        if (!(checksum % 10 == 0))
+        if (checksum % 10 == 0)
         {
-            printf("INVALID\n");
-            test = 0;
+            printf("%s\n",check_type(card,x));
         }
         else
         {
-            printf("%s\n",check_type(card,x));
+            printf("INVALID\n");
         }
     }
 
