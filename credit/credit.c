@@ -14,6 +14,7 @@ int main(void)
         printf("INVALID\n");
         test = 0;
     }
+    int checksum = sumdigit(card, x);
 
 }
 
@@ -25,10 +26,15 @@ int sumdigit(long card,int len)
     int sum = 0;
     if (len % 2 == 0)
     {
-        for (int i = len-1; i > 0; i -= 2)
+        for (int i = len-1; i > 1; i -= 2)
         {
-            sum += card/pow(10,i);
+            sum += 2*(card/pow(10,i));
+        for (int j = len-2; j > 0; j -= 2)
+        {
+            sum += (card/pow(10,i));
         }
+        }
+    printf("%d",sum);
     }
     return sum;
 }
