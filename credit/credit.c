@@ -14,6 +14,7 @@ int main(void)
 {
     long card = get_long("Enter card number: ");
     int x = length(card);
+    //check the length of the card is permissable if not return "INVALID"
     if ((x == 13 || x == 15 || x == 16))
     {
         int checksum = sumdigit(card, x);
