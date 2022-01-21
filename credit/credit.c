@@ -78,7 +78,7 @@ string check_type(long card, int length)
     }
     else
     {
-        //If all else has not passed then card number is invalid
+        //If all else has not passed then card number is invalidcd
         return "INVALID";
     }
 }
