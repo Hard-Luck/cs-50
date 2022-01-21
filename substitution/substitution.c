@@ -17,6 +17,14 @@ int main(int argc, string argv[])
         printf("\n");
         return 2;
     }
+    if (key_check(argv[1]) != 1)
+    {
+        printf("Key is good\n");
+    }
+    else
+    {
+        printf(")
+    }
     return 0;
 }
 
@@ -27,17 +35,17 @@ int key_check(string s)
     int check = 0;
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if strchr(t , s[i])
+        if (strchr(t , s[i]))
         {
             check++;
         }
+    }
     if (check == 26)
     {
-        return 0
+        return 0;
     }
     else
     {
-        return 1
-    }
+        return 1;
     }
 }
