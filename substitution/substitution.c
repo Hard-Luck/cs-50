@@ -4,5 +4,9 @@
 
 int main(int argc, string argv[])
 {
-    if argv[1]
+    if !(strlen(argv[1]) == 26)
+    {
+        printf("Key entered must be exactly 26 characters");
+        return 1;
+    }
 }
