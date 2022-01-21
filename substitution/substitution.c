@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     }
     if (key_check(argv[1]) == 0)
     {
-        ;
+        printf("Valid key\n");
     }
     else
     {
@@ -39,6 +39,7 @@ int key_check(string s)
     }
     for (int i = 0, n = strlen(s); i < n; i++)
     {
+        //Checking if uppercase or lower case is 
         if (strchr(s , toupper(t[i])) || (strchr(s , tolower(t[i]))))
         {
             check++;
