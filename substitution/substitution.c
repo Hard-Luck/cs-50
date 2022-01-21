@@ -6,8 +6,7 @@ int main(int argc, string argv[])
 {
     if (argc != 2)
     {
-        printf("Must enter a key");
-        printf("\n");
+        printf("Must enter a key\n");
         return 1;
     }
     if (strlen(argv[1]) != 26)
