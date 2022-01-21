@@ -2,10 +2,10 @@
 #include <cs50.h>
 #include <string.h>
 
-//including prototypes of functions
+//Including prototypes of functions.
 int key_check(string s);
 
-//using argc and argv
+//using argc and argv[] for command line argumets.
 int main(int argc, string argv[])
 {
     if (argc != 2)
