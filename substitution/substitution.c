@@ -13,13 +13,7 @@ int main(int argc, string argv[])
         printf("Must enter a key\n");
         return 1;
     }
-    if (strlen(argv[1]) != 26)
-    {
-        printf("Key entered must be exactly 26 characters");
-        printf("\n");
-        return 2;
-    }
-    if (key_check(argv[1]) != 1)
+    if (key_check(argv[1]) = 1)
     {
         printf("Key is good\n");
     }
@@ -35,6 +29,12 @@ int key_check(string s)
 {
     string t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int check = 0;
+    if (strlen(s) != 26)
+    {
+        printf("Key entered must be exactly 26 characters");
+        printf("\n");
+        return 2;
+    }
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         if (strchr(s , t[i]))
@@ -48,6 +48,6 @@ int key_check(string s)
     }
     else
     {
-        return 1;
+        return 3;
     }
 }
