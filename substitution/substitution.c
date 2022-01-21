@@ -15,11 +15,12 @@ int main(int argc, string argv[])
     }
     if (key_check(argv[1]) == 0)
     {
-        printf("Key is good\n");
+        ;
     }
     else
     {
         printf("Invalid key\n");
+        return 4;
     }
     return 0;
 }
