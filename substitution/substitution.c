@@ -2,6 +2,8 @@
 #include <cs50.h>
 #include <string.h>
 
+int key_check(string s);
+
 int main(int argc, string argv[])
 {
     if (argc != 2)
@@ -22,8 +24,20 @@ int main(int argc, string argv[])
 int key_check(string s)
 {
     string t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int check = 0;
     for (i = 0, n = strlen(s); i < n; i++)
     {
-        if strchr()
+        if strchr(t , s[i])
+        {
+            check++;
+        }
+    if (check == 26)
+    {
+        return 0
+    }
+    else
+    {
+        return 1
+    }
     }
 }
