@@ -2,8 +2,10 @@
 #include <cs50.h>
 #include <string.h>
 
+//including prototypes of functions
 int key_check(string s);
 
+//using argc and argv
 int main(int argc, string argv[])
 {
     if (argc != 2)
@@ -28,14 +30,14 @@ int main(int argc, string argv[])
     return 0;
 }
 
-
+// Check that each letter is mapped only once A-Z occurs once only.
 int key_check(string s)
 {
     string t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int check = 0;
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if (strchr(t , s[i]))
+        if (strchr(s , t[i]))
         {
             check++;
         }
