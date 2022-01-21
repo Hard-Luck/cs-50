@@ -25,7 +25,7 @@ int key_check(string s)
 {
     string t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int check = 0;
-    for (i = 0, n = strlen(s); i < n; i++)
+    for (int i = 0, n = strlen(s); i < n; i++)
     {
         if strchr(t , s[i])
         {
