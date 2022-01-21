@@ -17,3 +17,13 @@ int main(int argc, string argv[])
     }
     return 0;
 }
+
+
+int key_check(string s)
+{
+    string t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (i = 0, n = strlen(s); i < n; i++)
+    {
+        if strchr()
+    }
+}
