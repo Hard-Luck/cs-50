@@ -4,7 +4,7 @@
 
 int main(int argc, string argv[])
 {
-    //if (!argv[2]) --- Need to figure this out 
+    if (argc != 2)
     {
         printf("Must enter a key");
         printf("\n");
