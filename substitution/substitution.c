@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <string.h>
+#include <ctype.h>
 
 //Including prototypes of functions.
 int key_check(string s);
@@ -38,7 +39,7 @@ int key_check(string s)
     }
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if (strchr(s , toupper(t[i])) || strchr(s , tolower(t[i])))
+        if (strchr(s , toupper(t[i])) || (strchr(s , tolower(t[i]))))
         {
             check++;
         }
