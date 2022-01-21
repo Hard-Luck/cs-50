@@ -13,7 +13,7 @@ int main(int argc, string argv[])
         printf("Must enter a key\n");
         return 1;
     }
-    if (key_check(argv[1]) = 1)
+    if (key_check(argv[1]) == 0)
     {
         printf("Key is good\n");
     }
