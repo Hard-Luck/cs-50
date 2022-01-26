@@ -20,7 +20,7 @@ int main(int argc, string argv[])
     if (key_check(argv[1]) == 0)
     {
         string new = encrypt_string(argv[1]);
-        printf("%s\n", new);
+        printf("ciphertext: %s\n", new);
     }
     else
     {
@@ -61,13 +61,13 @@ int key_check(string s)
 
 string encrypt_string(string key)
 {
-    string str = get_string("Enter string to encode");
+    string str = get_string("plaintext: ");
     for (int i = 0; i < 26; i++ )
         {
             if (toupper(str[i]) == (i + 65))
             {
                 int diff = key[i] - str[i];
-                str[i] = str[i] + diff;
+                str[i] += diff;
             }
         }
     return str;
