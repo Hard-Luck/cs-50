@@ -20,7 +20,7 @@ int main(int argc, string argv[])
     if (key_check(argv[1]) == 0)
     {
         string new = encrypt_string(argv[1]);
-        printf("%s", new);
+        printf("%s\n", new);
     }
     else
     {
