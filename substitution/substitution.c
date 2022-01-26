@@ -6,6 +6,9 @@
 //Including prototypes of functions.
 int key_check(string s);
 
+//Encryption using key
+string encrypt_string(string str, string key);
+
 //using argc and argv[] for command line argumets.
 int main(int argc, string argv[])
 {
@@ -16,7 +19,8 @@ int main(int argc, string argv[])
     }
     if (key_check(argv[1]) == 0)
     {
-        printf("Valid key\n");
+        string new = encrypt_string(argv[1]);
+        printf("%s", new);
     }
     else
     {
@@ -55,13 +59,16 @@ int key_check(string s)
     }
 }
 
-string encrypt_string(string str, string key)
+string encrypt_string(string key)
 {
+    str = get_string("Enter string to encode");
     for (i = 0; i < 26; i++ )
         {
             if (toupper(char str[i]) == (i + 65))
             {
-                int diff = char key[i] - char[]
+                int diff = char key[i] - char str [i]
+                str[i] = char (str[i] + diff)
             }
         }
+    return str
 }
