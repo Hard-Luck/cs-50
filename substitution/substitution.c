@@ -59,9 +59,9 @@ string encrypt_string(string str, string key)
 {
     for (i = 0; i < 26; i++ )
         {
-            for (j= 0; j < 26; j++ )
+            if (toupper(char str[i]) == (i + 65))
             {
-                if (string[i] == string[j])
+                int diff = char key[i] - char[]
             }
         }
 }
