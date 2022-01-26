@@ -61,7 +61,7 @@ string encrypt_string(string str, string key)
         {
             for (j= 0; j < 26; j++ )
             {
-                if (char string[i] 
+                if (string[i] == string[j])
             }
         }
 }
