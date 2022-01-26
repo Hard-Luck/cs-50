@@ -7,7 +7,7 @@
 int key_check(string s);
 
 //Encryption using key
-string encrypt_string(string str, string key);
+string encrypt_string(string key);
 
 //using argc and argv[] for command line argumets.
 int main(int argc, string argv[])
@@ -61,14 +61,14 @@ int key_check(string s)
 
 string encrypt_string(string key)
 {
-    str = get_string("Enter string to encode");
-    for (i = 0; i < 26; i++ )
+    string str = get_string("Enter string to encode");
+    for (int i = 0; i < 26; i++ )
         {
-            if (toupper(char str[i]) == (i + 65))
+            if (toupper(str[i]) == (i + 65))
             {
-                int diff = char key[i] - char str [i]
-                str[i] = char (str[i] + diff)
+                int diff = key[i] - str[i];
+                str[i] = str[i] + diff;
             }
         }
-    return str
+    return str;
 }
