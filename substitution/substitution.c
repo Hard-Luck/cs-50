@@ -25,7 +25,7 @@ int main(int argc, string argv[])
     else
     {
         printf("Invalid key\n");
-        return 4;
+        return 1;
     }
     return 0;
 }
@@ -39,7 +39,7 @@ int key_check(string s)
     {
         printf("Key entered must be exactly 26 characters");
         printf("\n");
-        return 2;
+        return 1;
     }
     for (int i = 0, n = strlen(s); i < n; i++)
     {
@@ -51,11 +51,11 @@ int key_check(string s)
     }
     if (check == 26)
     {
-        return 0;
+        return 1;
     }
     else
     {
-        return 3;
+        return 1;
     }
 }
 
