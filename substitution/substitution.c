@@ -69,6 +69,10 @@ string encrypt_string(string key)
                 int diff = key[i] - str[i];
                 str[i] += diff;
             }
+            else
+            {
+                continue;
+            }
         }
     return str;
 }
