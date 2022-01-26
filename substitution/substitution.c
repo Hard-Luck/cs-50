@@ -67,7 +67,7 @@ string encrypt_string(string key)
             if (toupper(str[i]) == (i + 65))
             {
                 int diff = key[i] - str[i];
-                str[i] += diff;
+                str[i] = i + 65 - diff;
             }
             else
             {
