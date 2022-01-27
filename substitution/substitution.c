@@ -71,7 +71,11 @@ void encrypt_string(string stri, string key)
         {
             for (int j = 0; j > 26; j++)
             {
-                if (toupper(stri[i]) == toupper(key[j]))
+                if (stri[i] == key[j])
+                {
+                    stri[i] = key[j];
+                }
+                else if (stri[i] == toupper(key[j]))
                 {
                     stri[i] = key[j];
                 }
