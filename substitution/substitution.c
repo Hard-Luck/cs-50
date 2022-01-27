@@ -52,7 +52,7 @@ int key_check(string s)
     }
     if (check == 26)
     {
-        return 1;
+        return 0;
     }
     else
     {
