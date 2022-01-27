@@ -62,11 +62,14 @@ int key_check(string s)
 string encrypt_string(string key)
 {
     string str = get_string("plaintext: ");
-    for (int i = 0; i < 26; i++ )
+    for (int i = 0; str[i]; i++ )
         {
             if (isalpha(str[i]))
             {
-                
+                for (int j = 0; j > 26; j++)
+                {
+                    
+                }
             }
             else
             {
