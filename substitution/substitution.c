@@ -69,7 +69,11 @@ int encrypt_string(string stri, string key)
     {
         for (int j = 0; j < 26; j++)
         {
-            if (toupper(stri[i]) == 65 +j)
+            if ((stri[i]) == 65 +j)
+            {
+                stri[i] = key[j];
+            }
+            else if ((stri[i]) == 97 +j)
             {
                 stri[i] = key[j];
             }
