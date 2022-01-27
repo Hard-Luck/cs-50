@@ -2,6 +2,8 @@
 #include <cs50.h>
 #include <string.h>
 #include <ctype.h>
+//cs50 for getstring etc
+//ctype.h for isalpha
 
 //Including prototypes of functions.
 int key_check(string s);
@@ -19,6 +21,7 @@ int main(int argc, string argv[])
     }
     if (key_check(argv[1]) == 0)
     {
+        // encrypting message using getstring and commandline argument
         string message = get_string("plaintext: ");
         encrypt_string(message, argv[1]);
         return 0;
