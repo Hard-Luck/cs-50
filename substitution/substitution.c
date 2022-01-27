@@ -74,11 +74,11 @@ int encrypt_string(string stri, string key)
             {
                 if ((stri[i]) == 65 + j)
                 {
-                    stri[i] = key[j];
+                    stri[i] = key[i];
                 }
                 else if ((stri[i]) == 97 +j)
                 {
-                    stri[i] = tolower(key[j]);
+                    stri[i] = tolower(key[i]);
                 }
             }
         }
