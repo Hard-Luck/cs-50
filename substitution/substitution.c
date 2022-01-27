@@ -19,8 +19,7 @@ int main(int argc, string argv[])
     }
     if (key_check(argv[1]) == 0)
     {
-        string new = encrypt_string(argv[1]);
-        printf("ciphertext: %s\n", new);
+        encrypt_string(argv[1]);
     }
     else
     {
@@ -61,17 +60,17 @@ int key_check(string s)
 
 string encrypt_string(string key)
 {
-    string str = get_string("plaintext: ");
-    for (int i = 0; str[i]; i++ )
+    string stri = get_string("plaintext: ");
+    for (int i = 0; stri[i]; i++ )
         {
-            if (isalpha(str[i]))
+            if (isalpha(stri[i]))
             {
                 for (int j = 0; j > 26; j++)
                 {
-                    if (toupper(str[i]) == toupper(key[j]))
+                    if (toupper(stri[i]) == toupper(key[j]))
                     {
-                        char diff = str[i] - key[j];
-                        str[i] = str[i] + diff;
+                        char diff = stri[i] - key[j];
+                        stri[i] = stri[i] + diff;
                     }
                 }
             }
@@ -80,6 +79,6 @@ string encrypt_string(string key)
                 continue;
             }
         }
-    return str;
+    printf("ciphertext: %s\n", stri);
 }
 
