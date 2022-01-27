@@ -65,28 +65,14 @@ int key_check(string s)
 
 int encrypt_string(string stri, string key)
 {
-    // loop through the string
-    for (int i = 0, n = strlen(stri); i < n; i++ )
+    for (int i = 0; stri[i]; i++)
     {
         for (int j = 0; j < 26; j++)
         {
-            for(int k = 0; k < 26; k++)
-            {
-                if (isalpha(stri[i]))
+            if (isalpha(stri[i]))
                 {
-                    if ((stri[i]) == 65 + k)
-                    {
-                        stri[i] = key[j];
-                    }
-                    else if ((stri[i]) == 97 + k)
-                    {
-                        stri[i] = tolower(key[j]);
-                        break;
-                    }
-                }
-            }
+                    if ((stri[i]) == 65 + j)
+                    {}
         }
     }
-    printf("ciphertext: %s\n", stri);
-    return 0;
 }

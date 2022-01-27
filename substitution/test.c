@@ -45,15 +45,25 @@ void replacechar(char *s,char c1,char c2)
     }
 }
 
-int encrypt_string(string stri, string key)
 {
-    for (int i = 0; stri[i]; i++ )
+    // loop through the string
+    for (int i = 0, n = strlen(stri); i < n; i++ )
     {
-        for (int j = 0; j > 26; j++)
+        for (int j = 0; j < 26; j++)
         {
-            if (toupper(stri[i]) == 65 +j)
+            for(int k = 0; k < 26; k++)
             {
-                stri[i] = key[j];
+                if (isalpha(stri[i]))
+                {
+                    if ((stri[i]) == 65 + k)
+                    {
+                        stri[i] = key[j];
+                    }
+                    else if ((stri[i]) == 97 + k)
+                    {
+                        stri[i] = tolower(key[j]);
+                    }
+                }
             }
         }
     }
