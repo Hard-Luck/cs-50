@@ -62,16 +62,6 @@ int key_check(string s)
 
 int encrypt_string(string stri, string key)
 {
-    for (int i = 0; stri[i]; i++ )
-    {
-        for (int j = 0; j > 26; j++)
-        {
-            if (toupper(stri[i]) == 65 + j)
-            {
-                stri[i] = key[j];
-            }
-        }
-    }
     printf("ciphertext: %s\n", stri);
     return 0;
 }
