@@ -20,8 +20,7 @@ void encrypt_string(string stri, string key)
             {
                 if (toupper(stri[i]) == toupper(key[j]))
                 {
-                    char diff = stri[i] - key[j];
-                    stri[i] = stri[i] + diff;
+                    stri[i] = key[j];
                 }
             }
         }
@@ -34,3 +33,14 @@ void encrypt_string(string stri, string key)
     return 0;
 }
 
+void replacechar(char *s,char c1,char c2)
+{
+    int i=0;
+    for(i=0;s[i];i++)
+    {
+        if(s[i]==c1)
+        {
+        s[i]=c2;
+        }
+    }
+}
