@@ -14,10 +14,10 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
-    double L = letters / words;
-    double S = sentences / words;
+    float L = letters / words;
+    float S = sentences / words;
 
-    double index = (0.0588 * L) - (0.296 * S) - 15.8;
+    float index = (0.0588 * L) - (0.296 * S) - 15.8;
     if (index < 1)
     {
         printf("Before Grade 1\n");
