@@ -30,6 +30,10 @@ int count_letters(string text)
 int count_words(string text)
 {
     int word_count = 0;
+    if (text)
+    {
+        word_count = 1;
+    }
     for (int i = 0; text[i]; i++)
     {
         if (text[i] == 32)
