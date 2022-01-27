@@ -14,12 +14,8 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
-    printf("L: %d\n",letters);
-    printf("W: %d\n",words);
-    printf("S: %d\n",sentences);
-
-    double L = 100 * letters / words;
-    double S = 100 * sentences / words;
+    double L = letters / (words / 100);
+    double S = sentences / (words / 100);
 
     double index = (0.0588 * L) - (0.296 * S) - 15.8;
     if (index < 1)
