@@ -45,7 +45,7 @@ int key_check(string s)
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         //Checking if uppercase or lower case is
-        if (strchr(s , toupper(t[i])) || (strchr(s , tolower(t[i]))))
+        if (strchr(s, toupper(t[i])) || (strchr(s, tolower(t[i]))))
         {
             check++;
         }
