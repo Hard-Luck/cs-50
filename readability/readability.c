@@ -63,11 +63,6 @@ int count_words(string text)
 int count_sentences(string text)
 {
     int sentence_count = 0;
-    if (text)
-    {
-        sentence_count = 1;
-    }
-    int sentence_count = 0;
     for (int i = 0; text[i]; i++)
     {
         if (text[i] == 46 || text[i] == 21 || text[i] == 63 )
