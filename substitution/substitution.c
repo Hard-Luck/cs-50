@@ -75,7 +75,7 @@ int encrypt_string(string stri, string key)
             }
             else if ((stri[i]) == 97 +j)
             {
-                stri[i] = toupper(key[j]);
+                stri[i] = tolower(key[j]);
             }
         }
     }
