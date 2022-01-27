@@ -21,6 +21,7 @@ int main(int argc, string argv[])
     {
         string message = get_string("plaintext: ");
         encrypt_string(message, argv[1]);
+        return 0;
     }
     else
     {
