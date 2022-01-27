@@ -69,7 +69,7 @@ int encrypt_string(string stri, string key)
     {
         for (int i = 0, n = strlen(stri); i < n; i++ )
         {
-            if (isaplha(stri[i]) != 0)
+            if (isaplha(stri[i]) = 0)
             {
                 if ((stri[i]) == 65 + j)
                 {
