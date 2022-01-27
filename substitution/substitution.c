@@ -63,8 +63,12 @@ string encrypt_string(string key)
 {
     string str = get_string("plaintext: ");
     for (int i = 0; i < 26; i++ )
-        { if str[i]
-
+        {
+            if (isalpha(str[i]))
+            {
+                
+            }
+        }
     return str;
 }
 
