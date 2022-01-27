@@ -67,13 +67,15 @@ int encrypt_string(string mess, string key)
 {
     for (int i = 0; mess[i]; i++)
     {
+        //checking that a element is both alphabetic and the case
         if (isalpha(mess[i]) && isupper(mess[i]))
         {
-            mess[i] = toupper(key[toupper(mess[i])-65]);
+            //using the uppercase value for easy indexing and resolving issues with else if
+            mess[i] = toupper(key[toupper(mess[i]) - 65]);
         }
         else if (isalpha(mess[i]) && islower(mess[i]))
         {
-            mess[i] = tolower(key[toupper(mess[i])-65]);
+            mess[i] = tolower(key[toupper(mess[i]) - 65]);
         }
     }
     printf("ciphertext: %s\n", mess);
