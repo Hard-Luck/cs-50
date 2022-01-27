@@ -63,18 +63,16 @@ int key_check(string s)
 
 
 
-int encrypt_string(string stri, string key)
+int encrypt_string(string mess, string key)
 {
-    for (int i = 0; stri[i]; i++)
+    for (int i = 0; mess[i]; i++)
     {
         for (int j = 0; j < 26; j++)
         {
-            if (isalpha(stri[i]))
+            if (isalpha(mess[i]))
                 {
-                    if (key[j] == str[i])
-                    {
-                        
-                    }
+                    if (mess[j] == mess[i])
+                    {}
         }
     }
 }
