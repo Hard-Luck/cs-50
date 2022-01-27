@@ -63,8 +63,12 @@ string encrypt_string(string key)
 {
     string str = get_string("plaintext: ");
     for (int i = 0; i < 26; i++ )
-        {
-            if (toupper(str[i]) == (i + 65))
+        { if str[i]
+
+    return str;
+}
+
+ if (toupper(str[i]) == (i + 65))
             {
                 int x = str[i]
                 int y = key[i]
@@ -75,5 +79,3 @@ string encrypt_string(string key)
                 continue;
             }
         }
-    return str;
-}
