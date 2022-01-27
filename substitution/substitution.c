@@ -7,7 +7,7 @@
 int key_check(string s);
 
 //Encryption using key
-void encrypt_string(string stri, string key);
+int encrypt_string(string stri, string key);
 
 //using argc and argv[] for command line argumets.
 int main(int argc, string argv[])
@@ -63,28 +63,18 @@ int key_check(string s)
 
 
 
-void encrypt_string(string stri, string key)
+int encrypt_string(string stri, string key)
 {
     for (int i = 0; stri[i]; i++ )
     {
-        if (isalpha(stri[i]))
+        for (int j = 0; j < 26; j++)
         {
-            for (int j = 0; j > 26; j++)
+            if (toupper(stri[i]) == 65 +j)
             {
-                if (stri[i] == key[j])
-                {
-                    stri[i] = key[j];
-                }
-                else if (stri[i] == toupper(key[j]))
-                {
-                    stri[i] = key[j];
-                }
+                stri[i] = key[j];
             }
-        }
-        else
-        {
-            continue;
         }
     }
     printf("ciphertext: %s\n", stri);
+    return 0;
 }
