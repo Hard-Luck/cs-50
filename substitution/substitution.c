@@ -64,19 +64,12 @@ int encrypt_string(string stri, string key)
 {
     for (int i = 0; stri[i]; i++ )
     {
-        if (isalpha(stri[i]))
+        for (int j = 0; j > 26; j++)
         {
-            for (int j = 0; j > 26; j++)
+            if (toupper(stri[i]) == toupper(key[j]))
             {
-                if (toupper(stri[i]) == toupper(key[j]))
-                {
-                    stri[i] = key[j];
-                }
+                stri[i] = key[j];
             }
-        }
-        else
-        {
-            continue;
         }
     }
     printf("ciphertext: %s\n", stri);
