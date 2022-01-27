@@ -14,6 +14,10 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
+    printf("L: %d\n",letters);
+    printf("W: %d\n",words);
+    printf("S: %d\n",sentences);
+
     double L = 100 * letters / words;
     double S = 100 * sentences / words;
 
