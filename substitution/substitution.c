@@ -68,25 +68,18 @@ string encrypt_string(string key)
             {
                 for (int j = 0; j > 26; j++)
                 {
-                    
+                    if (toupper(str[i]) == toupper(key[j]))
+                    {
+                        char diff = str[i] - key[j];
+                        str[i] = str[i] + diff;
+                    }
                 }
-            }
-            else
-            {
-                continue
-            }
-        }
-    return str;
-}
-
- if (toupper(str[i]) == (i + 65))
-            {
-                int x = str[i]
-                int y = key[i]
-                str[i] = i + 65 - diff;
             }
             else
             {
                 continue;
             }
         }
+    return str;
+}
+
