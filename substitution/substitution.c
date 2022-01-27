@@ -67,14 +67,14 @@ int encrypt_string(string mess, string key)
 {
     for (int i = 0; mess[i]; i++)
     {
-        for (int j = 0; j < 26; j++)
+        if (isalpha(mess[i]))
         {
-            if (isalpha(mess[i]))
-                {
-                    if (mess[i] == 65 + j)
-                    {
-                        
-                    }
+            mess[i] = key[(toupper(mess[i])-65)];
         }
     }
+    printf("ciphertext: %s\n", mess);
+    return 0;
 }
+
+
+
