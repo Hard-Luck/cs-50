@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <ctype.h>
+#include <math.h>
 
 int count_words(string text);
 int count_letters(string text);
@@ -11,14 +12,14 @@ int main(void)
     string text = get_string("Text: ");
     int letters = count_letters(text);
     int words = count_words(text);
-    int sentences = count_setences(text);
+    int sentences = count_sentences(text);
 
-    float L = letters / words
-    float S = 100 * senteces / words
+    float L = letters / words;
+    float S = 100 * senteces / words;
 
-    int index = 0.0588 * L - 0.296 * S - 15.8
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
 
-    printf(")
+    printf("Grade %i\n", index);
     return 0;
 }
 
