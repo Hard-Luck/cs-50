@@ -9,9 +9,16 @@ int count_sentences(string text);
 int main(void)
 {
     string text = get_string("Text: ");
-    printf("Letter count is %i\n", count_letters(text));
-    printf("Word count is %i\n", count_words(text));
-    printf("Sentence count is %i\n", count_sentences(text));
+    int letters = count_letters(text);
+    int words = count_words(text);
+    int sentences = count_setences(text);
+
+    float L = letters / words
+    float S = 100 * senteces / words
+
+    int index = 0.0588 * L - 0.296 * S - 15.8
+
+    printf(")
     return 0;
 }
 
