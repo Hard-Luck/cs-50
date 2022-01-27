@@ -65,8 +65,10 @@ int key_check(string s)
 
 int encrypt_string(string stri, string key)
 {
+    // loop through the string
     for (int i = 0, n = strlen(stri); i < n; i++ )
     {
+        
         for (int j = 0; j < 26; j++)
         {
             if (isalpha(stri[i]))
