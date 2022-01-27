@@ -10,5 +10,9 @@ int main(void)
 
 int count_letters(string text)
 {
-    
+    int count = 0;
+    for (int i; string[i], i++)
+    {
+        if 
+    }
 }
