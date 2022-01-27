@@ -68,6 +68,10 @@ string encrypt_string(string key)
             {
                 
             }
+            else
+            {
+                continue
+            }
         }
     return str;
 }
