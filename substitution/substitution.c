@@ -71,9 +71,9 @@ int encrypt_string(string stri, string key)
         {
             if (isalpha(stri[i]))
                 {
-                    if ((stri[i]) == 65 + j)
+                    if (key[j] == str[i])
                     {
-                        stri[i] = key 
+                        
                     }
         }
     }
