@@ -80,5 +80,6 @@ string encrypt_string(string key)
             }
         }
     printf("ciphertext: %s\n", stri);
+    return 0;
 }
 
