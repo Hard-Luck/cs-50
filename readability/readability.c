@@ -14,6 +14,8 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
+
+
     double L = 100 * letters / words;
     double S = 100 * sentences / words;
 
@@ -28,7 +30,8 @@ int main(void)
     }
     else
     {
-    printf("Grade %f\n", round(index));
+        int grade = round(index);
+        printf("Grade %i\n", grade);
     }
     return 0;
 }
