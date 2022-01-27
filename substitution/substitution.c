@@ -69,15 +69,17 @@ int encrypt_string(string stri, string key)
     {
         for (int i = 0, n = strlen(stri); i < n; i++ )
         {
-            if ((stri[i]) == 65 + j)
+            if (isaplha(stri[i]) != 0)
             {
-                stri[i] = key[j];
+                if ((stri[i]) == 65 + j)
+                {
+                    stri[i] = key[j];
+                }
+                else if ((stri[i]) == 97 +j)
+                {
+                    stri[i] = tolower(key[j]);
+                }
             }
-            else if ((stri[i]) == 97 +j)
-            {
-                stri[i] = tolower(key[j]);
-            }
-        }
     }
     printf("ciphertext: %s\n", stri);
     return 0;
