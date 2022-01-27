@@ -70,15 +70,18 @@ int encrypt_string(string stri, string key)
     {
         for (int j = 0; j < 26; j++)
         {
-            if (isalpha(stri[i]))
+            for(int k = 0; k < 26; k++)
             {
-                if ((stri[i]) == 65 + j)
+                if (isalpha(stri[i]))
                 {
-                    stri[i] = key[i];
-                }
-                else if ((stri[i]) == 97 +j)
-                {
-                    stri[i] = tolower(key[i]);
+                    if ((stri[i]) == 65 + k)
+                    {
+                        stri[i] = key[j];
+                    }
+                    else if ((stri[i]) == 97 + k)
+                    {
+                        stri[i] = tolower(key[j]);
+                    }
                 }
             }
         }
