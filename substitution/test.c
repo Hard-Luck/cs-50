@@ -3,5 +3,7 @@
 int main(void)
 {
     char x =  97;
-    printf("%c\n",x);
+    char y = 99;
+    char z = y-x;
+    printf("%c,%c,%c,\n",x,y,z);
 }
