@@ -10,22 +10,7 @@ int main(void)
 
 
 
-void replacechar(char *s,char c1,char c2)
-{
-	int i=0;
-
-
-   for(i=0;s[i];i++)
-	{
-		if(s[i]==c1)
-		{
-		   s[i]=c2;
-
-	    }
-
-	}
-
-    string encrypt_string(string stri, string key)
+void encrypt_string(string stri, string key)
 {
     for (int i = 0; stri[i]; i++ )
     {
