@@ -69,7 +69,7 @@ int encrypt_string(string stri, string key)
     {
         for (int i = 0, n = strlen(stri); i < n; i++ )
         {
-            if (isaplha(stri[i]))
+            if (isalpha(stri[i]))
             {
                 if ((stri[i]) == 65 + j)
                 {
@@ -80,6 +80,7 @@ int encrypt_string(string stri, string key)
                     stri[i] = tolower(key[j]);
                 }
             }
+        }
     }
     printf("ciphertext: %s\n", stri);
     return 0;
