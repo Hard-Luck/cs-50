@@ -28,8 +28,7 @@ int main(void)
     }
     else
     {
-        int grade = round(index);
-        printf("Grade %i\n", grade);
+    printf("Grade %f\n", round(index));
     }
     return 0;
 }
