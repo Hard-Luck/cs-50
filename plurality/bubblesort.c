@@ -13,9 +13,9 @@ int main(void)
             array[i] = array[i -1];
             array[i - 1] = array[i];
         }
-    for (int j = 0; array[j]; i++)
+    for (int j = 0; array[j]; j++)
     {
-        printf("%i\t", array[i]);
+        printf("%i\t", array[j]);
     }
     }
 }
