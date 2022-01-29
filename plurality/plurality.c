@@ -78,6 +78,7 @@ bool vote(string name)
 }
 
 // Print the winner (or winners) of the election
+// ##### Bubble Sort #####
 void print_winner(void)
 {
     for (int j = 0; j < candidate_count - 1; i++)
