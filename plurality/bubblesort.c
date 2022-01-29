@@ -13,7 +13,7 @@ int main(void)
             array[i] = array[i -1];
             array[i - 1] = array[i];
         }
-    for (int i = 0; array[i]; i++)
+    for (int j = 0; array[j]; i++)
     {
         printf("%i\t", array[i]);
     }
