@@ -83,6 +83,10 @@ int main(int argc, string argv[])
                 printf("Invalid vote.\n");
                 return 3;
             }
+            else
+            {
+                ranks[i] = j;
+            }
         }
 
         record_preferences(ranks);
@@ -104,7 +108,6 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(candidates[i], name) == 0)
         {
-            ranks[i] = rank;
             return true;
         }
     }
