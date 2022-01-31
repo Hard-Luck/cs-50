@@ -187,7 +187,9 @@ void lock_pairs(void)
     check[MAX];
     for (int i = 0; i < pair_count; i++)
     {
-        if 
+        int x = pairs[i].winner
+        int y = pairs[i].loser
+        if (check[])
     }
     return;
 }
