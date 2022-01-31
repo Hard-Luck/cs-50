@@ -151,9 +151,12 @@ void add_pairs(void)
             }
         }
     }
-    for (int k = 0; pairs[k]; k++)
+    for (int k = 0; pairs[k].winner; k++)
     {
+        if (pairs[k].winner)
+        {
         pair_count++;
+        }
     }
     return;
 }
