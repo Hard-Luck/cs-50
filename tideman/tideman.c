@@ -139,18 +139,19 @@ void add_pairs(void)
                 {
                     pairs[index].winner = i;
                     pairs[index].loser = j;
-                    pair_count++;
+                    index++;
 
                 }
                 else if (preferences[i][j] < preferences[j][i])
                 {
                     pairs[index].winner = j;
                     pairs[index].loser = i;
-                    pair_count++;
+                    index++;
                 }
             }
         }
     }
+    pair_count = index;
     return;
 }
 
