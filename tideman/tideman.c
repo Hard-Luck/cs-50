@@ -152,7 +152,7 @@ void add_pairs(void)
         }
     }
     pair_count = index;
-    return pair_count;
+    return;
 }
 
 // Sort pairs in decreasing order by strength of victory
