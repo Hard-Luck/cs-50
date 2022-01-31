@@ -2,13 +2,13 @@
 
 int main(void)
 {
-    int ranks[5];
+    int ranks[2][2];
 
-    ranks[2] = 3;
+    ranks[0][1] = 3;
 
-    for (int i = 0; i <= 4; i++)
+    for (int i = 0; i <= 0; i++)
     {
-        printf("%d\t", ranks[i]);
+        printf("%i\t", ranks[i][i+1]);
         printf("\n");
     }
 }
