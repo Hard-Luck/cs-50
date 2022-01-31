@@ -151,14 +151,8 @@ void add_pairs(void)
             }
         }
     }
-    for (int k = 0; pairs[k].winner; k++)
-    {
-        if (pairs[k].winner)
-        {
-        pair_count++;
-        }
-    }
-    return;
+    pair_count = index;
+    return pair_count;
 }
 
 // Sort pairs in decreasing order by strength of victory
