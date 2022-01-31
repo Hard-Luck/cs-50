@@ -6,7 +6,7 @@ int main(void)
 
     ranks[2] = 3;
 
-    for (int i = 1; i <= 4; i++)
+    for (int i = 0; i <= 4; i++)
     {
         printf("%d\t", ranks[i]);
         printf("\n");
