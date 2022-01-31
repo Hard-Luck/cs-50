@@ -168,11 +168,12 @@ void sort_pairs(void)
         for (int j = 0; j < pair_coint - 1 - i; j++)
         {
             int margin = pairs[j].winner - pairs[j].loser
-            if (pair[j].winn > candidates[j + 1].votes)
+            int next_margin pairs[j + 1].winner - pairs[j + 1].loser
+            if (margin > next_margin)
             {
-                candidate temp = candidates[j];
-                candidates[j] = candidates[j + 1];
-                candidates[j + 1] = temp;
+                pairs temp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
             }
         }
     }
