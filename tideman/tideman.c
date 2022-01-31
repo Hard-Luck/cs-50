@@ -156,6 +156,7 @@ void add_pairs(void)
                 index++;
             }
         }
+    }
     pair_count = index + 1;
     return;
 }
@@ -165,13 +166,13 @@ void sort_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = 0; j < pair_coint - 1 - i; j++)
+        for (int j = 0; j < pair_count - 1 - i; j++)
         {
-            int margin = pairs[j].winner - pairs[j].loser
-            int next_margin pairs[j + 1].winner - pairs[j + 1].loser
+            int margin = pairs[j].winner - pairs[j].loser;
+            int next_margin = pairs[j + 1].winner - pairs[j + 1].loser;
             if (margin > next_margin)
             {
-                pairs temp = pairs[j];
+                pair temp = pairs[j];
                 pairs[j] = pairs[j + 1];
                 pairs[j + 1] = temp;
             }
