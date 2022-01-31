@@ -151,7 +151,10 @@ void add_pairs(void)
             }
         }
     }
-    pair_count = index;
+    for (int k = 0; pairs[k]; k++)
+    {
+        pair_count++;
+    }
     return;
 }
 
