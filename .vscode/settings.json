@@ -2,6 +2,7 @@
     "files.associations": {
         "*.html": "jinja-html",
         "string": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "array": "c"
     }
 }

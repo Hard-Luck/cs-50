@@ -7,15 +7,20 @@ int main(void)
 {
     for (int i = 0; i < 4; i++)
     {
-        if(array[i] < array[i + 1])
+        for(int j = 0; j < 4 - i; j++)
         {
-            int temp = array[i];
-            array[i] = array[i -1];
-            array[i - 1] = array[i];
+            if(array[j] > array[j + 1])
+            {
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
         }
-    for (int j = 0; array[j]; j++)
+    }
+
+    for (int k = 0; k<5; k++)
     {
-        printf("%i\t", array[j]);
+        printf("%d\t", array[k]);
     }
-    }
+     printf("\n");
 }

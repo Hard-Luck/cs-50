@@ -51,11 +51,11 @@ int main(int argc, string argv[])
     for (int i = 0; i < voter_count; i++)
     {
         string name = get_string("Vote: ");
-
         // Check for invalid vote
         if (!vote(name))
         {
             printf("Invalid vote.\n");
+            return 0;
         }
     }
 
@@ -68,7 +68,7 @@ bool vote(string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(candidates[i].name, name))
+        if (strcmp(candidates[i].name, name) == 0)
         {
             candidates[i].votes++;
             return true;
@@ -81,18 +81,25 @@ bool vote(string name)
 // ##### Bubble Sort #####
 void print_winner(void)
 {
-    for (int j = 0; j < candidate_count - 1; i++)
+    for (int i = 0; i < candidate_count - 1; i++)
     {
-        for (int i = 0; i < candidate_count - 1; i++)
+        for (int j = 0; j < candidate_count - 1 - i; j++)
         {
-            if (candidates[i].votes < candidates[i + 1].votes)
+            if (candidates[j].votes > candidates[j + 1].votes)
             {
-                tv = candidates[i + 1].votes;
-                candidates[i].votes = candidates[i + 1].votes;
-                candidates[i + 1].votes = tv;
+                candidate temp = candidates[j];
+                candidates[j] = candidates[j + 1];
+                candidates[j + 1] = temp;
             }
         }
     }
 
-    return;
+    for (int i = candidate_count - 1; i >= 0; i--)
+    {
+        printf("%s\n", candidates[i].name);
+        if (candidates[i].votes != candidates[i - 1].votes)
+        {
+            break;
+        }
+    }
 }
