@@ -83,10 +83,7 @@ int main(int argc, string argv[])
                 printf("Invalid vote.\n");
                 return 3;
             }
-            else
-            {
-                ranks[i] = j;
-            }
+
         }
 
         record_preferences(ranks);
