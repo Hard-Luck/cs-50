@@ -182,7 +182,6 @@ void lock_pairs(void)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
-    }
     return;
 
     bool test(int n, int m)
