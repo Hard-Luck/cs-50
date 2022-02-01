@@ -8,4 +8,5 @@ for i in v - 1
     preferences[i][j]++
 
 
-margin = preferences[pairs[i].winner][pairs[j].loser] - preferences[pairs[j].winner][pairs[i].loser]
+marg_1 = preferences[pairs[i].winner][pairs[j].loser] - preferences[pairs[j].winner][pairs[i].loser]
+marg_2 = preferences[pairs[i].winner][pairs[j].loser] - preferences[pairs[j].winner][pairs[i].loser]
