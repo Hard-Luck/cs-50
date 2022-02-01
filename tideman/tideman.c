@@ -169,6 +169,20 @@ void sort_pairs(void)
     return;
 }
 
+{
+    for (int i = 0; i < pair_coint; i++)
+    {
+        for(int j = 0; j < pair_count - i; j++)
+        {
+            if(array[j] > array[j + 1])
+            {
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
