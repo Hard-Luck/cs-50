@@ -156,13 +156,16 @@ void sort_pairs(void)
     {
         for (int j = 0; j < pair_count - i - 1; j++)
         {
-            int margin = pairs[j].winner - pairs[j].loser;
-            int next_margin = pairs[j + 1].winner - pairs[j + 1].loser;
-            if (margin < next_margin)
+            if ( pairs[j].winner - pairs[j].loser < pairs[j + 1].winner - pairs[j + 1].loser)
             {
-                pair temp = pairs[j];
-                pairs[j] = pairs[j + 1];
-                pairs[j + 1] = temp;
+                pair temp;
+                temp.loser = pairs[j].loser;
+                temp.winner = pairs[j].winner;
+                pairs[j].winner = pairs[j + 1].winner;
+                pairs[j].loser = pairs[j + 1].loser;
+                pairs[j + 1].winner = temp.winner;
+                pairs[j + 1].winner = temp.winner;
+                temp = false;
             }
         }
     }
