@@ -158,7 +158,7 @@ void sort_pairs(void)
         {
             int margin = pairs[j - 1].winner - pairs[j - 1].loser;
             int next_margin = pairs[j].winner - pairs[j].loser;
-            if (margin < next_margin)
+            if (margin > next_margin)
             {
                 pair temp = pairs[j];
                 pairs[j] = pairs[j - 1];
