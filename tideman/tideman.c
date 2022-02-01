@@ -32,6 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
+bool test(int n, int m);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -175,7 +176,6 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    bool test(int n, int m);
     for (int i = 0; i < pair_count; i++)
     {
         if(test(pairs[i].winner,pairs[i].loser) == 0)
@@ -183,23 +183,8 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
     return;
-
-    bool test(int n, int m)
-    {
-        if(n == m)
-        {
-            return false;
-        }
-        for(int i = 0, i < candidate_count; i++)
-        {
-            if preference[n][i] = true
-            {
-                test(n, m);
-            }
-        }
-        return true;
+    }
 }
-
 
 
 // Print the winner of the election
@@ -221,4 +206,20 @@ void print_winner(void)
         }
     }
     return;
+}
+
+bool test(int n, int m)
+{
+    if(n == m)
+    {
+        return false;
+    }
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if (preferences[n][i] == true)
+        {
+            test(n, m);
+        }
+    }
+    return true;
 }
