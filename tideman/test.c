@@ -6,3 +6,6 @@ for i in v - 1
     for j=1++ in v
 
     preferences[i][j]++
+
+
+margin = preferences[i][j]
