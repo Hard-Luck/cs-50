@@ -178,28 +178,30 @@ void lock_pairs(void)
     bool test(int n, int m);
     for (int i = 0; i < pair_count; i++)
     {
-        if(test())
-        locked[pairs[i].winner][pairs[i].loser] = true;
+        if(test(pairs[i].winner,pairs[i].loser) == 0)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
     }
     return;
 
-bool test(int n, int m)
-{
-    if(n == m)
+    bool test(int n, int m)
     {
-        return false;
-    }
-    for(int i = 0, i < candidate_count; i++)
-    {
-        if preference[n][i] = true
+        if(n == m)
         {
-            test(n, m);
+            return false;
         }
-    }
-    return true;
+        for(int i = 0, i < candidate_count; i++)
+        {
+            if preference[n][i] = true
+            {
+                test(n, m);
+            }
+        }
+        return true;
 }
 
-}
+
 
 // Print the winner of the election
 void print_winner(void)
