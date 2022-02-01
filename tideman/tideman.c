@@ -156,15 +156,15 @@ void sort_pairs(void)
     {
         for (int j = 0; j < pair_count - i - 1; j++)
         {
-            if (pairs[j].winner - pairs[j].loser < pairs[j + 1].winner - pairs[j + 1].loser)
+            int marg_1 = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
+            int marg_2 = preferences[pairs[j+1].winner][pairs[j+1].loser] - preferences[pairs[j+1].loser][pairs[j+1].winner];
+            if (marg_1 < marg_2)
             {
                 pair temp;
-                temp.loser = pairs[j].loser;
-                temp.winner = pairs[j].winner;
-                pairs[j].winner = pairs[j + 1].winner;
-                pairs[j].loser = pairs[j + 1].loser;
-                pairs[j + 1].winner = temp.winner;
-                pairs[j + 1].loser = temp.loser;
+                temp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
+
             }
         }
     }
