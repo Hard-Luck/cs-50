@@ -164,7 +164,7 @@ void sort_pairs(void)
                 pairs[j].winner = pairs[j + 1].winner;
                 pairs[j].loser = pairs[j + 1].loser;
                 pairs[j + 1].winner = temp.winner;
-                pairs[j + 1].winner = temp.winner;
+                pairs[j + 1].loser = temp.loser;
             }
         }
     }
