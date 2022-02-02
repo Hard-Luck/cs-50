@@ -18,12 +18,24 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    if (score1 > score2)
+    {
+        printf()
+    }
 }
 
 int compute_score(string word)
 {
     int score = 0;
     for (int i = 0; n = strlen(word); i < n; i++)
-        for (int j = 0; j < 26)
+    {
+        for (int j = 0; j <= 25; j++)
+        {
+            if (word[i] = j + 65)
+            {
+                score += POINTS[j]
+            }
+        }
+    }
+    return score;
 }
