@@ -220,7 +220,8 @@ bool test(int winner, int loser)
     {
         if(locked[loser][i])
         {
-            return test(winner,i);
+            if (test(winner,i))
+            return true;
         }
     }
     return true;
