@@ -220,7 +220,9 @@ bool cycle(int end, int start)
         if(locked[end][i])
         {
             if (cycle(i,end))
-            return true;
+            {
+                return true;
+            }
         }
     }
     return false;
