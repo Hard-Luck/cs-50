@@ -25,5 +25,5 @@ int compute_score(string word)
 {
     int score = 0;
     for (int i = 0; n = strlen(word); i < n; i++)
-        for (int j = 0; )
+        for (int j = 0; j < 26)
 }
