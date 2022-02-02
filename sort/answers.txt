@@ -1,6 +1,6 @@
 sort1 uses: TODO
 
-time ./sort2 reversed10000.txt:
+time ./sort1 reversed10000.txt:
 real    0m0.284s
 user    0m0.190s
 sys     0m0.046s
@@ -18,4 +18,8 @@ How do you know?: TODO
 
 sort3 uses: TODO
 
+time ./sort3 reversed10000.txt:
+real    0m0.007s
+user    0m0.005s
+sys     0m0.002s
 How do you know?: TODO
