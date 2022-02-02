@@ -34,8 +34,9 @@ int main(void)
 
 int compute_score(string word)
 {
+    int n;
     int score = 0;
-    for (int i = 0, int n = strlen(word); i < n; i++)
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
         for (int j = 0; j <= 25; j++)
         {
