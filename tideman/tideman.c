@@ -222,7 +222,7 @@ void print_winner(void)
         }
         if (counter == 0)
         {
-            printf("%s", candidates[i]);
+            printf("%s\n", candidates[i]);
         }
     }
     return;
