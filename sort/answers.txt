@@ -7,11 +7,10 @@ Minimal steps in the sorted due to no swaps.
 sort2 uses: Merge Sort
 
 
-How do you know?:Bubble
+How do you know?: In the random 5000 and 1000 as n increased the time proportionality was the lowest.
+This is due to the order being of o(nlog(n)) where as the other 2 searched have O(n^2)
 
 sort3 uses: Bubble Sort
 
-How do you know?:
-This sort took significantly longer on the reversed5000.txt and reversed10000.txt.
-This would make sense as it would take it would take 5000 and 10000 steps
-as all numbers are the maximum distance away from being sorted and it only sorts the smallest number per iteration.
+How do you know?: It took the longesst in the sorted groups because it has to compare pairs too each other reg
+
