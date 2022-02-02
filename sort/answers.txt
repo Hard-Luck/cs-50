@@ -1,11 +1,13 @@
 sort1 uses: Selection Sort
 
-How do you know?: It performed the worst in the random data
+How do you know?:
+It is expected to have performed the worst in the random data.
+Minimal steps in the sorted due to no swaps.
 
 sort2 uses: Merge Sort
 
 
-How do you know?: TODO
+How do you know?:Bubble
 
 sort3 uses: Bubble Sort
 
