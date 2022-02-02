@@ -1,6 +1,6 @@
 sort1 uses: TODO
 
-time ./sort1 reversed10000.txt:
+time ./sort1 reversed5000.txt:
 
 How do you know?: TODO
 
