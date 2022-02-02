@@ -1,8 +1,6 @@
-sort1 uses: TODO
+sort1 uses: Selection Sort
 
-time ./sort1 reversed5000.txt:
-
-How do you know?: TODO
+How do you know?: It performed the worst in the random data
 
 sort2 uses: TODO
 
