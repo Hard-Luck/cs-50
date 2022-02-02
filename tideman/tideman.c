@@ -119,7 +119,7 @@ void record_preferences(int ranks[])
 {
     for (int i = 0; i < candidate_count - 1; i++)
     {
-        for(int j = 1 + i; j < candidate_count; j++)
+        for (int j = 1 + i; j < candidate_count; j++)
         {
             preferences[ranks[i]][ranks[j]]++;
         }
@@ -131,20 +131,20 @@ void add_pairs(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for(int j = 1 + i ; j < candidate_count; j++)
+        for (int j = 1 + i ; j < candidate_count; j++)
         {
             if (preferences[i][j] > preferences[j][i])
-               {
-                    pairs[pair_count].winner = i;
-                    pairs[pair_count].loser = j;
-                    pair_count++;
-                }
-                else if (preferences[i][j] < preferences[j][i])
-                {
-                    pairs[pair_count].winner = j;
-                    pairs[pair_count].loser = i;
-                    pair_count++;
-                }
+            {
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
+                pair_count++;
+            }
+            else if (preferences[i][j] < preferences[j][i])
+            {
+                pairs[pair_count].winner = j;
+                pairs[pair_count].loser = i;
+                pair_count++;
+            }
         }
     }
     return;
@@ -158,7 +158,7 @@ void sort_pairs(void)
         for (int j = 0; j < pair_count - i - 1; j++)
         {
             int marg_1 = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
-            int marg_2 = preferences[pairs[j+1].winner][pairs[j+1].loser] - preferences[pairs[j+1].loser][pairs[j+1].winner];
+            int marg_2 = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
             if (marg_1 < marg_2)
             {
                 pair temp;
@@ -180,11 +180,12 @@ bool cycle(int end, int start)
     {
         return true;
     }
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(locked[end][i])
+        if (locked[end][i])
         {
-            if (cycle(i,start))
+            //checks with every new branch whether we get a cycle
+            if (cycle(i, start))
             {
                 return true;
             }
@@ -198,7 +199,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if(!cycle(pairs[i].loser,pairs[i].winner))
+        if (!cycle(pairs[i].loser, pairs[i].winner))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
@@ -208,21 +209,24 @@ void lock_pairs(void)
 
 
 // Print the winner of the election
+//winner will have no prefereces true as loser
 void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
+        //loop through and tally any true locked for loser[i]
         int counter = 0;
         for (int j = 0; j < candidate_count; j++)
         {
-            if(locked[j][i])
+            if (locked[j][i])
             {
                 counter++;
             }
         }
+        //if counter is not zero then i cannot be the source
         if (counter == 0)
         {
-            printf("%s", candidates[i]);
+            printf("%s\n", candidates[i]);
         }
     }
     return;
