@@ -190,9 +190,9 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    for (int i = 0; i < candidate_count - 1 ; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 1; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             int counter = 0;
             if(preferences[j][i])
