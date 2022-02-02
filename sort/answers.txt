@@ -11,8 +11,6 @@ time ./sort2 reversed10000.txt:
 
 How do you know?: TODO
 
-sort3 uses: TODO
-
-time ./sort3 reversed10000.txt:
+sort3 uses: Selection Sort
 
 How do you know?: TODO
