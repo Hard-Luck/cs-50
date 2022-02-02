@@ -20,14 +20,22 @@ int main(void)
 
     if (score1 > score2)
     {
-        printf()
+        printf("Player 1 Wins!");
+    }
+    else if (score1 < score2)
+    {
+        printf("Player 2 Wins!");
+    }
+    else if (score1 == score2)
+    {
+        printf("Tie!");
     }
 }
 
 int compute_score(string word)
 {
     int score = 0;
-    for (int i = 0; n = strlen(word); i < n; i++)
+    for (int i = 0, int n = strlen(word); i < n; i++)
     {
         for (int j = 0; j <= 25; j++)
         {
