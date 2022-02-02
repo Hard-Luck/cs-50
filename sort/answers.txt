@@ -12,5 +12,5 @@ This is due to the order being of o(nlog(n)) where as the other 2 searched have 
 
 sort3 uses: Bubble Sort
 
-How do you know?: It took the longesst in the sorted groups because it has to compare pairs too each other reg
+How do you know?: It took the longesst in the sorted groups because it has to compare pairs too each other.
 
