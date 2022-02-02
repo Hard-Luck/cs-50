@@ -210,15 +210,15 @@ void print_winner(void)
 }
 
 //check for cycles
-bool test(int n, int m)
+bool test(int a, int b)
 {
-    if (m == n)
+    if (a == b)
     {
         return false;
     }
     for(int i = 0; i < candidate_count; i++)
     {
-        if(locked[m][i])
+        if(locked[b][i])
         {
             test(n,i);
         }
