@@ -217,7 +217,7 @@ void print_winner(void)
         {
             if (j != i)
             {
-                if(preferences[j][i])
+                if(locked[j][i])
                 {
                     counter = false;
                 }
