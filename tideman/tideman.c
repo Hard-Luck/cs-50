@@ -179,7 +179,7 @@ void lock_pairs(void)
     locked[pairs[0].winner][pairs[0].loser] = true;
     for (int i = 1; i < pair_count; i++)
     {
-        if(test(pairs[i].winner,pairs[i].loser))
+        if(test(pairs[i].loser,pairs[i].winner))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
@@ -210,17 +210,17 @@ void print_winner(void)
 }
 
 //check for cycles
-bool test(int a, int b)
+bool test(int loser, int winner)
 {
-    if (a == b)
+    if (winner == loser)
     {
         return false;
     }
     for(int i = 0; i < candidate_count; i++)
     {
-        if(locked[b][i])
+        if(locked[winner][i])
         {
-            return test(a,i);
+            return test(winner,i);
         }
     }
     return true;
