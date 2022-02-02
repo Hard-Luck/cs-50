@@ -39,7 +39,7 @@ int compute_score(string word)
     {
         for (int j = 0; j <= 25; j++)
         {
-            if (word[i] == j + 65)
+            if (toupper(word[i]) == j + 65)
             {
                 score += POINTS[j];
             }
