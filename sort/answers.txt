@@ -2,12 +2,12 @@ sort1 uses: Selection Sort
 
 How do you know?: It performed the worst in the random data
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
 
 How do you know?: TODO
 
-sort3 uses: Selection Sort
+sort3 uses: Bubble Sort
 
 How do you know?:
 This sort took significantly longer on the reversed5000.txt and reversed10000.txt.
