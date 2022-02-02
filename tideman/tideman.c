@@ -218,7 +218,7 @@ bool test(int a, int b)
     }
     for(int i = 0; i < candidate_count; i++)
     {
-        if(locked[i][b])
+        if(locked[b][i])
         {
             test(a,i);
         }
