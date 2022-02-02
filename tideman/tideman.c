@@ -218,7 +218,7 @@ bool test(int n, int m)
     {
         if (preferences[i][m] == true)
         {
-            test(n, m);
+            test(n, i);
         }
     }
     return true;
