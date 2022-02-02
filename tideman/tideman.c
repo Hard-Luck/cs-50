@@ -173,6 +173,26 @@ void sort_pairs(void)
 }
 
 
+//check for cycles
+bool cycle(int end, int start)
+{
+    if (end == start)
+    {
+        return true;
+    }
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if(locked[end][i])
+        {
+            if (cycle(i,start))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
@@ -211,22 +231,3 @@ void print_winner(void)
     return;
 }
 
-//check for cycles
-bool cycle(int end, int start)
-{
-    if (end == start)
-    {
-        return true;
-    }
-    for(int i = 0; i < candidate_count; i++)
-    {
-        if(locked[end][i])
-        {
-            if (cycle(i,start))
-            {
-                return true;
-            }
-        }
-    }
-    return false;
-}
