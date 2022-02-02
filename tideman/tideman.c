@@ -218,9 +218,9 @@ bool test(int a, int b)
     }
     for(int i = 0; i < candidate_count; i++)
     {
-        if(locked[b][i])
+        if(locked[i][b])
         {
-            test(n,i);
+            test(a,i);
         }
     }
     return true;
