@@ -32,15 +32,20 @@ int main(void)
     }
 }
 
+//Tally the scores of each letter in the string and return the total
 int compute_score(string word)
 {
+    //set score to zero to add too when looping through the string
     int score = 0;
     for (int i = 0, n = strlen(word); i < n; i++)
     {
+        //looping through each letter of the alphabet
         for (int j = 0; j <= 25; j++)
         {
+            //converting all letters to UPPER case to disambiguate. Using Ascii values 65-90 -> A-C
             if (toupper(word[i]) == j + 65)
             {
+                //if the character is a match add the correstponding points to score
                 score += POINTS[j];
             }
         }
