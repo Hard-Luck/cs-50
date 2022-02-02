@@ -6,11 +6,12 @@ How do you know?: TODO
 
 sort2 uses: TODO
 
-time ./sort2 reversed10000.txt:
-
 
 How do you know?: TODO
 
 sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?:
+This sort took significantly longer on the reversed5000.txt and reversed10000.txt.
+This would make sense as it would take it would take 5000 and 10000 steps
+as all numbers are the maximum distance away from being sorted and it only sorts the smallest number per iteration.
