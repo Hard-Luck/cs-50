@@ -216,7 +216,7 @@ bool test(int n, int m)
     }
     for(int i = 0; i < candidate_count; i++)
     {
-        if (preferences[i][n] == true)
+        if (preferences[i][m] == true)
         {
             test(n, m);
         }
