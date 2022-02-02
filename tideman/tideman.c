@@ -194,13 +194,16 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            int counter = 0;
-            if(preferences[j][i])
+            if (j != i)
             {
-                counter++;
+                int counter = 0;
+                if(preferences[j][i])
+                {
+                    counter++;
+                }
+                if (counter == 0)
+                printf ("%s",candidates[i]);
             }
-            if (counter == 0)
-            printf ("%s",candidates[i]);
         }
     }
     return;
