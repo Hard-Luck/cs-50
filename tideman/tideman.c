@@ -212,24 +212,16 @@ void print_winner(void)
 //check for cycles
 bool test(int n, int m)
 {
-    int count = 0;
-    //if n is m then fails and returns false
-    if(n != m)
+    if (m == n)
     {
-        for(int i = 0; i < candidate_count; i++)
+        return false;
+    }
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if(locked[m][i])
         {
-            //check where m goes to
-            if (locked[m][i] == true)
-            {
-                count++;
-                //
-                test(n, i);
-            }
+            test(n,i);
         }
     }
-    if (count == 0)
-    {
-        return true;
-    }
-    return false;
+    return true;
 }
