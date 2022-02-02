@@ -220,7 +220,7 @@ bool test(int a, int b)
     {
         if(locked[b][i])
         {
-            test(a,i);
+            return test(a,i);
         }
     }
     return true;
