@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     //Copy header from input file to output file
-    uint8_t header_arr[HEADER_SIZE];
+    uint8_t *header_arr 
     fread(header_arr,1,HEADER_SIZE, input);
 
     // TODO: Read samples from input file and write updated data to output file
