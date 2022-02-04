@@ -35,9 +35,7 @@ int main(int argc, char *argv[])
 
     //Copy header from input file to output file
     header_arr[HEADER_SIZE];
-    
-    for (int i; i < HEADER_SIZE; i++)
-    fwrite()
+    fread(header_arr,1,HEADER_SIZE, input)
 
     // TODO: Read samples from input file and write updated data to output file
 
