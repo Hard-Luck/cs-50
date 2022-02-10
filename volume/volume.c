@@ -35,18 +35,18 @@ int main(int argc, char *argv[])
 
     //Copy header from input file to output file
     uint8_t *header_arr = malloc(sizeof(uint8_t) * HEADER_SIZE);
-    fread(header_arr,sizeof(uint8_t), HEADER_SIZE, input);
-    fwrite(header_arr,sizeof(uint8_t), HEADER_SIZE, output);
+    fread(&header_arr,sizeof(uint8_t), HEADER_SIZE, input);
+    fwrite(&header_arr,sizeof(uint8_t), HEADER_SIZE, output);
     // TODO: Read samples from input file and write updated data to output file
     int16_t buffer[200];
-    size_t num_read = fread(buffer, sizeof(int16_t), 200, input);
+    size_t num_read = fread(&buffer, sizeof(int16_t), 200, input);
     buffer[num_read] = '\0';
     int16_t double_buffer[num_read];
     for (int i = 0; i <= num_read; i++)
     {
         double_buffer[i] = 2 * buffer[i];
     }
-    fwrite(double_buffer, sizeof(int16_t), num_read, output);
+    fwrite(&double_buffer, sizeof(int16_t), num_read, output);
     // Close files
     fclose(input);
     fclose(output);
