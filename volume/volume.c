@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
     // TODO: Read samples from input file and write updated data to output file
     int16_t buffer[1024];
     size_t num_read = fread(buffer, sizeof(int16_t), 1024, input);
-    buffer[num_read] = "\0";
-    fwrite(2 * buffer, sizeof(int16_t), num_read, output);
+    buffer[num_read] = '\0';
+    fwrite(buffer, sizeof(int16_t), num_read, output);
     // Close files
     fclose(input);
     fclose(output);
