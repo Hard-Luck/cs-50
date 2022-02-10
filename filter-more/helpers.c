@@ -44,9 +44,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                           + blurred[width - 2][0] + blurred[width - 2][1]) / 4
                                      );
     blurred[0][height - 1].rgbtBlue = (
-                                         (blurred[width - 1][0] + blurred[width - 1][1]
-                                          + blurred[width - 2][0] + blurred[width - 2][1]) / 4
+                                         (blurred[0][height - 1] + blurred[0][height - 2]
+                                          + blurred[1][height - 1] + blurred[1][height - 2]) / 4
                                      );
+    blurred[width - 1][height - 1].rgbtBlue = (blurred[width - 1][height - 1] + blurred[width - 1][height - 2]
+                                                 + blurred[width - 1][height - 1] + blurred[width - 1][height - 1]) / 4
+                                              );
+
     return;
 }
 
