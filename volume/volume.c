@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
 
     //Copy header from input file to output file
     uint8_t header[HEADER_SIZE];
-    fread(header,sizeof(uint8_t), HEADER_SIZE, input);
-    fwrite(header,sizeof(uint8_t), HEADER_SIZE, output);
+    fread(header,sizeof(uint8_t), 1, input);
+    fwrite(header,sizeof(uint8_t), 1, output);
     // TODO: Read samples from input file and write updated data to output file
     int16_t buffer[1000];
     size_t num_read = fread(&buffer, sizeof(int16_t), 1, input);
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     {
         double_buffer[i] = factor * buffer[i];
     }
-    fwrite(&double_buffer, sizeof(int16_t), num_read, output);
+    fwrite(&double_buffer, sizeof(int16_t), 1, output);
     // Close files
     fclose(input);
     fclose(output);
