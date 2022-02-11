@@ -1,6 +1,6 @@
 #include "helpers.h"
 
-void neighbour_check(i,j);
+void neighbour_check(RGBTRIPLE b[m][p]);
 
 bool neighbours[3][3];
 
