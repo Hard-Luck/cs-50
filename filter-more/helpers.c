@@ -58,7 +58,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             for (int l = -1; l < 2; l++)
             {
-                if (image[i + k][j + l])
+                if (image[i + k][j + l].rgbtBlue != "\0" || image[i + k][j + l].rgbtBlue != "\0" || image[i + k][j + l].rgbtRed != "\0" )
                 {
                     neighbours[k][l] = 1;
                 }
