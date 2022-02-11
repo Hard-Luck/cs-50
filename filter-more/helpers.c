@@ -2,7 +2,7 @@
 
 void neighbour_check(i,j);
 
-bool NEIGHBOURS[3][3];
+bool neighbours[3][3];
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
