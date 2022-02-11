@@ -124,9 +124,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             //variables for RGB calculations
-            int blue = pow((pow(gxblue, 2) + pow(gyblue, 2)), 0.5);
-            int green = pow((pow(gxgreen, 2) + pow(gygreen, 2)), 0.5);
-            int red = pow((pow(gxred, 2) + pow(gyred, 2)), 0.5);
+            int blue = round(pow((pow(gxblue, 2) + pow(gyblue, 2)), 0.5));
+            int green = round(pow((pow(gxgreen, 2) + pow(gygreen, 2)), 0.5));
+            int red = round(pow((pow(gxred, 2) + pow(gyred, 2)), 0.5));
             if (blue > 255)
             {
                 blue = 255;
@@ -139,9 +139,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 red = 255;
             }
-            edges[i][j].rgbtBlue = round(blue);
-            edges[i][j].rgbtGreen = round(green);
-            edges[i][j].rgbtRed = round(red);
+            edges[i][j].rgbtBlue = blue;
+            edges[i][j].rgbtGreen = green;
+            edges[i][j].rgbtRed = red;
 
         }
     }
