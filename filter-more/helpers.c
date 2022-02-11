@@ -41,11 +41,19 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 4; j++)
+    for (int i = 0; i < 4; i++)
         {
-            neighbours[i][j] = false;
+            for (int j = 0; j < 4; j++)
+            {
+                neighbours[i][j] = false;
+            }
+        }
+
+    for (int a = 0; a < height; a++)
+    {
+        for (int b = 0; b < width; b++)
+        {
+            
         }
     }
 
@@ -66,7 +74,10 @@ void neighbour_check(RGBTRIPLE image[i][j])
     {
         for (int l = -1; l < 2; l++)
         {
-            if (image[i + k][j + k])
+            if (image[i + k][j + l])
+            {
+                neighbours[k][l] = true;
+            }
         }
     }
 }
