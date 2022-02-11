@@ -50,15 +50,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //count for how many neighbours
             int count = 0;
             //keeping sum of the neighbours rgb values
-            int blue = 0;
-            int red = 0;
-            int green = 0;
+            float blue = 0;
+            float red = 0;
+            float green = 0;
 
             for (int a = - 1; a < 2; a++)
             {
                 for (int b = - 1; b < 2; b++)
                 {
-                    if ((i - a > 0) || (i + a < height) || (j - b > 0) || (j + b < width)
+                    if ((i - a > 0) || (i + a < height) || (j - b > 0) || (j + b < width))
                     {
                         blue += image[i + a][j + b].rgbtBlue;
                         green += image[i + a][j + b].rgbtGreen;
@@ -68,9 +68,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            blur_img[i][j].rgbtBlue = blue / count;
-            blur_img[i][j].rgbtGreen = green / count;
-            blur_img[i][j].rgbtRed = red / count;
+            blur_img[i][j].rgbtBlue = round(blue / count);
+            blur_img[i][j].rgbtGreen = round(green / count);
+            blur_img[i][j].rgbtRed = round(red / count);
 
         }
     }
