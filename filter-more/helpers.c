@@ -89,7 +89,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE edges[height][width];
-    int gx_matrix[3][3] = {{1-, 0, 1}, {-2, 0, 2}, {-1, 0, 2}};
+    int gx_matrix[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int gy_matrix[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     for (int i = 0; i < height; i++)
