@@ -115,11 +115,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         //multipling the pixel RGB values by the Gx/y scalars
                         gxblue += (image[i + a][j + b].rgbtBlue * gx_matrix[a][b]);
-                        gyblue += (image[i + a][j + b].rgbtBlue * gx_matrix[a][b]);
+                        gyblue += (image[i + a][j + b].rgbtBlue * gy_matrix[a][b]);
                         gxgreen += (image[i + a][j + b].rgbtGreen * gx_matrix[a][b]);
-                        gygreen += (image[i + a][j + b].rgbtGreen * gx_matrix[a][b]);
+                        gygreen += (image[i + a][j + b].rgbtGreen * gy_matrix[a][b]);
                         gxred += (image[i + a][j + b].rgbtRed * gx_matrix[a][b]);
-                        gyred += (image[i + a][j + b].rgbtRed * gx_matrix[a][b]);
+                        gyred += (image[i + a][j + b].rgbtRed * gy_matrix[a][b]);
                     }
                 }
             }
