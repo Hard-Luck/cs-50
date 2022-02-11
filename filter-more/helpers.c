@@ -110,8 +110,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int b = - 1; b < 2; b++)
                 {
+                    //checking pixel neighbours are in the image
                     if ((i + a >= 0) && (i + a < height) && (j + b >= 0) && (j + b < width))
                     {
+                        //multipling the pixel RGB values by the Gx/y scalars
                         gxblue += image[i + a][j + b].rgbtBlue * gx_matrix[a][b];
                         gyblue += image[i + a][j + b].rgbtBlue * gx_matrix[a][b];
                         gxgreen += image[i + a][j + b].rgbtGreen * gx_matrix[a][b];
@@ -122,9 +124,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             //variables for RGB calculations
-            int red = ;
-            int blue;
-            int green;
+            int red = pow((pow(gxred, 2) + pow(gyred, 2)), 0.5);
+            int blue = pow((pow(gxblue, 2) + pow(gyblue, 2)), 0.5);
+            int green = pow((pow(gxgreen, 2) + pow(gygreen, 2)), 0.5);
             blur_img[i][j].rgbtBlue = round(blue / count);
             blur_img[i][j].rgbtGreen = round(green / count);
             blur_img[i][j].rgbtRed = round(red / count);

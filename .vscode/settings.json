@@ -3,6 +3,7 @@
         "*.html": "jinja-html",
         "string": "c",
         "typeinfo": "c",
-        "array": "c"
+        "array": "c",
+        "cmath": "c"
     }
 }
