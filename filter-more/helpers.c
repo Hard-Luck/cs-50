@@ -53,7 +53,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-void neighbour_check(i,j)
+void neighbour_check(RGBTRIPLE image[i][j])
 {
-    for (int k = 0)
+    
+    for (int k = -1; k < 2; k++)
+    {
+        for (int l = -1; l < 2; l++)
+        {
+            if (image[i + k][j + k])
+        }
+    }
 }
