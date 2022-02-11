@@ -1,9 +1,8 @@
 #include "helpers.h"
 #include <stdbool.h>
 
-void neighbour_check(RGBTRIPLE image[i][j]);
-
-bool neighbours[3][3];
+//neighbour check 0 = false, 1 = true
+int neighbours[3][3];
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -43,6 +42,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE blur_img[height][width];
+
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -54,7 +54,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int red = 0;
             int green = 0;
 
-            neighbour_check(image[i][j]);
+        for (int k = -1; k < 2; k++)
+        {
+            for (int l = -1; l < 2; l++)
+            {
+                if (image[i + k][j + l])
+                {
+                    neighbours[k][l] = 1;
+                }
+                else
+                {
+                    neighbours[k][l] = 0;
+                }
+            }
+        }
             for (int a = 0; a < 3; a++)
             {
                 for (int b = 0; b < 3; b++)
@@ -86,21 +99,3 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-void neighbour_check(RGBTRIPLE image[i][j])
-{
-
-    for (int k = -1; k < 2; k++)
-    {
-        for (int l = -1; l < 2; l++)
-        {
-            if (image[i + k][j + l])
-            {
-                neighbours[k][l] = true;
-            }
-            else
-            {
-                neighbours[k][l] = false;
-            }
-        }
-    }
-}
