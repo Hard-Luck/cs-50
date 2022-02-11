@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <stdbool.h>
 
 void neighbour_check(RGBTRIPLE b[m][p]);
 
