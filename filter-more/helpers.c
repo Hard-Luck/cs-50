@@ -1,5 +1,5 @@
 #include "helpers.h"
-#include <stdbool.h>
+#include <math.h>
 
 //neighbour check 0 = false, 1 = true
 int neighbours[3][3];
@@ -14,10 +14,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             int blue = image[i][j].rgbtBlue;
             int green = image[i][j].rgbtGreen;
             int red = image[i][j].rgbtRed;
-            int average = (blue + green + red)/3;
-            image[i][j].rgbtBlue = average;
-            image[i][j].rgbtGreen = average;
-            image[i][j].rgbtRed = average;
+            float average = (blue + green + red)/3;
+            image[i][j].rgbtBlue = round(average);
+            image[i][j].rgbtGreen = round(average);
+            image[i][j].rgbtRed = round(average);
         }
     }
     return;
