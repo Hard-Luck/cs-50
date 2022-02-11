@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <stdbool.h>
 
-void neighbour_check(RGBTRIPLE b[m][p]);
+void neighbour_check(RGBTRIPLE image[i][j]);
 
 bool neighbours[3][3];
 
@@ -59,7 +59,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int b = 0; b < 3; b++)
                 {
-                    if (neighbours[a][b] = true)
+                    if (neighbours[a][b] == true)
                     {
                         count++;
                         blue += image[a - 1][b -1].rgbtBlue;
