@@ -127,10 +127,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int blue = pow((pow(gxblue, 2) + pow(gyblue, 2)), 0.5);
             int green = pow((pow(gxgreen, 2) + pow(gygreen, 2)), 0.5);
             int red = pow((pow(gxred, 2) + pow(gyred, 2)), 0.5);
-            
-            blur_img[i][j].rgbtBlue = round(blue / count);
-            blur_img[i][j].rgbtGreen = round(green / count);
-            blur_img[i][j].rgbtRed = round(red / count);
+            if (blue > 255)
+            {
+                blue = 255;
+            }
+            if (green > 255)
+            {
+                green = 255;
+            }
+            if (red > 255)
+            {
+                red = 255;
+            }
+            edges[i][j].rgbtBlue = round(blue);
+            edges[i][j].rgbtGreen = round(green);
+            edges[i][j].rgbtRed = round(red);
 
         }
     }
@@ -138,7 +149,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int y = 0; y < width; y++)
         {
-            image[x][y] = blur_img[x][y];
+            image[x][y] = edges[x][y];
         }
     }
 
