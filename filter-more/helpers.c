@@ -1,5 +1,9 @@
 #include "helpers.h"
 
+void neighbour_check(i,j);
+
+bool NEIGHBOURS[3][3];
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -38,46 +42,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE blurred[height][width];
-    //Changing the corners blue values, I have to assume theres a better way than this
-    blurred[0][0].rgbtBlue = (blurred[0][0] + blurred[0][1] + blurred[1][0] + blurred[1][0]) / 4;
-    blurred[width - 1][0].rgbtBlue = (
-                                         (blurred[width - 1][0] + blurred[width - 1][1]
-                                          + blurred[width - 2][0] + blurred[width - 2][1]) / 4
-                                     );
-    blurred[0][height - 1].rgbtBlue = (
-                                         (blurred[0][height - 1] + blurred[0][height - 2]
-                                          + blurred[1][height - 1] + blurred[1][height - 2]) / 4
-                                     );
-    blurred[width - 1][height - 1].rgbtBlue = (blurred[width - 1][height - 1] + blurred[width - 1][height - 2]
-                                                 + blurred[width - 2][height - 1] + blurred[width - 2][height - 2]) / 4
-                                              );
-    //Changing the corners Green values
-    blurred[0][0].rgbtGreen = (blurred[0][0] + blurred[0][1] + blurred[1][0] + blurred[1][0]) / 4;
-    blurred[width - 1][0].rgbtGreen = (
-                                         (blurred[width - 1][0] + blurred[width - 1][1]
-                                          + blurred[width - 2][0] + blurred[width - 2][1]) / 4
-                                     );
-    blurred[0][height - 1].rgbtGreen = (
-                                         (blurred[0][height - 1] + blurred[0][height - 2]
-                                          + blurred[1][height - 1] + blurred[1][height - 2]) / 4
-                                     );
-    blurred[width - 1][height - 1].rgbtGreen = (blurred[width - 1][height - 1] + blurred[width - 1][height - 2]
-                                                 + blurred[width - 2][height - 1] + blurred[width - 2][height - 2]) / 4
-                                              );
 
-    //Changing the corners Red values
-    blurred[0][0].rgbtGreen = (blurred[0][0] + blurred[0][1] + blurred[1][0] + blurred[1][0]) / 4;
-    blurred[width - 1][0].rgbtRed = (
-                                         (blurred[width - 1][0] + blurred[width - 1][1]
-                                          + blurred[width - 2][0] + blurred[width - 2][1]) / 4
-                                     );
-    blurred[0][height - 1].rgbtRed = (
-                                         (blurred[0][height - 1] + blurred[0][height - 2]
-                                          + blurred[1][height - 1] + blurred[1][height - 2]) / 4
-                                     );
-    blurred[width - 1][height - 1].rgbtRed = (blurred[width - 1][height - 1] + blurred[width - 1][height - 2]
-                                                 + blurred[width - 2][height - 1] + blurred[width - 2][height - 2]) / 4
-                                              );
 
     return;
 }
@@ -86,4 +51,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     return;
+}
+
+void neighbour_check(i,j)
+{
+    for (int k = 0)
 }
