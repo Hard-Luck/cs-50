@@ -39,11 +39,8 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
-    //Generate base case generations = 1
-    if (generations == 1)
-    {
-        
-    }
+    // TODO: Allocate memory for new person
+    person child = malloc(sizeof(person))
     // If there are still generations left to create
     if (generations > 1)
     {
