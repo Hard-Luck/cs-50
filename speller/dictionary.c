@@ -58,6 +58,7 @@ bool load(const char *dictionary)
     node *n = malloc(sizeof(node));
     n->word = wrd;
     n->next = NULL;
+    table[bucket] = n;
     return true;
 }
 
