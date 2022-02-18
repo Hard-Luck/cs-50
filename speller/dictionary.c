@@ -13,7 +13,7 @@ typedef struct node
     struct node *next;
 }
 node;
-FILE *fopen(speller/dictionaries/small, "r")
+char* dictionary = "speller/dictionaries/small"
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 677;
