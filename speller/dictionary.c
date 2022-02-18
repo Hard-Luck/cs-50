@@ -53,7 +53,11 @@ bool load(const char *dictionary)
         printf("Error opening file");
         return false;
     }
+    while(fscanf(file, "%s", wrd) != EOF)
+    
     node *n = malloc(sizeof(node));
+    n->word = wrd;
+    n->next = NULL;
     return true;
 }
 
