@@ -54,7 +54,7 @@ bool load(const char *dictionary)
         return false;
     }
     while(fscanf(file, "%s", wrd) != EOF)
-    
+    bucket = hash(wrd);
     node *n = malloc(sizeof(node));
     n->word = wrd;
     n->next = NULL;
