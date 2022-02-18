@@ -13,7 +13,7 @@ typedef struct node
     struct node *next;
 }
 node;
-char* dictionary = "speller/dictionaries/small"
+
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 677;
@@ -46,8 +46,8 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *fopen(dictionary, "r");
-    if (p == NULL)
+    FILE *fopen(dictionary, 'r');
+    if (FILE == NULL)
     {
         printf("Error opening file");
         return false;
