@@ -45,7 +45,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *p = fopen(dictionary, "r");
+    FILE *fopen(dictionary, "r");
     if (p == NULL)
     {
         printf("Error opening file");
