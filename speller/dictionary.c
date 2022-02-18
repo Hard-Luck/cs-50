@@ -29,13 +29,15 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    //26* 1st + second AA 0*26 + 0 = 0, AB 0*26 + 1 = 1... , AZ = 26*0 +25 = 25, BA = 26*1 + 0
+
+    // incase of single letter words.
     if(!(word[1]))
     {
-        return 677
+        return 677;
     }
-    return toupper((word[0]) - 'A') * 26 + (word[1]) - 'A'));
+    //Hashing using first two letters
+    //26* 1st + second AA 0*26 + 0 = 0, AB 0*26 + 1 = 1... , AZ = 26*0 +25 = 25, BA = 26*1 + 0
+    return (toupper(word[0]) - 'A') * 26 + word[1] - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
