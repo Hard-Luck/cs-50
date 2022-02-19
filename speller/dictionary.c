@@ -78,7 +78,7 @@ bool load(const char *dictionary)
         strcpy(n->word , wrd);
         n->next = table[bucket]->next;
         table[bucket] = n;
-        free(&n);
+        free(n);
 
     }
     free(&wrd);
@@ -98,13 +98,14 @@ bool unload(void)
 {
     for(int i = 0; i < N; i++)
     {
-
+        while(table[i] != NULL)
+        {
+            node *temp = table[i]->next;
+            free(table[i]);
+            table[i] = temp;
+        }
+        return true;
     }
     return false;
 }
 
-void free_list(node i)
-{
-    node *temp = i;
-    free_list(temp)
-}
