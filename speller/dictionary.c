@@ -101,20 +101,26 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    node *n = table[i]
-    for(int i = 0; i < N; i++)
+    // Iterate over hash table and free nodes in each linked list
+    for (int i = 0; i < N; i++)
     {
-        while(n != NULL)
+        // Assign cursor
+        node *n = table[i];
+        // Loop through linked list
+        while (n != NULL)
         {
-            node *temp = n;
+            // Make temp equal cursor;
+            node *tmp = n;
+            // Point cursor to next element
             n = n->next;
-            free(temp);
+            // free temp
+            free(tmp);
         }
-    }
-    if (n == NULL && i == N - 1)
+        if (n == NULL && i == N - 1)
         {
             return true;
         }
-    return false;
+    }
+return false;
 }
 
