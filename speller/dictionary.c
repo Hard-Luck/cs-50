@@ -60,7 +60,7 @@ bool load(const char *dictionary)
     while(fscanf(dict, "%s", next_word) != EOF)
     {
         //find hash value
-        int bucket = hash(next_word);
+        int hash_val = hash(next_word);
         //allocate space for new node
         node *n = malloc(sizeof(node));
         //test for memory allocation
@@ -72,8 +72,8 @@ bool load(const char *dictionary)
         }
         //give node word value and null pointer
         strcpy(n->word , next_word);
-        n->next = table[bucket]->next;
-        table[bucket]->next = n;
+        n->next = table[hash_val]->next;
+        table[hash_val]->next = n;
     }
     fclose(dict);
     return true;
