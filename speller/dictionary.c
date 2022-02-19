@@ -74,10 +74,14 @@ bool load(const char *dictionary)
             fclose(dict);
             return false;
         }
-        //give node word value and null pointer
-        strcpy(n->word , wrd);
-        n->next = table[bucket]->next;
-        table[bucket] = n;
+        if(!table[bucket])
+        {
+            //give node word value and null pointer
+            strcpy(n->word , wrd);
+            n->next = table[bucket]->next;
+            table[bucket] = n;
+        }
+
 
     }
     free(wrd);
