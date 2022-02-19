@@ -32,7 +32,7 @@ bool check(const char *word)
     node *p = table[hash_value];
     while (p != NULL)
     {
-        if(strcasecmp(word, p->word) == 0)
+        if (strcasecmp(word, p->word) == 0)
         {
             return true;
         }
@@ -49,7 +49,7 @@ unsigned int hash(const char *word)
 {
 
     // incase of single letter words.
-    if(!(word[1]))
+    if (!(word[1]))
     {
         return 677;
     }
@@ -71,21 +71,21 @@ bool load(const char *dictionary)
         printf("Error opening file");
         return false;
     }
-    while(fscanf(dict, "%s", next_word) != EOF)
+    while (fscanf(dict, "%s", next_word) != EOF)
     {
         //find hash value
         int hash_val = hash(next_word);
         //allocate space for new node
         node *n = malloc(sizeof(node));
         //test for memory allocation
-        if(n == NULL)
+        if (n == NULL)
         {
             printf("Error allocating memory");
             fclose(dict);
             return false;
         }
         //give node word value and null pointer
-        strcpy(n->word , next_word);
+        strcpy(n->word, next_word);
         n->next = table[hash_val];
         table[hash_val] = n;
         dic_size++;
@@ -98,7 +98,7 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-        return dic_size;
+    return dic_size;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -106,10 +106,10 @@ bool unload(void)
 {
     //assign node
 
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         node *n = table[i];
-        while(n != NULL)
+        while (n != NULL)
         {
             node *temp = n;
             n = n->next;
