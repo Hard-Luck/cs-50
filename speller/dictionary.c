@@ -104,18 +104,17 @@ bool unload(void)
 
     for(int i = 0; i < N; i++)
     {
-        if (table[i] == NULL)
-        {
-            return false;
-        }
         while(table[i] != NULL)
         {
             node *temp = table[i];
             table[i] = table[i]->next;
             free(temp);
-
         }
     }
-    return true;
+    if (n == NULL && i == N - 1)
+        {
+            return true;
+        }
+    return false;
 }
 
