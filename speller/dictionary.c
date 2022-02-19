@@ -23,6 +23,8 @@ const unsigned int N = 677;
 // Hash table
 node *table[N];
 
+int dic_size = 0;
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -74,6 +76,7 @@ bool load(const char *dictionary)
         strcpy(n->word , next_word);
         n->next = table[hash_val];
         table[hash_val] = n;
+        dic_size++;
     }
     fclose(dict);
     return true;
