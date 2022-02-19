@@ -31,9 +31,9 @@ bool check(const char *word)
     node *p = table[hash_value];
     while (p != NULL)
     {
-        if(strcmp(p->word,word) == 0)
+        for(int i = 0; word[i]; i++)
         {
-            return true;
+            if(word[i] !=)
         }
         p = p->next;
     }
