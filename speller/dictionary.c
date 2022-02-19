@@ -98,7 +98,13 @@ bool unload(void)
 {
     for(int i = 0; i < N; i++)
     {
-        node *temp = table[i]->next
+
     }
     return false;
+}
+
+void free_list(node i)
+{
+    node *temp = i;
+    free_list(temp)
 }
