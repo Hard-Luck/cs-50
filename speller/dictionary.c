@@ -53,7 +53,7 @@ bool load(const char *dictionary)
         printf("Error opening file");
         return false;
     }
-    while(fscanf(dict, "%s", char *wrd) != EOF)
+    while(fscanf(*dict, "%s", char *wrd) != EOF)
     {
         //find hash value
         int bucket = hash(wrd);
