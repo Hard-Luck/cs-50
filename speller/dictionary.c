@@ -72,8 +72,8 @@ bool load(const char *dictionary)
         }
         //give node word value and null pointer
         strcpy(n->word , next_word);
-        n->next = table[hash_val]->next;
-        table[hash_val]->next = n;
+        n->next = table[hash_val];
+        table[hash_val] = n;
     }
     fclose(dict);
     return true;
