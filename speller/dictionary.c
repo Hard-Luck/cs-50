@@ -101,13 +101,13 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-
+    node *n = table[i]
     for(int i = 0; i < N; i++)
     {
-        while(table[i] != NULL)
+        while(n != NULL)
         {
-            node *temp = table[i];
-            table[i] = table[i]->next;
+            node *temp = n;
+            n = n->next;
             free(temp);
         }
     }
