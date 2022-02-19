@@ -48,11 +48,16 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    char wrd[LENGTH + 1];
+    char *wrd = malloc(LENGTH * sizeof(char) + 1);
+    if (wrd == NULL)
+    {
+        return false;
+    }
     FILE *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
         printf("Error opening file");
+        free(&wrd);
         return false;
     }
     while(fscanf(dict, "%s", wrd) != EOF)
@@ -65,6 +70,7 @@ bool load(const char *dictionary)
         if(n == NULL)
         {
             printf("Error allocating memory");
+            free(&wrd);
             fclose(dict);
             return false;
         }
@@ -72,9 +78,10 @@ bool load(const char *dictionary)
         strcpy(n->word , wrd);
         n->next = table[bucket]->next;
         table[bucket] = n;
-        free(n);
+        free(&n);
 
     }
+    free(&wrd);
     fclose(dict);
     return true;
 }
