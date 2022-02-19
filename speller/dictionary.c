@@ -62,7 +62,8 @@ bool load(const char *dictionary)
         //allocate space for new node
         node *n = malloc(sizeof(node));
         //test for memory allocation
-        if(n == NULL){
+        if(n == NULL)
+        {
             printf("Error allocating memory");
             return false;
         }
@@ -71,6 +72,7 @@ bool load(const char *dictionary)
         n->next = table[bucket]->next;
         table[bucket] = n;
         free(n);
+
     }
     return true;
 }
