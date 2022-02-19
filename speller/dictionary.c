@@ -78,7 +78,6 @@ bool load(const char *dictionary)
         strcpy(n->word , wrd);
         n->next = table[bucket]->next;
         table[bucket]->next = n;
-        }
     }
     free(wrd);
     fclose(dict);
