@@ -53,10 +53,10 @@ bool load(const char *dictionary)
         printf("Error opening file");
         return false;
     }
-    while(fscanf(dict, "%s", wrd) != EOF)
+    while(fscanf(dict, "%s", char *wrd) != EOF)
     {
         //find hash value
-        bucket = hash(wrd);
+        int bucket = hash(wrd);
         //allocate space for new node
         node *n = malloc(sizeof(node));
         //test for memory allocation
