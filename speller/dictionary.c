@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -86,8 +85,7 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return dic_size;
+        return dic_size;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
