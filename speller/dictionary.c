@@ -47,13 +47,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    char *word[]
     FILE *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
         printf("Error opening file");
         return false;
     }
-    while(fscanf(*dict, "%s", char *wrd) != EOF)
+    while(fscanf(*dict, "%s", wrd) != EOF)
     {
         //find hash value
         int bucket = hash(wrd);
