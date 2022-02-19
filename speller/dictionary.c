@@ -57,7 +57,7 @@ bool load(const char *dictionary)
     if (dict == NULL)
     {
         printf("Error opening file");
-        free(&wrd);
+        free(wrd);
         return false;
     }
     while(fscanf(dict, "%s", wrd) != EOF)
