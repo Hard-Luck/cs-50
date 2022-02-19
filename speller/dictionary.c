@@ -48,38 +48,33 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    char *wrd = malloc(LENGTH * sizeof(char) + 1);
-    if (wrd == NULL)
-    {
-        return false;
-    }
+    // Initialise word array
+    char next_word[LENGTH + 1];
+    //open file
     FILE *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
         printf("Error opening file");
-        free(wrd);
         return false;
     }
-    while(fscanf(dict, "%s", wrd) != EOF)
+    while(fscanf(dict, "%s", next_word) != EOF)
     {
         //find hash value
-        int bucket = hash(wrd);
+        int bucket = hash(next_word);
         //allocate space for new node
         node *n = malloc(sizeof(node));
         //test for memory allocation
         if(n == NULL)
         {
             printf("Error allocating memory");
-            free(wrd);
             fclose(dict);
             return false;
         }
         //give node word value and null pointer
-        strcpy(n->word , wrd);
+        strcpy(n->word , next_word);
         n->next = table[bucket]->next;
         table[bucket]->next = n;
     }
-    free(wrd);
     fclose(dict);
     return true;
 }
