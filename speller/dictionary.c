@@ -109,7 +109,6 @@ bool unload(void)
             free(table[i]);
             table[i] = temp;
         }
-        return true;
     }
     return false;
 }
