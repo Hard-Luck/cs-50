@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -31,9 +32,9 @@ bool check(const char *word)
     node *p = table[hash_value];
     while (p != NULL)
     {
-        for(int i = 0; word[i]; i++)
+        if(strcasecmp(p->word,word) == 0)
         {
-            if(word[i] !=)
+            return true;
         }
         p = p->next;
     }
