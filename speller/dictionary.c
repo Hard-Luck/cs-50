@@ -77,8 +77,13 @@ bool load(const char *dictionary)
         if(!table[bucket])
         {
             //give node word value and null pointer
+            strcpy(table[bucket]->word , wrd);
+            table[bucket]->next = NULL;
+        }
+        else
+        {
             strcpy(n->word , wrd);
-            n->next = table[bucket]->next;
+            n->next = table[bucket];
             table[bucket] = n;
         }
 
