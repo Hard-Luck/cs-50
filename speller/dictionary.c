@@ -59,6 +59,7 @@ bool load(const char *dictionary)
         bucket = hash(wrd);
         //allocate space for new node
         node *n = malloc(sizeof(node));
+        //give node word value and null pointer
         n->word = wrd;
         n->next = NULL;
         table[bucket] = n;
