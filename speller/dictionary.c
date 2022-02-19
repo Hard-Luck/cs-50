@@ -53,7 +53,7 @@ bool load(const char *dictionary)
         printf("Error opening file");
         return false;
     }
-    while(fscanf(file, "%s", wrd) != EOF)
+    while(fscanf(dict, "%s", wrd) != EOF)
     {
         //find hash value
         bucket = hash(wrd);
@@ -66,10 +66,11 @@ bool load(const char *dictionary)
         }
         //give node word value and null pointer
         n->word = wrd;
-        n->next = NULL;
+        n->next = table[bucket]->next;
         table[bucket] = n;
-        return true;
+        free(n);
     }
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
