@@ -47,14 +47,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    char *word[]
+    char *wrd;
     FILE *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
         printf("Error opening file");
         return false;
     }
-    while(fscanf(*dict, "%s", wrd) != EOF)
+    while(fscanf(dict, "%s", wrd) != EOF)
     {
         //find hash value
         int bucket = hash(wrd);
@@ -62,7 +62,7 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         //test for memory allocation
         if(n == NULL){
-            print("Error allocating memory")
+            printf("Error allocating memory");
             return false;
         }
         //give node word value and null pointer
