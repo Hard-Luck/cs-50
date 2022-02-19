@@ -78,6 +78,7 @@ bool load(const char *dictionary)
         table[hash_val] = n;
         dic_size++;
     }
+    //close file
     fclose(dict);
     return true;
 }
@@ -86,7 +87,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return dic_size;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
