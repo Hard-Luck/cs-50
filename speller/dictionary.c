@@ -81,7 +81,7 @@ bool load(const char *dictionary)
         free(n);
 
     }
-    free(&wrd);
+    free(wrd);
     fclose(dict);
     return true;
 }
