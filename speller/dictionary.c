@@ -89,7 +89,6 @@ bool load(const char *dictionary)
         n->next = table[hash_val];
         table[hash_val] = n;
         dic_size++;
-        free(n);
     }
     //close file
     fclose(dict);
