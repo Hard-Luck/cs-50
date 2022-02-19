@@ -74,6 +74,8 @@ bool load(const char *dictionary)
         free(n);
 
     }
+    free(wrd);
+    fclose(dict);
     return true;
 }
 
