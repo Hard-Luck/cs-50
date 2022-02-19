@@ -27,8 +27,16 @@ int dic_size = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    hash_value = hash(word);
-    while 
+    int hash_value = hash(word);
+    node *p = table[hash_value];
+    while (p != NULL)
+    {
+        if(strcmp(p->word,word) == 0)
+        {
+            return true;
+        }
+        p = p->next;
+    }
     return false;
 }
 
