@@ -70,7 +70,7 @@ bool load(const char *dictionary)
         if(n == NULL)
         {
             printf("Error allocating memory");
-            free(&wrd);
+            free(wrd);
             fclose(dict);
             return false;
         }
