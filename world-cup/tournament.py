@@ -17,8 +17,7 @@ def main():
     teams = []
     # Read teams into memory from file
     with open(argv[1]) as f:
-        reader = csv.reader()
-        next(reader)
+        reader = csv.DictReader()
         for row in reader:
             teams += [{"name" : f"{}"]
 
