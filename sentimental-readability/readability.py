@@ -9,15 +9,14 @@ nopunc = nopunc.replace(" ", "")
 
 # Split the text at every space, count the size of the list
 words = len(text.split())
-print(words)
 letters = len(nopunc)
-print(letters)
 sentences = 0
 
+# Increment based on sentence identifiers
 sentences += text.count(".")
 sentences += text.count("!")
 sentences += text.count("?")
-print(sentences)
+
 # Calculate the level using the formula
 level = 5.88 * letters/words - 29.6 * sentences/words - 15.8
 
