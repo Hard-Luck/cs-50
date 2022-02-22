@@ -23,7 +23,7 @@ level = 5.88 * letters/words - 29.6 * sentences/words - 15.8
 # Print result based on grade (level)
 if level < 1:
     print("Grade 1")
-if level > 16:
+elif level > 16:
     print("Grade 16+")
 else:
     print(f"Grade {round(level)}")
