@@ -10,7 +10,11 @@ def main():
     #check the length and return invalid if not correct length
     if not check_length(number) == 0:
         return
-    sum_check(number)
+    # Check sumcheck = 0
+    if not sum_check(number):
+        print("INVALID")
+    pre = prefix(number)
+    
 
 
 #Function to check the length is 13, 15 or 16
@@ -42,7 +46,7 @@ def sum_check(number):
             sum += int(number[2 * j])
             if int(number[2 * j + 1]) > 4:
                 sum += 1
-    return sum
+    return sum % 10
 
 
 # Get the first 2 digits as an int
