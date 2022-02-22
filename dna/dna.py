@@ -21,14 +21,8 @@ def main():
         strs_list.append(match)
     # Check database for matching profiles
     for row in reader:
-        if row[1:] == strs_list:
-            print(row[0])
-            print(row)
-            return
-        else:
-            print("no")
-    file.close
-    return
+        print(row)
+
 
 
 def longest_match(sequence, subsequence):
