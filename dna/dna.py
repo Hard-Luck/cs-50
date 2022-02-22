@@ -21,8 +21,9 @@ def main():
         strs_list.append(match)
     # Check database for matching profiles
     for row in reader:
-        if row[1:] == strs_list[1:]:
+        if row[1:] == strs_list:
             print(row[0])
+            print(row)
             return
         else:
             print("no")
