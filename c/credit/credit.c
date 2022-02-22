@@ -44,7 +44,7 @@ int main(void)
 
 
 
-//funtuin that outputs an interger representing the length of the input
+//function that outputs an interger representing the length of the input
 int length(long card)
 {
     int count = 0;
