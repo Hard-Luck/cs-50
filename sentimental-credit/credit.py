@@ -32,7 +32,7 @@ def sum_check(number):
             sum += int(number[2 * i])
         for j in range(1, hlen):
             sum += 2*(int(number[(2 * i) - 1]))
-            if number[j] >= 5:
+            if int(number[j]) >= 5:
                 sum += 1
 
     print(sum)
