@@ -16,8 +16,10 @@ sentences += text.count(".")
 sentences += text.count("!")
 sentences += text.count("?")
 
-level = (0.0588 * letters/words - 0.296 * sentences/words) *100 - 15.8
+# Calculate the level using the formula
+level = 0.0588 * letters/words - 0.296 * sentences/words *100 - 15.8
 
+# Print result based on grade (level)
 if level < 1:
     print("Grade 1")
 if level > 16:
