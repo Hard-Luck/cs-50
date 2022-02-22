@@ -24,7 +24,12 @@ def main():
     counts = {}
     # Simulate N tournaments and keep track of win counts
     for i in range(N):
-        winners = simulate round(teams)
+        winners = simulate_round(teams)
+        while len(winners) > 1:
+            simulate_round(winners)
+        counts[winners[0]] += 1
+
+
 
 
 
