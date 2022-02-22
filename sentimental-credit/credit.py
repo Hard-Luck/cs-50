@@ -1,9 +1,18 @@
 import cs50
 import re
 
-pattern = r"/^[0-9]{7}$/"
+#regex check for length of string
+pattern = r"^[0-9]{13}$|^[0-9]{15}$|^[0-9]{16}$"
 
-if re.match(pattern,"0000000"):
-    print("all good")
-else:
-    print("baD")
+#Enter credit card number
+number = get_string("Enter credit card number")
+
+def main():
+    #check the length and return invalid if not correct length
+    if not re.match(pattern, number):
+        print("INVALID")
+        break
+
+
+
+def l
