@@ -1,5 +1,4 @@
 # Simulate a sports tournament
-
 import csv
 import sys
 import random
