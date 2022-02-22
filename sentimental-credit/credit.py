@@ -37,10 +37,10 @@ def sum_check(number):
     # For card numbers of even length
     else:
         sum += int(number[0])
-        for j in range(1, hlen):
-            sum += (2*(int(number[2 * j - 1])) % 10)
+        for j in range(0, hlen):
+            sum += (2*(int(number[2 * j + 1])) % 10)
             sum += int(number[2 * j])
-            if int(number[2 * j - 1]) > 4:
+            if int(number[2 * j + 1]) > 4:
                 sum += 1
 
     print(sum)
