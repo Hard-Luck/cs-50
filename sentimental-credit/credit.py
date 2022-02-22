@@ -24,9 +24,24 @@ def check_length(number):
 
 # Sum check function to check card number is valid
 def sum_check(number):
+    length = len(number)
+    hlen = length // 2
     sum = 0
-
-
+    # For card numbers of even length
+    if length % 2 == 0:
+        for i in range(hlen):
+            sum += 2*(int(number[2 * i]))
+            sum += int(number[2 * i + 1])
+            if int(number[2 * i]) > 4:
+                sum += 1
+    # For card numbers of even length
+    else:
+        sum += int(number[0])
+        for j in range(1, hlen):
+            sum += 2*(int(number[2 * i + 1]))
+            sum += int(number[2 * i + 1])
+            if int(number[2 * i]) > 4:
+                sum += 1
 
     print(sum)
 
