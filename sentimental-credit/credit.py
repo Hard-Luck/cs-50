@@ -48,7 +48,7 @@ def sum_check(number):
             sum += int(number[2 * j])
             if int(number[2 * j + 1]) > 4:
                 sum += 1
-    return sum % 10
+    return sum % 10)
 
 
 # Get the first 2 digits as an int
@@ -57,7 +57,7 @@ def check_type(number):
     length = len(number)
     if (number[0] == "4" and (length == 13 or length == 16)):
         return "VISA"
-    elif (pre == 34 or pre == 37) and length == 15:
+    elif ((pre == 34 or pre == 37) and length == 15):
         return "AMEX"
     elif (50 < pre <= 55) and length == 16:
         return "MASTERCARD"
