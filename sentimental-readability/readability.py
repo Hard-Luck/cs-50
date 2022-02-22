@@ -5,7 +5,7 @@ text = cs50.get_string("Enter Text: ")
 
 # Take all punctuation out of the text and then remove all whitespace to count
 nopunc = text.translate(str.maketrans("","",string.punctuation))
-nopunc.replace(" ", "")
+nopunc = nopunc.replace(" ", "")
 
 # Split the text at every space, count the size of the list
 words = len(text.split())
