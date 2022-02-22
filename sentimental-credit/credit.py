@@ -1,13 +1,11 @@
 import cs50
 import re
-from math import ceil
-
 
 
 def main():
-    #Enter credit card number
+    # Enter credit card number
     number = cs50.get_string("Enter credit card number: ")
-    #check the length and return invalid if not correct length
+    # Check the length and return invalid if not correct length
     if check_length(number) == False:
         print("INVALID")
         return
@@ -19,14 +17,14 @@ def main():
     return 0
 
 
-
-#Function to check the length is 13, 15 or 16, returns TRUE/FALSE
+# Function to check the length is 13, 15 or 16, returns TRUE/FALSE
 def check_length(number):
-    #regex check for length of string
+    # regex check for length of string
     pattern = r"^[0-9]{13}$|^[0-9]{15}$|^[0-9]{16}$"
     if re.match(pattern, number):
-       return True
+        return True
     return False
+
 
 # Sum check function to check card number is valid
 def sum_check(number):
