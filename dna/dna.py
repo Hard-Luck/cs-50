@@ -11,6 +11,7 @@ def main():
     # Read database file into a variable
     reader = csv.reader(sys.argv[1])
     titles = next(reader)
+    print(titles)
     # Read DNA sequence file into a variable
     file = open(sys.argv[2],"r")
 
@@ -20,8 +21,8 @@ def main():
         match = longest_match(titles[i],file)
         strs_list.append(match)
     # Check database for matching profiles
-    for row in reader:
-        print(row)
+    #for row in reader:
+    #  print(row)
 
 
 
