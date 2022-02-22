@@ -9,7 +9,7 @@ def main():
     #check the length and return invalid if not correct length
     if not check_length(number) == 0:
         return
-
+    sum_check(number)
 
 
 #Function to check the length is 13, 15 or 16
@@ -23,11 +23,15 @@ def check_length(number):
 
 # Sum check function to check card number is valid
 def sum_check(number):
-    if len(num) % 2 = 1:
-        
+    sum = 0
+    if len(number) % 2 == 1:
+        for i in (range(len(number) // 2 + 1),2):
+            sum += int(number[i])
+    print(sum)
 
-#checking the leading digits
-def check_type(number):
+
+"""#checking the leading digits
+def check_type(number):"""
 
 
 main()
