@@ -26,7 +26,7 @@ def check_length(number):
 def sum_check(number):
     sum = 0
     if len(number) % 2 == 1:
-        for i in (range(ceil(len(number) / 2)),2):
+        for i in ((range(len(number) - 1) / 2 + 1), 2):
             x = number[i]
             sum += x
     print(sum)
