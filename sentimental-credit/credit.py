@@ -30,7 +30,7 @@ def sum_check(number):
     # For card numbers of even length
     if length % 2 == 0:
         for i in range(hlen):
-            sum += 2*(int(number[2 * i]))
+            sum += (2*(int(number[2 * i])) % 10)
             sum += int(number[2 * i + 1])
             if int(number[2 * i]) > 4:
                 sum += 1
@@ -38,7 +38,7 @@ def sum_check(number):
     else:
         sum += int(number[0])
         for j in range(1, hlen):
-            sum += 2*(int(number[2 * j - 1]))
+            sum += (2*(int(number[2 * j - 1])) % 10)
             sum += int(number[2 * j])
             if int(number[2 * j - 1]) > 4:
                 sum += 1
