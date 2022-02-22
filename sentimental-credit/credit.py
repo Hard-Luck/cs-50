@@ -8,11 +8,13 @@ def main():
     #Enter credit card number
     number = cs50.get_string("Enter credit card number: ")
     #check the length and return invalid if not correct length
-    if not check_length(number) == 0:
+    if check_length(number):
+        print("INVALID")
         return
     # Check sumcheck = 0
     if sum_check(number):
         print("INVALID")
+        return
     print(check_type(number))
 
 
