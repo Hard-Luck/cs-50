@@ -21,13 +21,15 @@ def main():
             teams += [{"name" : row["team"],"rating" : int(row["rating"])}]
 
     counts = {}
+    for team in teams:
+        counts[team["name"]] = 0
     # Simulate N tournaments and keep track of win counts
     for i in range(N):
         winner = simulate_tournament(teams)
         if not counts[winner["name"]]:
-            counts[winner[name]] = 1
+            counts[winner["name"]] = 1
         else:
-            counts[winner[name]] += 1
+            counts[winner["name"]] += 1
 
 
 
