@@ -13,8 +13,8 @@ def main():
     # Check sumcheck = 0
     if not sum_check(number):
         print("INVALID")
-    pre = prefix(number)
-    
+    print(check_type(number))
+
 
 
 #Function to check the length is 13, 15 or 16
@@ -50,8 +50,18 @@ def sum_check(number):
 
 
 # Get the first 2 digits as an int
-def prefix(number):
-    return int(number[0:2])
+def check_type(number):
+    pre = int(number[0:2])
+    length = len(number)
+    if (number[0] == "4" and (length == 13 or length == 16)):
+        return "VISA"
+    elif (pre == 34 or pre == 37) and length == 15:
+        return "AMEX"
+    elif (50 < pre <= 55) and length == 16:
+        return "MASTERCARD"
+    # If no passes thus far then card must be invalid
+    else:
+        return "INVALID"
 
 
 main()
