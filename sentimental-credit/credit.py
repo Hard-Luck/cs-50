@@ -36,12 +36,11 @@ def sum_check(number):
                 sum += 1
 
     else:
-        if len(number) % 2 == 0:
-            for i in range(hlen):
-                sum += (2 * (int(number[2 * i])) % 10)
-                if int(number[2*i]) >= 5:
-                    sum += 1
-                sum += (int(number[(2 * i + 1)]))
+        for k in range(hlen):
+            sum += (2 * (int(number[2 * k])) % 10)
+            if int(number[2*k]) >= 5:
+                sum += 1
+            sum += (int(number[(2 * k + 1)]))
 
 
     print(sum)
