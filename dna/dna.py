@@ -6,11 +6,13 @@ def main():
 
     # Ensure correct usage
     if len(sys.argv) != 3:
-        sys.exit("Usage: python dna.py database.csv sequence.txt)
+        sys.exit("Usage: python dna.py database.csv sequence.txt")
 
-    # TODO: Read database file into a variable
+    # Read database file into a variable
+    reader = csv.reader(sys.argv[1])
 
-    # TODO: Read DNA sequence file into a variable
+    # Read DNA sequence file into a variable
+    file = f"{sys.argv[2]}"
 
     # TODO: Find longest match of each STR in DNA sequence
 
