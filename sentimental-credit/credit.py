@@ -48,7 +48,7 @@ def sum_check(number):
             sum += int(number[2 * j])
             if int(number[2 * j + 1]) > 4:
                 sum += 1
-    return sum % 10)
+    return sum % 10
 
 
 # Get the first 2 digits as an int
