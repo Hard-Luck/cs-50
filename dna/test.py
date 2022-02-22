@@ -1,4 +1,6 @@
 import csv
 
 reader = csv.reader(open("databases/small.csv"))
-print(reader.next())
+titles = (next(reader))
+print(titles)
+print(next(reader))
