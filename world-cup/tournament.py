@@ -23,8 +23,9 @@ def main():
 
     counts = {}
     # Simulate N tournaments and keep track of win counts
-    for i^2 <= len(teams):
-        simulate round(teams)
+    for i in range(N):
+        winners = simulate round(teams)
+
 
 
     # Print each team's chances of winning, according to simulation
