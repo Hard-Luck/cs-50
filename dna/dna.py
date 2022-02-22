@@ -11,18 +11,20 @@ def main():
     # Read database file into a variable
     reader = csv.reader(sys.argv[1])
     titles = next(reader)
-
     # Read DNA sequence file into a variable
     file = f"{sys.argv[2]}"
 
     # Find longest match of each STR in DNA sequence
+    strs_list = []
     with open(file, "r") as f:
         for i in range(1, len(titles)):
-            
+            match = longest_match(titles[i],file)
+            strs_list.append(match)
 
-
-
-    # TODO: Check database for matching profiles
+    # Check database for matching profiles
+    for row in reader:
+        if row == strs_list[1:]:
+            print(row[0])
 
     return
 
