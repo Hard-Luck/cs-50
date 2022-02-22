@@ -11,7 +11,7 @@ def main():
     if not check_length(number) == 0:
         return
     # Check sumcheck = 0
-    if not sum_check(number):
+    if sum_check(number):
         print("INVALID")
     print(check_type(number))
 
@@ -21,10 +21,9 @@ def main():
 def check_length(number):
     #regex check for length of string
     pattern = r"^[0-9]{13}$|^[0-9]{15}$|^[0-9]{16}$"
-    if not re.match(pattern, number):
-        print("INVALID")
-        return 1
-    return 0
+    if re.match(pattern, number):
+       return 0
+    return 1
 
 # Sum check function to check card number is valid
 def sum_check(number):
