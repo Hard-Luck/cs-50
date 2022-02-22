@@ -1,7 +1,9 @@
 import cs50
+import string
 
 text = cs50.get_string("Enter Text: ")
 
 words = len(text.split())
 
-print(words)
+nopunc = text.translate(str.maketrans("","",string.punctuation()))
+print(nopunc)
