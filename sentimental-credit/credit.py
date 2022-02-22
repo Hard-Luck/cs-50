@@ -25,9 +25,11 @@ def check_length(number):
 # Sum check function to check card number is valid
 def sum_check(number):
     sum = 0
+    length = len(number)
+    hlen = length // 2
     if len(number) % 2 == 1:
-        for i in ((range(len(number) - 1) / 2 + 1), 2):
-            x = number[i]
+        for i in range(hlen):
+            x = int(number[2* i + 1])
             sum += x
     print(sum)
 
