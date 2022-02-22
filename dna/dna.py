@@ -9,8 +9,8 @@ def main():
         sys.exit("Usage: python dna.py database.csv sequence.txt")
 
     # Read database file into a variable
-    reader = csv.reader(f"{sys.argv[1]}")
-    titles = next(reader)
+    database = open(sys.argv[1], "r")
+    reader = csv.reader(database)
     print(titles)
     # Read DNA sequence file into a variable
     file = open(sys.argv[2],"r")
