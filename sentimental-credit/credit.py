@@ -41,7 +41,7 @@ def sum_check(number):
                 sum += 2 * (int(number[2 * i]))
                 if int(number[i]) >= 5:
                     sum += 1
-            for j in range(1, hlen):
+            for j in range(0, hlen):
                 sum += (int(number[(2 * i) - 1]))
 
 
