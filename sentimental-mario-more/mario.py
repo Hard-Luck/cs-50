@@ -2,7 +2,7 @@ import cs50
 
 height = 0
 
-while true:
+while True:
     height = cs50.get_int("How tall do you want it?: ")
     if height > 0:
         break
