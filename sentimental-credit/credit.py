@@ -22,10 +22,11 @@ def check_length(number):
     return 0
 
 # Sum check function to check card number is valid
-def sum_check():
+def sum_check(number):
+    
 
 #checking the leading digits
-def check_type():
+def check_type(number):
 
-    
+
 main()
