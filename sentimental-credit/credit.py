@@ -45,8 +45,9 @@ def sum_check(number):
     return sum
 
 
-"""#checking the leading digits
-def check_type(number):"""
+# Get the first 2 digits as an int
+def prefix(number):
+    return int(number[0:2])
 
 
 main()
