@@ -15,10 +15,10 @@ def main():
 
     teams = []
     # Read teams into memory from file
-    with open(argv[1]) as f:
-        reader = csv.DictReader()
+    with open(sys.argv[1]) as f:
+        reader = csv.DictReader(f)
         for row in reader:
-            teams += [{"name" : row["Name"],"rating" : int(row["Rating"])}]
+            teams += [{"name" : row["team"],"rating" : int(row["rating"])}]
 
     counts = {}
     # Simulate N tournaments and keep track of win counts
