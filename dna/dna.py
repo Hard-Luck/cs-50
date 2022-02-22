@@ -17,18 +17,19 @@ def main():
     read_file = file.read()
 
     # Find longest match of each STR in DNA sequence
-    strs_list = []
+    slist = []
     for i in titles:
         if not i == "name":
             match = longest_match(read_file, i)
-            strs_list.append(match)
-    print(strs_list)
-    # Check database for matching profiles
+            slist.append(match)
+    for s ,i in enumerate(slist):
+        slist[s] = str(slist[s])
 
+    # Check database for matching profiles
     for row in reader:
         check = []
         check = list(row)
-        if check[1:] == strs_list[1:]:
+        if check[1:] == slist:
             print(check[0])
 
 
