@@ -16,5 +16,5 @@ sentences += text.count(".")
 sentences += text.count("!")
 sentences += text.count("?")
 
-print(0.0588 * letters/words - 0.296 * sentences/words) / 100 - 15.8
+print((0.0588 * letters/words - 0.296 * sentences/words) / 100 - 15.8)
 
