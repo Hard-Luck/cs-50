@@ -16,5 +16,11 @@ sentences += text.count(".")
 sentences += text.count("!")
 sentences += text.count("?")
 
-print(round((0.0588 * letters/words - 0.296 * sentences/words) *100 - 15.8))
+level = (0.0588 * letters/words - 0.296 * sentences/words) *100 - 15.8
 
+if level < 1:
+    print("Grade 1")
+if level > 16:
+    print("Grade 16+")
+else:
+    print(f"Grade {round(level)}")
