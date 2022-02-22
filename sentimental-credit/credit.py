@@ -31,12 +31,12 @@ def sum_check(number):
         for i in range(hlen + 1):
             sum += int(number[2 * i])
         for j in range(hlen):
-            sum += 2*(int(number[(2 * i) + 1]))
+            sum += 2*(int(number[(2 * i)]))
             if j >= 5:
                 sum += 1
 
     print(sum)
-
+0000000000000
 
 """#checking the leading digits
 def check_type(number):"""
