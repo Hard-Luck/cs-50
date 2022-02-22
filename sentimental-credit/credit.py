@@ -29,8 +29,12 @@ def sum_check(number):
     hlen = length // 2
     if len(number) % 2 == 1:
         for i in range(hlen):
-            x = int(number[2 * i])
-            sum += x
+            sum += int(number[2 * i])
+        for j in range(hlen):
+            sum += int(number[2 * i])
+            if j >= 5:
+                sum += 1
+
     print(sum)
 
 
