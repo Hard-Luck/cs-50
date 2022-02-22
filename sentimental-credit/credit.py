@@ -40,7 +40,7 @@ def sum_check(number):
             sum += int(number[2 * i + 1])
             if int(number[2 * i]) > 4:
                 sum += 1
-    # For card numbers of even length
+    # For card numbers of odd length
     else:
         sum += int(number[0])
         for j in range(0, hlen):
