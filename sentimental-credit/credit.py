@@ -42,8 +42,7 @@ def sum_check(number):
             sum += int(number[2 * j])
             if int(number[2 * j + 1]) > 4:
                 sum += 1
-
-    print(sum)
+    return sum
 
 
 """#checking the leading digits
