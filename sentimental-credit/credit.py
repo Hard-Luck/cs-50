@@ -23,7 +23,8 @@ def check_length(number):
 
 # Sum check function to check card number is valid
 def sum_check(number):
-    
+    if len(num) % 2 = 1:
+        
 
 #checking the leading digits
 def check_type(number):
