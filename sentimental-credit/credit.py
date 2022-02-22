@@ -1,5 +1,6 @@
 import cs50
 import re
+from math import ceil
 
 
 
@@ -25,7 +26,7 @@ def check_length(number):
 def sum_check(number):
     sum = 0
     if len(number) % 2 == 1:
-        for i in (range(len(number) // 2 + 1),2):
+        for i in (range(ceil(len(number) / 2)),2):
             sum += int(number[i])
     print(sum)
 
