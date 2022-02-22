@@ -14,16 +14,18 @@ def main():
     titles = next(reader)
     # Read DNA sequence file into a variable
     file = open(sys.argv[2],"r")
+    read_file = file.read()
 
     # Find longest match of each STR in DNA sequence
     strs_list = []
     for i in titles:
         if not i == "name":
-            match = longest_match(file, i)
+            match = longest_match(read_file, i)
             strs_list.append(match)
+    print(strs_list)
     # Check database for matching profiles
-    #for row in reader:
-    #  print(row)
+    for row in reader:
+        
 
 
 
