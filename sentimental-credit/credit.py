@@ -14,9 +14,9 @@ def main():
     # Check sumcheck = 0
     if sum_check(number) == 0:
         print(check_type(number))
-        return
     else:
         print("INVALID")
+    return 0
 
 
 
