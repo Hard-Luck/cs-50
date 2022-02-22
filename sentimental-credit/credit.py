@@ -29,7 +29,7 @@ def sum_check(number):
     hlen = length // 2
     if len(number) % 2 == 1:
         for i in range(hlen):
-            x = int(number[2* i + 1])
+            x = int(number[2 * i])
             sum += x
     print(sum)
 
