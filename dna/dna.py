@@ -24,8 +24,12 @@ def main():
             strs_list.append(match)
     print(strs_list)
     # Check database for matching profiles
+    check = []
     for row in reader:
-        
+        check = list(row)
+        if check[1:] == strs_list[1:]:
+            print(check[0])
+
 
 
 
