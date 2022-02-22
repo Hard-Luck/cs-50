@@ -4,8 +4,8 @@ height = 0
 
 while True:
     height = cs50.get_int("How tall do you want it?: ")
-    if height > 0:
+    if 9 > height > 0:
         break
 
 for i in range(height):
-    print((height - 1 - i) * " " + i * "#" + "# #" + i * "#")
+    print((height - 1 - i) * " " + i * "#" + "#  #" + i * "#")
