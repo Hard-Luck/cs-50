@@ -31,14 +31,14 @@ def sum_check(number):
         for i in range(hlen + 1):
             sum += int(number[2 * i])
         for j in range(1, hlen + 1):
-            sum += 2*(int(number[(2 * i) - 1]))
+            sum += 2*(int(number[(2 * i) - 1])) % 10
             if int(number[j]) >= 5:
                 sum += 1
 
     else:
         if len(number) % 2 == 0:
             for i in range(hlen):
-                sum += 2 * (int(number[2 * i]))
+                sum += 2 * (int(number[2 * i])) % 10
                 if int(number[i]) >= 5:
                     sum += 1
             for j in range(0, hlen):
