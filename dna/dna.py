@@ -21,11 +21,11 @@ def main():
             match = longest_match(titles[i],file)
             strs_list.append(match)
 
-    # Check database for matching profiles
-    for row in reader:
-        if row == strs_list[1:]:
-            print(row[0])
 
+            # Check database for matching profiles
+            for row in reader:
+                if row == strs_list[1:]:
+                    print(row[0])
     return
 
 
