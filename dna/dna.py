@@ -11,7 +11,7 @@ def main():
     # Read database file into a variable
     database = open(sys.argv[1], "r")
     reader = csv.reader(database)
-    print(titles)
+    titles = next(reader)
     # Read DNA sequence file into a variable
     file = open(sys.argv[2],"r")
 
