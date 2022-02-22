@@ -8,24 +8,25 @@ def main():
     #Enter credit card number
     number = cs50.get_string("Enter credit card number: ")
     #check the length and return invalid if not correct length
-    if check_length(number):
+    if not check_length(number):
         print("INVALID")
         return
     # Check sumcheck = 0
-    if sum_check(number):
-        print("INVALID")
+    if sum_check(number) == 0:
+        print(check_type(number))
         return
-    print(check_type(number))
+    else:
+        print("INVALID")
 
 
 
-#Function to check the length is 13, 15 or 16
+#Function to check the length is 13, 15 or 16, returns TRUE/FALSE
 def check_length(number):
     #regex check for length of string
     pattern = r"^[0-9]{13}$|^[0-9]{15}$|^[0-9]{16}$"
     if re.match(pattern, number):
-       return 0
-    return 1
+       return True
+    return False
 
 # Sum check function to check card number is valid
 def sum_check(number):
