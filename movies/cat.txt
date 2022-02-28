@@ -1,1 +1,1 @@
-cat 3.sql | sqlite3 movies.db > output.txt
+cat 5.sql | sqlite3 movies.db > output.txt
