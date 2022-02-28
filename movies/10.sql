@@ -1,0 +1,1 @@
+SELECT movie_id from ratings WHERE rating >= 9;
