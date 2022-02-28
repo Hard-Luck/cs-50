@@ -1,4 +1,4 @@
-SELECT movies.title, ratings.rating
+SELECT movies.title
 FROM movies
 INNER JOIN ratings ON movies.id = ratings.movie_id
 WHERE id IN(
