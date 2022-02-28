@@ -1,0 +1,1 @@
+SELECT id from people where name is like "Johnny Depp";
