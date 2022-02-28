@@ -1,3 +1,3 @@
-  SELECT name FROM movies
+  SELECT title FROM movies
    WHERE year = 2008
-ORDER BY name;
+ORDER BY title;
