@@ -1,3 +1,3 @@
-SELECT movies.titles, rating.ratings
-JOIN rating from ratings
-on movies.titles = rating.ratings;
+SELECT title from movies
+JOIN ratings
+on movies.id = ratings.movie_id;
