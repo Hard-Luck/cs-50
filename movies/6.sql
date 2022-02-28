@@ -1,1 +1,1 @@
-SELECT avg(rating) FROM ratings WHERE
+SELECT avg(rating) FROM ratings WHERE (year FROM movies = 2012);
