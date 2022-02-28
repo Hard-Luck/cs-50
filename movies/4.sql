@@ -1,1 +1,1 @@
-SELECT title FROM movies WHERE title LIKE "%Harry Potter%";
+SELECT count(rating) from ratings where rating = 10
