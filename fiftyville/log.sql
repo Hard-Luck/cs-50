@@ -52,8 +52,6 @@ WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) a
 
 --Check phone records for the 28th
 
-
-
 select * from phone_calls where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
