@@ -69,4 +69,7 @@ WHERE (day = 28 and month = 7 and hour = 10 and minute > 15)
 LIMIT 1)
 AND day = 28);
 
-
+--look at ATM on legget street
+SELECT * from atm_transactions
+ WHERE atm_location LIKE "leggett street"
+   AND day = 28;
