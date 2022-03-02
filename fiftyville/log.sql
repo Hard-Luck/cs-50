@@ -43,7 +43,9 @@ SELECT * from airports where id = 4;
 SELECT * from people where passport_number in(
 SELECT passport_number from passengers where flight_id = 36);
 --Luca and Bruce on the plane
-SELECT * from phone_calls join where caller in(
+SELECT * from phone_calls join people
+on phone_calls.caller = people.phone_number
+where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) and day = 28);
