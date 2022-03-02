@@ -43,6 +43,11 @@ SELECT * from airports where id = 4;
 SELECT * from people where passport_number in(
 SELECT passport_number from passengers where flight_id = 36);
 --Luca and Bruce on the plane
+SELECT * from phone_calls where caller in(
+SELECT phone_number from people
+ WHERE name LIKE "luca"
+    OR name LIKE "bruce")
+   AND day = 29;
 
 --Check phone records for the 28th
 
