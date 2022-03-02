@@ -11,6 +11,7 @@ LIMIT 1;
 
 --Check name against license plates
 SELECT * from people where license_plate in(
-SELECT licence_plate FROM bakery_security_logs
+SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15)
 LIMIT 1);
+--Name: Venessa
