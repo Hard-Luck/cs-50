@@ -70,6 +70,9 @@ LIMIT 1)
 AND day = 28);
 
 --look at ATM on legget street
-SELECT * from atm_transactions
+SELECT * from people
+  JOIN bank_accounts on bank_accounts.person_id = people.id
+ WHERE account_number in (
+SELECT account_number from atm_transactions
  WHERE atm_location LIKE "leggett street"
-   AND day = 28;
+   AND day = 28);
