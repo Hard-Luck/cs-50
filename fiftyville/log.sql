@@ -62,3 +62,4 @@ SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25))));
 --BRUCE DIANA IMAN LUCA
 --BRUCE and DIANA only 2 to make calls
+-- DIANA wasnt on the flight 
