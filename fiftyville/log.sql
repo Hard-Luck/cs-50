@@ -42,6 +42,9 @@ SELECT * from airports where id = 4;
 --check which suspects passport number was on the flight
 SELECT * from people where passport_number in(
 SELECT passport_number from passengers where flight_id = 36);
+--Luca and Bruce on the plane
+
+--Check phone records for the 28th
 
 
 
