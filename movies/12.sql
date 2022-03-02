@@ -1,6 +1,7 @@
-SELECT * from (
-SELECT * from stars WHERE person_id =
-(SELECT id from people WHERE name LIKE "Johnny Depp"))
-WHERE person_id = (SELECT id from people WHERE name LIKE "Helena Bonham Carter");
+SELECT * from(
+SELECT * from movies
+WHERE id IN
+(SELECT movie_id from stars where person_id = 136))
+Where ;
 
---select title from movies where id IN(
+-- and person_id = 307)
