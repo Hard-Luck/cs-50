@@ -46,7 +46,8 @@ SELECT passport_number from passengers where flight_id = 36);
 SELECT * from phone_calls where caller in(
 SELECT phone_number from people
  WHERE name LIKE "luca"
-    OR name LIKE "bruce")
+    OR name LIKE "bruce"
+    OR name LIKE "Sofia")
    AND day = 29;
 
 --Check phone records for the 28th
