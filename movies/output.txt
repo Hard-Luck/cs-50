@@ -1,9 +1,9 @@
-+----------+
-| movie_id |
-+----------+
-| 72272    |
-| 74130    |
-| 75323    |
-| 82449    |
-| 87322    |
-+----------+
++---------------------------------------+
+|                 title                 |
++---------------------------------------+
+| That's Entertainment!                 |
+| The Amazing Dobermans                 |
+| That's Entertainment, Part II         |
+| Ghost Story                           |
+| George Stevens: A Filmmaker's Journey |
++---------------------------------------+
