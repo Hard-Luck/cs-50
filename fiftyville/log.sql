@@ -65,9 +65,12 @@ WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25))))
 -- DIANA wasnt on the flight
 
 -- Who did bruce call?
-SELECT * from phone_calls join people
+SELECT name from 
+SELECT receiver from phone_calls join people
 on phone_calls.caller = people.phone_number
 where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
-WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) and day = 28) and duration < 60;
+WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) and day = 28)
+  AND duration < 60
+  AND name = "Bruce";
