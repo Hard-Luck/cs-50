@@ -6,4 +6,4 @@ SELECT description FROM crime_scene_reports
 
 --Check bakery security logs for 10:15 on 28th July
 SELECT * FROM bakery_security_logs
-       WHERE (day = 28 and month = 7) ;
+WHERE (day = 28 and month = 7 and hour = 10);
