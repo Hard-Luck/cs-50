@@ -1,4 +1,6 @@
-SELECT DISTINCT person_id from stars where movie_id in(
+SELECT DISTINCT name from people
+JOIN stars ON people.id = stars.person_id
+WHERE movie_id in(
 SELECT movie_id FROM movies
 JOIN stars on movies.id = stars.movie_id
 JOIN people ON stars.person_id = people.id
