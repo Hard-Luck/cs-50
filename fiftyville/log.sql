@@ -45,7 +45,7 @@ SELECT passport_number from passengers where flight_id = 36);
 --Luca and Bruce on the plane
 SELECT * from phone_calls where caller in(
 SELECT phone_number from people
- WHERE name LIKE "luca"
+ WHERE name LIKE "Kelsey"
     OR name LIKE "bruce"
     OR name LIKE "Sofia")
    AND day = 29;
