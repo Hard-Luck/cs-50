@@ -61,7 +61,6 @@ WHERE (day = 28 and month = 7 and hour = 10 and minute > 15)
 LIMIT 1)
 AND day = 28);
 --3 calls made, 1 on the day check number against receiver
-SELECT
 select receiver from phone_calls where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
@@ -80,3 +79,4 @@ AND name in (SELECT name from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25))));
 --BRUCE DIANA IMAN LUCA
+--BRUCE and DIANA only 2 to make calls
