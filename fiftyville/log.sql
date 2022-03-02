@@ -72,7 +72,11 @@ AND day = 28);
 --look at ATM on legget street
 SELECT * from people
   JOIN bank_accounts on bank_accounts.person_id = people.id
- WHERE account_number in (
+ WHERE (account_number in (
 SELECT account_number from atm_transactions
  WHERE atm_location LIKE "leggett street"
-   AND day = 28);
+   AND day = 28)
+AND name in (SELECT name from people where license_plate in(
+SELECT license_plate FROM bakery_security_logs
+WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25))));
+--BRUCE DIANA IMAN LUCA
