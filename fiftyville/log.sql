@@ -40,7 +40,7 @@ SELECT * from airports where id = 4;
 -- New York City
 
 --check which suspects passport number was on the flight
-SELECT * FROM flights where flight_id in
+SELECT * FROM flights where id = 36;
 
 
 select * from phone_calls where caller in(
