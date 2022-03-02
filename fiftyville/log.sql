@@ -43,28 +43,12 @@ SELECT * from airports where id = 4;
 SELECT * from people where passport_number in(
 SELECT passport_number from passengers where flight_id = 36);
 -- checking call logs for < 1 min calls
-SELECT DISTINCT name, receiver from phone_calls join people
+SELECT * from phone_calls join people
 on phone_calls.caller = people.phone_number
 where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) and day = 28) and duration < 60;
-
---Check phone records for the 28th
-
-select * from phone_calls where caller in(
-SELECT phone_number from people where license_plate in(
-SELECT license_plate FROM bakery_security_logs
-WHERE (day = 28 and month = 7 and hour = 10 and minute > 15)
-LIMIT 1)
-AND day = 28);
---3 calls made, 1 on the day check number against receiver
-select receiver from phone_calls where caller in(
-SELECT phone_number from people where license_plate in(
-SELECT license_plate FROM bakery_security_logs
-WHERE (day = 28 and month = 7 and hour = 10 and minute > 15)
-LIMIT 1)
-AND day = 28);
 
 --look at ATM on legget street
 SELECT * from people
