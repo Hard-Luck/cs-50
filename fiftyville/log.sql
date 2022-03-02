@@ -18,21 +18,28 @@ SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25));
 --Suspects, Vanessa, Barry, Iman, Sofia, Luca Diana, Kelsey, Bruce
 
---Check Venessas passport number agianst flight records
+--Check suspects passport numbers agianst flight records
 SELECT * from passengers where passport_number in(
 SELECT passport_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
 WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)));
---Vanessa took 3 flights, check flight ID against date
 
+--check flights, check flight ID against date
 SELECT * from flights where id in(
 SELECT flight_id from passengers where passport_number in(
 SELECT passport_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
-WHERE (day = 28 and month = 7 and hour = 10 and minute > 15)
-LIMIT 5)) and day = 28 and month = 7);
+WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)))
+AND day = 29 and month = 7)
+ORDER BY hour
+LIMIT 1;
+-- 2 options, the witness suggested the theif would take the earlier flight
 
---destination airport 8
+--destination airport 4
+SELECT * from airports where id = 4;
+-- New York City
+
+
 select * from phone_calls where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
