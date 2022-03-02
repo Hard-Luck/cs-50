@@ -48,7 +48,7 @@ on phone_calls.caller = people.phone_number
 where caller in(
 SELECT phone_number from people where license_plate in(
 SELECT license_plate FROM bakery_security_logs
-WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) and day = 28);
+WHERE (day = 28 and month = 7 and hour = 10 and minute > 15 and minute <= 25)) and day = 28) and duration < 60;
 
 --Check phone records for the 28th
 
