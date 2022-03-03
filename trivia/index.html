@@ -6,9 +6,10 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            let allButtons = document.querySelectorAll(".answer");
+            allButtons = document.querySelectorAll(".answer");
             for (button in allButtons){
-                console.log("1")};
+                if(button.class contains("incorrect")){
+                console.log("1")}};
         </script>
     </head>
     <body>
