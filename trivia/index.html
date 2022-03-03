@@ -7,11 +7,11 @@
         <title>Trivia!</title>
         <script>
             document.addEventListener("DOMLoaded", function(){
-                let correct_answer = querySelector("#correct");
+                let correct_answer = querySelector(".correct");
                 let incorrect_answer = querySelectorAll(".incorrect");
+                correct_answer.addEventListener("click", function(){
+                    correct_answer.setBackgroundColor = "green";
                 });
-            correct_answer.addEventListener("click", function(){
-                correct_answer.setBackgroundColor = "green";
             });
 
 
