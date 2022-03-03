@@ -27,6 +27,17 @@
                     node.appendChild(textnode);
                     document.getElementById("q1").appendChild(node);
             })}
+            let check_q2 = document.querySelector("#typed_answer");
+            let submit_answer = document.querySelector("#submitted");
+            submit_answer.addEventListener("click",function{
+                if (check_q2.toUpperCase() = "JOHN CANDY"){
+                    const node = document.createElement("h4")
+                    const textnode = document.createTextNode("Correct!");
+                    node.appendChild(textnode);
+                    document.getElementById("q2").appendChild(node);
+                }
+            })
+
         });
     </script>
 </head>
@@ -49,13 +60,13 @@
 
         </div>
 
-        <div class="section">
+        <div class="section" id="q2">
             <h2>Part 2: Free Response</h2>
             <hr>
             <!-- TODO: Add free response question here -->
             <h3>What was the name of the Canadian lead actor from Uncle Buck?</h3>
-            <input type="text">
-            <button type="button" id="answers">Submit your answer!</button>
+            <input type="text" id="typed_answer">
+            <button type="button" id="submitted">Submit your answer!</button>
         </div>
     </div>
 </body>
