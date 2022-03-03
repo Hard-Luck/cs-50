@@ -14,14 +14,18 @@
             correct_answer.addEventListener("click", function() {
                 correct_answer.style.backgroundColor = "green";
                 const node = document.createElement("h4")
-                const textnode = document.createTextNode("Correct");
+                const textnode = document.createTextNode("Correct!");
                 node.appendChild(textnode);
-                document.getElementById("container").appendChild(node);
+                document.getElementById("q1").appendChild(node);
             })
             for(let i = 0; i < incorrect_answers.length; i++)
             {
                 incorrect_answers[i].addEventListener("click", function() {
                     incorrect_answers[i].style.backgroundColor = "red";
+                    const node = document.createElement("h4")
+                    const textnode = document.createTextNode("Inorrect!");
+                    node.appendChild(textnode);
+                    document.getElementById("q1").appendChild(node);
             })}
         });
     </script>
@@ -33,7 +37,7 @@
     </div>
 
     <div class="container">
-        <div class="section">
+        <div class="section" id="q1">
             <h2>Part 1: Multiple Choice </h2>
             <hr>
             <!-- TODO: Add multiple choice question here -->
