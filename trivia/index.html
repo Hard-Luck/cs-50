@@ -7,8 +7,9 @@
         <title>Trivia!</title>
         <script>
             document.addEventListener("DOMContentLoaded", function(){
-                let correct_answer = querySelector(".correct");
-                let incorrect_answer = querySelectorAll(".incorrect");
+                let correct_answer = document.querySelector("#correct");
+                let incorrect_answer = document.querySelectorAll(".incorrect");
+
                 correct_answer.addEventListener("click", function(){
                     correct_answer.style.backgroundColor = "green";
                 });
@@ -30,7 +31,7 @@
                 <h3>How many sides does a pentagon have?</h3>
                 <button type="button" class ="answer incorrect">3 Sides</button>
                 <button type="button" class ="answer incorrect">4 Sides</button>
-                <button type="button" class ="answer correct">5 Sides</button>
+                <button type="button" class ="answer" id="correct">5 Sides</button>
                 <button type="button" class ="answer incorrect">6 Sides</button>
 
             </div>
