@@ -9,7 +9,9 @@
             document.addEventListener("DOMLoaded", function(){
                 let correct_answer = querySelector("#correct");
                 let incorrect_answer = querySelectorAll(".incorrect");
-                console.log("Hi!")
+                });
+            correct_answer.addEventListener("click", function(){
+                correct_answer.setBackgroundColor = "green";
             });
 
 
