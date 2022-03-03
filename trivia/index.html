@@ -6,11 +6,11 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            document.addEventListener("DOMLoaded", function(){
+            document.addEventListener("DOMContentLoaded", function(){
                 let correct_answer = querySelector(".correct");
                 let incorrect_answer = querySelectorAll(".incorrect");
                 correct_answer.addEventListener("click", function(){
-                    correct_answer.setBackgroundColor = "green";
+                    correct_answer.style.backgroundColor = "green";
                 });
             });
 
