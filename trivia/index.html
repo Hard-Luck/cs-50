@@ -27,10 +27,10 @@
                     node.appendChild(textnode);
                     document.getElementById("q1").appendChild(node);
             })}
-            var check_q2 = document.querySelector("#typed_answer").toString();
+            var check_q2 = document.getElementById("typed_answer");
             let submit_answer = document.querySelector("#submitted");
             submit_answer.addEventListener("click",function() {
-                if (check_q2 = "JOHN CANDY"){
+                if (check_q2 == "JOHN CANDY"){
                     const node = document.createElement("h4")
                     const textnode = document.createTextNode("Correct!");
                     node.appendChild(textnode);
