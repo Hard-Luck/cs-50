@@ -7,7 +7,7 @@
         <title>Trivia!</title>
         <script>
             let allButtons = document.querySelectorAll(".answer");
-            for (button of allButtons){
+            for (button in allButtons){
                 console.log("1")};
         </script>
     </head>
@@ -24,7 +24,7 @@
                 <h3>How many sides does a pentagon have?</h3>
                 <button type="button" class ="answer incorrect" id ="b1">3 Sides</button>
                 <button type="button" class ="answer incorrect" id ="b2">4 Sides</button>
-                <button type="button" class ="answer incorrect" id ="b3">5 Sides</button>
+                <button type="button" class ="answer correct" id ="b3">5 Sides</button>
                 <button type="button" class ="answer incorrect" id ="b4">6 Sides</button>
 
             </div>
@@ -35,7 +35,7 @@
                 <!-- TODO: Add free response question here -->
                 <h3>What was the name of the Canadian lead actor from Uncle Buck?</h3>
                 <input type="text">
-                <button type="button" id="answer">Submit your answer!</button>
+                <button type="button" id="answers">Submit your answer!</button>
             </div>
         </div>
     </body>
