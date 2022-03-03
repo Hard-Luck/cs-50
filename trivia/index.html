@@ -30,7 +30,7 @@
             var check_q2 = document.getElementById("typed_answer");
             let submit_answer = document.querySelector("#submitted");
             submit_answer.addEventListener("click",function() {
-                if (check_q2 == "JOHN CANDY"){
+                if (check_q2.value.toUpperCase() == "JOHN CANDY"){
                     const node = document.createElement("h4")
                     const textnode = document.createTextNode("Correct!");
                     node.appendChild(textnode);
