@@ -14,9 +14,10 @@
             correct_answer.addEventListener("click", function() {
                 correct_answer.style.backgroundColor = "green";
             })
-            for(answer of incorrect_answers){
-            answer.addEventListener("click", function() {
-                answer.style.backgroundColor = "red";
+            for(let i = 0; i < incorrect_answers.length, i++)
+            {
+                incorrect_answers[i].addEventListener("click", function() {
+                    incorrect_answers[i].style.backgroundColor = "red";
             })}
         });
     </script>
