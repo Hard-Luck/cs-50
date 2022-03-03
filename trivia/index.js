@@ -1,5 +1,0 @@
-let b1 = document.QuerySelector('#b1')
-let b2 = document.QuerySelector('#b2')
-let b3 = document.QuerySelector('#b3')
-let b4 = document.QuerySelector('#b4')
-b1.addEventListner('click', b1.style.backgroundColor = "green")
