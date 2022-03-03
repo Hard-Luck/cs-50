@@ -14,6 +14,9 @@
             correct_answer.addEventListener("click", function() {
                 correct_answer.style.backgroundColor = "green";
                 const node = document.createElement("h4")
+                const textnode = document.createTextNode("Correct");
+                node.appendChild(textnode);
+                document.getElementById("myList").appendChild(node);
             })
             for(let i = 0; i < incorrect_answers.length; i++)
             {
