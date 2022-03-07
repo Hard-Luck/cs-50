@@ -1,0 +1,111 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: #748c06;
+    width: 100vw;
+}
+
+nav {
+    background-color: #8c6306;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button {
+    width: 150px;
+    text-align: center;
+    padding-top: 5px;
+    align-items: right;
+}
+
+.nav-button:hover {
+    background-color: #748c06;
+}
+
+ul {
+    width: 500px;
+    font-size: 30px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    padding-top: 10px;
+    align-content: center;
+}
+
+#logo {
+    width: 100px;
+    padding-left: 10px;
+}
+
+.section-alternative {
+    justify-content: space-between;
+}
+
+.color-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.bg-image {
+    background-size: cover;
+    position: relative;
+    height: 75vh;
+    width: 100vw;
+    background-position: 50% 50%;
+    background-image: url(../src/images/Jungle.jpg);
+}
+
+.text-overlay {
+    position: absolute;
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-discription {
+    width: 50%;
+    text-align: center;
+}
+
+.sub-heading {
+    position: relative;
+    color: white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.card-container {
+    display: flex;
+    background-color: none;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.card {
+    background-color: #748c06;
+    border: none;
+}
+
+.pic-card {
+    width: clamp(40px, 100px, 200px);
+    height: clamp(40px, 100px, 200px);
+    border-radius: 50%;
+    position: flex;
+}
+
+footer {
+    padding-top: 50px;
+}
