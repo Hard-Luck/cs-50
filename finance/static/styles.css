@@ -24,3 +24,13 @@ nav .navbar-brand .green
 .reg-form{
     padding-bottom: 5px
 }
+
+.stocks{
+    font-size: 30px;
+    text-align: left;
+}
+
+.stock-container{
+    justify-content: center;
+    display: flex;
+}
