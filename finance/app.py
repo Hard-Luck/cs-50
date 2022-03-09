@@ -118,9 +118,9 @@ def quote():
 def register():
     if request.method == "POST":
         """Register user"""
-        name = request.forms.get("name")
-        password1 = request.forms.get("password1")
-        password2 = request.forms.get("password2")
+        name = request.form.get("name")
+        password1 = request.form.get("password1")
+        password2 = request.form.get("password2")
         password = generate_password_hash(password1)
         if not name or not password2 or not (password1 == password2):
             return apology("Form not entered correctly")
