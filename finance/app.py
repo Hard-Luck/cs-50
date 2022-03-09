@@ -116,7 +116,7 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method = "POST":
+    if request.method == "POST":
         """Register user"""
         return apology("You have not been registered!")
     render_template("register.html")
