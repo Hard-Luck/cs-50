@@ -130,7 +130,7 @@ def register():
         if not name_check:
             db.execute("INSERT INTO users (username, hash) VALUES (?,?)", name, password)
         else:
-            
+            return apology("Username already exists!")
 
     return render_template("register.html")
 
