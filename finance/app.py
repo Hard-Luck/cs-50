@@ -115,7 +115,7 @@ def quote():
     if request.method == "POST":
         stock = lookup(request.form.get("quote"))
         if stock:
-            return render_template("quoted.html", stock=usd(stock))
+            return render_template("quoted.html", stock=stock)
         else:
             return apology("Stock does not exist")
     else:
