@@ -119,20 +119,15 @@ def register():
     if request.method == "POST":
         """Register user"""
         name = request.form.get("name")
-        password1 = request.form.get("pass1")
-        password2 = request.form.get("pass2")
-        if password2:
-            print(password2)
-        else:
-            print("here")
+        password1 = request.form.get("password1")
+        password2 = request.form.get("password2")
         password = generate_password_hash(password1, method='pbkdf2:sha256', salt_length=8)
         if not name or not password2 or not (password1 == password2):
             return apology("Form not entered correctly")
         #is name in database
         name_check = db.execute("SELECT username FROM users where UPPER(username) = ?",name.upper())
-        print(len(name_check))
-        if len(name_check == 0):
-            db.execute("INSERT INTO users (username, hash) VALUES (?,?)", name, password)
+        print(name_check)
+        
     return render_template("register.html")
 
 
