@@ -112,7 +112,7 @@ def logout():
 def quote():
     """Get stock quote."""
     if request.method == "POST":
-        
+        render_template("quoted.html")
     return apology("TODO")
 
 
