@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+
+{% block main %}
+
+    <h1> Look up stock </h1>
+    <br>
+    <form action="/quote" method="post">
+
+        <input type="text" name="quote" placeholder="Username" autofocus autocomplete="off">
+
+    </form>
+
+{% endblock %}
