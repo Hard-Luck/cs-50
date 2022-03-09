@@ -113,9 +113,10 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         stock = lookup(request.form.get("quote"))
-        print (stock)
-        return render_template("quoted.html", stock=stock)
-    #return apology("TODO")
+        if stock:
+            return render_template("quoted.html", stock=stock)
+        else:
+            return apology("Stock does not exist")
     else:
         return render_template("quote.html")
 
