@@ -118,6 +118,7 @@ def quote():
 def register():
     if request.method == "POST":
         """Register user"""
+        name = 
         return apology("You have not been registered!")
     return render_template("register.html")
 
