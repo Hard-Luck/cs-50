@@ -118,7 +118,7 @@ def quote():
 def register():
     if request.method == "POST":
         """Register user"""
-        name = request.form.get("name")
+        name = request.form.get("name").rstrip()
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
         password = generate_password_hash(password1, method='pbkdf2:sha256', salt_length=8)
@@ -131,6 +131,7 @@ def register():
             db.execute("INSERT INTO users (username, hash) VALUES (?,?)", name, password)
         else:
             return apology("Username already exists")
+        return render_template("login.html")
 
     return render_template("register.html")
 
