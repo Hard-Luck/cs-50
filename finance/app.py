@@ -119,8 +119,8 @@ def register():
     if request.method == "POST":
         """Register user"""
         name = request.form.get("name")
-        password1 = request.form.get("password1")
-        password2 = request.form.get("password2")
+        password1 = request.form.get("p1")
+        password2 = request.form.get("p2")
         if password2:
             print(password2)
         else:
