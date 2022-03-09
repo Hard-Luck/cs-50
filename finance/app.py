@@ -119,7 +119,7 @@ def register():
     if request.method == "POST":
         """Register user"""
         return apology("You have not been registered!")
-    render_template("register.html")
+    render_template()
 
 
 @app.route("/sell", methods=["GET", "POST"])
