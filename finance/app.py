@@ -127,7 +127,11 @@ def register():
         #is name in database
         name_check = db.execute("SELECT username FROM users where UPPER(username) = ?",name.upper())
         print(name_check)
-        
+        if not name_check:
+            db.execute("INSERT INTO users (username, hash) VALUES (?,?)", name, password)
+        else:
+            
+
     return render_template("register.html")
 
 
