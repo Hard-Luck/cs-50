@@ -190,20 +190,14 @@ def sell():
             return apology("Sale Error")
         price = float(stock["price"])
         sale_price = price * quantity
-        print(balance)}
+        print(balance)
         # Update cash balance and stock balance
         new_balance = float(balance[0]["cash"]) + sale_price
         db.execute("UPDATE users SET cash = ? where id = ?", new_balance, session["user_id"])
         db.execute("UPDATE stocks SET quantity = ? where person_id = ?", new_owned, session["user_id"])
         # If user sells all stock, delete from db
-        if new_owned = 0:
-            db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["symbol"].upper(), session["user_id"], int(quantity))
-            return render_template("buy.html", cash=new_balance)
-        # Query how many stock already owned
-        current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
-        db.execute("UPDATE stocks set quantity = ? WHERE person_id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
+        db.execute("DELETE from stocks WHERE quantity = 0")
         return render_template("buy.html", cash=new_balance)
-        else:
-            return apology("Stock does not exist")
+
     else:
         return render_template("buy.html", cash=balance[0]["cash"])
