@@ -11,16 +11,16 @@
             <tr>
                 <th class="headings">Stock</th>
                 <th class="headings">Holdings</th>
-                <th class="headings">{{ prices.stock.price }}</th>
-                <th class="headings">{{ prices.stock.price }}</th>
+                <th class="headings">Current Price</th>
+                <th class="headings">Value</th>
             </tr>
 
             {% for stock in holdings%}
                 <tr>
                     <td>{{stock.stock}}</td>
                     <td>{{stock.quantity}}</td>
-                    <td>Price</td>
-                    <td>Value</td>
+                    <td>{{prices.stock}}</td>
+                    <td>{{stock.quantity * prices.stock}}</td>
                 </tr>
             {% endfor %}
 
