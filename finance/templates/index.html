@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{stock.stock}}</td>
                     <td>{{stock.quantity}}</td>
-                    <td>{{prices.stock}}</td>
+                    <td>{{prices.(stock.stock)}}</td>
                     <td>{{stock.quantity * prices.stock}}</td>
                 </tr>
             {% endfor %}
