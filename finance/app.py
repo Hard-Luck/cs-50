@@ -46,7 +46,7 @@ def index():
     holdings = db.execute("SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
     prices = {}
     total = 0
-    print(holdings)
+    # Loop through holdings for tickers and price calculations
     for j in holdings:
         prices[j["stock"]] = float(lookup(j["stock"])["price"])
         total += float(lookup(j["stock"])["price"]) * j["quantity"]
