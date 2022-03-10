@@ -176,3 +176,12 @@ def sell():
     return apology("TODO")
 
 
+
+CREATE TABLE stocks (
+    txID int NOT NULL,
+    stock int NOT NULL,
+    person_id int NOT NULL,
+    quantity numeric NOT NULL,
+    PRIMARY KEY (txID),
+    FOREIGN KEY (person_id) REFERENCES users(id)
+);
