@@ -6,5 +6,5 @@
 <ul style="list-style: none" class="stock-container">
             <li class="stocks">Stock: {{ stock.name }}</li>
             <li class="stocks">Ticker: {{ stock.symbol }}</li>
-            <li class="stocks">Stock: {{ stock.price }}</li>
+            <li class="stocks">Stock: {{ stock.price | usd }}</li>
 {% endblock %}
