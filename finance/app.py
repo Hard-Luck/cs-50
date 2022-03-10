@@ -44,6 +44,12 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     holdings = db.execute("SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
+    price = []
+    for j in holdings:
+        price.append(lookup(j["stock"]))
+    print(price)
+
+    print(price)
     print(holdings)
     return render_template("index.html", holdings=holdings)
 
