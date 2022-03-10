@@ -181,8 +181,10 @@ def register():
 def sell():
     """Sell shares of stock"""
     balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    stocks = []
+    print(stocks)
     if request.method == "POST":
-        stock = lookup(request.form.get("stocks"))
+        stocks = lookup(request.form.get("stocks"))
         quantity = float(request.form.get("quantity"))
         quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
         new_owned
@@ -201,4 +203,4 @@ def sell():
         return render_template("buy.html", cash=new_balance)
 
     else:
-        return render_template("buy.html", cash=balance[0]["cash"])
+        return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)

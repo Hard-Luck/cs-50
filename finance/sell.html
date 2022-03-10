@@ -6,9 +6,13 @@
     <br>
     <form action="/sell" method="post">
         <h3>Your balance: {{ cash | usd }}<h3>
-        <input type="text" name="stocks" placeholder="Stock to buy" autofocus autocomplete="off">
-        <input type="number" min=0 name="quantity" placeholder="Quantity" autocomplete="off">
-        <input type="submit" value="buy">
+        <label for="cars">Choose a car:</label>
+
+            <select name="stocks" id="stocks">
+                {% for stock in stocks%}
+                <option value = {{ stock }}>{{ stock </option}}
+                {%endfor%}
+            </select>
 
     </form>
 
