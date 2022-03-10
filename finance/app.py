@@ -49,15 +49,16 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
+    balance = db.execute("SELECT cash FROM users WHERE user)
     """Buy shares of stock"""
     if request.method == "POST":
         stock = lookup(request.form.get("quote"))
-    if stock:
-        return render_template("quoted.html", stock=stock)
+        if stock:
+            return render_template("quoted.html", stock=stock)
+        else:
+            return apology("Stock does not exist")
     else:
-        return apology("Stock does not exist")
-
-    return apology("TODO")
+        return render_template("buy.html")
 
 
 @app.route("/history")
