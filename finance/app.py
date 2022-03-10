@@ -47,6 +47,7 @@ def index():
     prices = {}
     for j in holdings:
         prices[j["stock"]] = lookup(j["stock"])["price"]
+    print(prices)
     return render_template("index.html", holdings=holdings, prices=prices)
 
 
