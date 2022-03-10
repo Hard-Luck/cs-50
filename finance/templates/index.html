@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>Current Holdings</h1>
+    {% for stock in holdings%}
+    <h4>{{stock.stock}}, {{stock.quantity}}</h4>
+    {% endfor %}
+{% endblock %}

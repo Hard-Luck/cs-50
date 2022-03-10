@@ -45,7 +45,7 @@ def index():
     """Show portfolio of stocks"""
     holdings = db.execute("SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
     print(holdings)
-    return apology("TODO")
+    return render_template("index.html", holdings=holdings)
 
 
 @app.route("/buy", methods=["GET", "POST"])
