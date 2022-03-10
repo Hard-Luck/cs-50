@@ -45,11 +45,13 @@ def index():
     """Show portfolio of stocks"""
     holdings = db.execute("SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
     prices = {}
+    total = 0
     print(holdings)
     for j in holdings:
         prices[j["stock"]] = float(lookup(j["stock"])["price"])
+        total += float(lookup(j["stock"])["price"])
     print(prices)
-    return render_template("index.html", holdings=holdings, prices=prices)
+    return render_template("index.html", holdings=holdings, prices=prices, total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
