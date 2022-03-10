@@ -54,19 +54,21 @@ def buy():
     if request.method == "POST":
         stock = lookup(request.form.get("quote"))
         if stock:
-            print(stock)
             price = float(stock["price"])
             quantity = float(request.form.get("quantity"))
             cost = price * quantity
             print(balance)
+            #check balance
             if not cost < float(balance[0]["cash"]):
                 return apology("Not enough funds")
             new_balance = float(balance[0]["cash"]) - cost
             stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ?", stock["name"])
+            db.execute("UPDATE SET users cash = ? where id = ?", new_balance, session["user_id"])
+            #check if user already owns some of this stock, if not insert new row
             if not stock_check:
                 db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
-                db.execute("UPDATE users cash = ? where id = ?", new_balance, session["user_id"])
-            return render_template("buy.html", cash=balance[0])
+                return render_template("buy.html", cash=new_balance)
+            db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
         else:
             return apology("Stock does not exist")
     else:
