@@ -174,13 +174,3 @@ def register():
 def sell():
     """Sell shares of stock"""
     return apology("TODO")
-
-
-
-CREATE TABLE stocks (
-    txID INTEGER PRIMARY KEY AUTOINCREMENT,
-    stock INTEGER NOT NULL,
-    person_id INTEGER NOT NULL,
-    quantity NUMERIC NOT NULL,
-    FOREIGN KEY (person_id) REFERENCES users(id)
-);
