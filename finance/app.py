@@ -62,7 +62,7 @@ def buy():
                 return apology("Not enough funds")
             stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ?", stock["name"])
             if not stock_check:
-                db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUE(?, ?, ?)",stock["name"], session["user_id"], quantity)
+                db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
             return render_template("buy.html", cash=balance)
         else:
             return apology("Stock does not exist")
