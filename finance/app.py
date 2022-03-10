@@ -179,4 +179,29 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    if request.method == "POST":
+        stock = lookup(request.form.get("quote"))
+        if stock:
+            price = float(stock["price"])
+            quantity = float(request.form.get("quantity"))
+            cost = price * quantity
+            print(balance)
+            #check balance
+            if not cost < float(balance[0]["cash"]):
+                return apology("Not enough funds")
+            new_balance = float(balance[0]["cash"]) - cost
+            stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
+            db.execute("UPDATE users SET cash = ? where id = ?", new_balance, session["user_id"])
+            #check if user already owns some of this stock, if not insert new row
+            if not stock_check:
+                db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["symbol"].upper(), session["user_id"], int(quantity))
+                return render_template("buy.html", cash=new_balance)
+            # Query how many stock already owned
+            current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
+            db.execute("UPDATE stocks set quantity = ? WHERE person_id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
+            return render_template("buy.html", cash=new_balance)
+        else:
+            return apology("Stock does not exist")
+    else:
+        return render_template("buy.html", cash=balance[0]["cash"])
