@@ -62,13 +62,15 @@ def buy():
             if not cost < float(balance[0]["cash"]):
                 return apology("Not enough funds")
             new_balance = float(balance[0]["cash"]) - cost
-            stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ?", stock["name"])
+            stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ? AND id =?", stock["name"], session["user_id"])
             db.execute("UPDATE SET users cash = ? where id = ?", new_balance, session["user_id"])
             #check if user already owns some of this stock, if not insert new row
             if not stock_check:
                 db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
                 return render_template("buy.html", cash=new_balance)
-            db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
+            # Query how many stock already owned
+            current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND id =?", stock["name"], session["user_id"])
+            db.execute("UPDATE stocks quantity = ? WHERE id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
         else:
             return apology("Stock does not exist")
     else:
