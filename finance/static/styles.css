@@ -35,3 +35,6 @@ nav .navbar-brand .green
     flex-direction: column;
 }
 
+.headings{
+    text-decoration: underline;
+}

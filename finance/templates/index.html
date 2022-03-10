@@ -6,22 +6,24 @@
 
 {% block main %}
     <h1>Current Holdings</h1>
-    <div class="table-striped">
-        <table>
+    <div class="container mt-3">
+        <table class="table table-striped">
             <tr>
-                <th>Stock</th>
-                <th>Holdings</th>
-                <th>Current Price</th>
-                <th>Value</th>
+                <th class="headings">Stock</th>
+                <th class="headings">Holdings</th>
+                <th class="headings">Current Price</th>
+                <th class="headings">Value</th>
             </tr>
-            <tr>
-                {% for stock in holdings%}
-                <td>{{stock.stock}}</td>
-                <td>{{stock.quantity}}</td>
-                <td>Price</td>
-                <td>Value</td>
-                {% endfor %}
-            </tr>
+
+            {% for stock in holdings%}
+                <tr>
+                    <td>{{stock.stock}}</td>
+                    <td>{{stock.quantity}}</td>
+                    <td>Price</td>
+                    <td>Value</td>
+                </tr>
+            {% endfor %}
+
         </table>
     </div>
 {% endblock %}
