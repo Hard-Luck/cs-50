@@ -49,7 +49,7 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    balance = db.execute("SELECT cash FROM users WHERE user)
+    balance = db.execute("SELECT cash FROM users WHERE user")
     """Buy shares of stock"""
     if request.method == "POST":
         stock = lookup(request.form.get("quote"))
