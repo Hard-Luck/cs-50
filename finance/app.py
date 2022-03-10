@@ -57,13 +57,16 @@ def buy():
             print(stock)
             price = float(stock["price"])
             quantity = float(request.form.get("quantity"))
+            cost = price * quantity
             print(balance)
-            if not price * quantity < float(balance[0]["cash"]):
+            if not cost < float(balance[0]["cash"]):
                 return apology("Not enough funds")
+            new_balance = balance["cash"] - cost
             stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ?", stock["name"])
             if not stock_check:
                 db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
-            return render_template("buy.html", cash=balance)
+                db.execute("UPDATE users cash = ? where id = ?", new_balance, session["user_id"])
+            return render_template("buy.html", cash=balance[0])
         else:
             return apology("Stock does not exist")
     else:
