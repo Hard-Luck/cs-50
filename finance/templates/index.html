@@ -15,12 +15,12 @@
                 <th class="headings">Value</th>
             </tr>
 
-            {% for i,j in holdings.items() %}
+            {% for i,j in prices.items() %}
                 <tr>
                     <td>{{i}}</td>
-                    <td>{{stock.quantity}}</td>
+                    <td>{{holdings[i].quantity}}</td>
                     <td>{{j}}</td>
-                    <td>{{stock.quantity * prices.stock}}</td>
+                    <td>{{holdings[i].quantity * j}}</td>
                 </tr>
             {% endfor %}
 
