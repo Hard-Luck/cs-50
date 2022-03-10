@@ -4,10 +4,11 @@
 
     <h1> Look up stock to buy </h1>
     <br>
-    <form action="/quote" method="post">
+    <form action="/buy" method="post">
         <h3>Your balance: {{cash}}<h3>
         <input type="text" name="quote" placeholder="Stock to quote" autofocus autocomplete="off">
         {% if stock %}
+        {% end if %}
 
 
     </form>
