@@ -182,7 +182,7 @@ def sell():
     """Sell shares of stock"""
     balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     if request.method == "POST":
-        stock = lookup(request.form.get("quote"))
+        stock = lookup(request.form.get("stocks"))
         quantity = float(request.form.get("quantity"))
         quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
         new_owned
