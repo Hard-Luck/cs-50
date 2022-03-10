@@ -51,7 +51,7 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-    stock = lookup(request.form.get("quote"))
+        stock = lookup(request.form.get("quote"))
     if stock:
         return render_template("quoted.html", stock=stock)
     else:
