@@ -55,9 +55,10 @@ def buy():
         stock = lookup(request.form.get("quote"))
         if stock:
             print(stock)
-            price = stock["price"]
+            price = float(stock["price"])
             quantity = float(request.form.get("quantity"))
-            if not price * quantity < balance:
+            print(balance)
+            if not price * quantity < float(balance[0]["cash"]):
                 return apology("Not enough funds")
             stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ?", stock["name"])
             if not stock_check:
