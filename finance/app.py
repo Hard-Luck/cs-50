@@ -195,8 +195,8 @@ def sell():
         new_balance = float(balance[0]["cash"]) + sale_price
         db.execute("UPDATE users SET cash = ? where id = ?", new_balance, session["user_id"])
         db.execute("UPDATE stocks SET quantity = ? where person_id = ?", new_owned, session["user_id"])
-        #check if user already owns some of this stock, if not insert new row
-        if not stock_check:
+        # If user sells all stock, delete from db
+        if new_owned = 0:
             db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["symbol"].upper(), session["user_id"], int(quantity))
             return render_template("buy.html", cash=new_balance)
         # Query how many stock already owned
