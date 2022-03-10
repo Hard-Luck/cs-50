@@ -45,6 +45,7 @@ def index():
     """Show portfolio of stocks"""
     holdings = db.execute("SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
     prices = {}
+    print(holdings)
     for j in holdings:
         prices[j["stock"]] = lookup(j["stock"])["price"]
     print(prices)
