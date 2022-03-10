@@ -6,7 +6,17 @@
 
 {% block main %}
     <h1>Current Holdings</h1>
+
+    <table>
+        <th>Stock</th>
+        <th>Holdings</th>
+        <th>Current Price</th>
+        <th>Value</th>
     {% for stock in holdings%}
-    <h4>{{stock.stock}}, {{stock.quantity}}</h4>
+    <td>{{stock.stock}}</td>
+    <td>{{stock.quantity}}</td>
+    <td>Price</td>
+    <td>Value</td>
     {% endfor %}
+    </table>
 {% endblock %}
