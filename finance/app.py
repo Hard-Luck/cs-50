@@ -182,14 +182,16 @@ def sell():
     balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     if request.method == "POST":
         stock = lookup(request.form.get("quote"))
-        if stock:
-            price = float(stock["price"])
-            quantity = float(request.form.get("quantity"))
-            cost = price * quantity
-            print(balance)
-            #check balance
-            if not cost < float(balance[0]["cash"]):
-                return apology("Not enough funds")
+        quantity = float(request.form.get("quantity"))
+        quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
+        # Ensure quantity is positive and less tthan or equal to stock owned
+        if not stock or (quantity <= quantity_owned and quantity < 0):
+            return apology("Sale Error")
+        price = float(stock["price"])
+        sale_price = price * quantity
+        print(balance)}
+
+
             new_balance = float(balance[0]["cash"]) - cost
             stock_check = db.execute("SELECT stock FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
             db.execute("UPDATE users SET cash = ? where id = ?", new_balance, session["user_id"])
