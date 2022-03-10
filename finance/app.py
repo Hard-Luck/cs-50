@@ -46,7 +46,7 @@ def index():
     holdings = db.execute("SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
     prices = {}
     for j in holdings:
-        prices[j["stock"]] : lookup(j["stock"])["price"]})
+        prices[j["stock"]] = lookup(j["stock"])["price"]
     return render_template("index.html", holdings=holdings, prices=prices)
 
 
