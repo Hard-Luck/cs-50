@@ -69,7 +69,7 @@ def buy():
                 db.execute("INSERT INTO stocks (stock, person_id, quantity) VALUES(?, ?, ?)",stock["name"], session["user_id"], int(quantity))
                 return render_template("buy.html", cash=new_balance)
             # Query how many stock already owned
-            current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND id =?", stock["name"], session["user_id"])
+            current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["name"], session["user_id"])
             db.execute("UPDATE stocks quantity = ? WHERE id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
         else:
             return apology("Stock does not exist")
