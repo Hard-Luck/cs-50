@@ -178,10 +178,10 @@ def sell():
 
 
 CREATE TABLE stocks (
-    txID int AUTOINCREMENT NOT NULL,
+    txID int NOT NULL,
     stock int NOT NULL,
     person_id int NOT NULL,
     quantity numeric NOT NULL,
-    PRIMARY KEY (txID),
+    PRIMARY KEY (txID) AUTOINCREMENT,
     FOREIGN KEY (person_id) REFERENCES users(id)
 );
