@@ -70,7 +70,7 @@ def buy():
                 return render_template("buy.html", cash=new_balance)
             # Query how many stock already owned
             current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
-            db.execute("UPDATE stocks quantity = ? WHERE id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
+            db.execute("UPDATE stocks set quantity = ? WHERE id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
         else:
             return apology("Stock does not exist")
     else:
