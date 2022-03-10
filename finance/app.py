@@ -50,7 +50,6 @@ def index():
     for j in holdings:
         prices[j["stock"]] = float(lookup(j["stock"])["price"])
         total += float(lookup(j["stock"])["price"]) * j["quantity"]
-    print(prices)
     return render_template("index.html", holdings=holdings, prices=prices, total=total)
 
 
