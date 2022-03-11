@@ -128,7 +128,7 @@ def changepassword():
              return render_template("/changepasswords.html", message="Incorrect Password")
         if not password1 = password2:
              return render_template("/changepasswords.html", message="Passwords do not match!")
-        db.execute("UPDATE)
+        db.execute("UPDATE users SET hash = ? WHERE id = ?", )
         return render_template("/changepasswords.html", message="Password Changed")
     return render_template("/changepassword.html")
 
