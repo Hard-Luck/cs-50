@@ -86,7 +86,7 @@ def buy():
             db.execute("UPDATE stocks set quantity = ? WHERE person_id = ?", int(
                 quantity) + current[0]["quantity"], session["user_id"])
             db.execute(
-                "INSERT INTO history (date, buysell, person_id, stock, quantity) VALUES(DATETIME(), ?, ?, ?,?)",
+                "INSERT INTO history (date, buysell, person_id, stock, quantity) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
                 "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
             )
             return render_template("buy.html", cash=new_balance)
@@ -230,7 +230,7 @@ def sell():
         stocks = db.execute(
             "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
         db.execute(
-            "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?,?)",
+            "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
             "SELL", session["user_id"], to_sell, int(quantity), price
         )
         return render_template("sell.html", cash=new_balance, stocks=stocks)
