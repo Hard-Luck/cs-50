@@ -117,7 +117,7 @@ def history():
 @app.route("/changepassword")
 @login_required
 def changepassword():
-    return redirect("/")
+    
 
 
 @app.route("/login", methods=["GET", "POST"])
