@@ -209,7 +209,7 @@ def sell():
         db.execute("UPDATE stocks SET quantity = ? where person_id = ? and stock = ?", new_owned, session["user_id"], to_sell)
         # If user sells all stock, delete from db
         stocks = db.execute("SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
-        db.execute("INSERT INTO history (date, person_id, stock, quantity) VALUES(NOW()), ?, ?,?)", session["user_id"],stock["symbol"].upper(), int(quantity))
+        db.execute("INSERT INTO history (date, person_id, stock, quantity) VALUES(NOW()), ?, ?,?)", session["user_id"],to_sell, int(quantity))
         return render_template("sell.html", cash=new_balance, stocks=stocks)
 
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
