@@ -68,7 +68,8 @@ def buy():
         if stock:
             price = float(stock["price"])
             quantity = request.form.get("shares")
-            print
+            print(quantity)
+            print(type(quantity))
             if type(quantity) is not int:
                 return apology("Buy not")
             cost = price * quantity
