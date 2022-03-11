@@ -64,10 +64,10 @@ def buy():
         "SELECT cash FROM users WHERE id = ?", session["user_id"])
     """Buy shares of stock"""
     if request.method == "POST":
-        stock = lookup(request.form.get("quote"))
+        stock = lookup(request.form.get("symbol"))
         if stock:
             price = float(stock["price"])
-            quantity = float(request.form.get("quantity"))
+            quantity = float(request.form.get("shares"))
             cost = price * quantity
             print(balance)
             # check balance
