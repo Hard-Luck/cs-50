@@ -185,11 +185,13 @@ def sell():
 
     if request.method == "POST":
         to_sell = request.form.get("sell")
+        if not to_sell:
+            return apology("Sale Error")
         quantity = float(request.form.get("quantity"))
         quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", to_sell, session["user_id"])
         owned = quantity_owned[0]["quantity"]
         # Ensure quantity is positive and less tthan or equal to stock owned
-        if not to_sell or ((quantity <= owned) and quantity < 0):
+        if (quantity > owned) or quantity < 0:
             return apology("Sale Error")
         new_owned = owned - quantity
         # Lookup the stock and get the price
@@ -203,6 +205,6 @@ def sell():
         db.execute("UPDATE stocks SET quantity = ? where person_id = ? and stock = ?", new_owned, session["user_id"], to_sell)
         # If user sells all stock, delete from db
         db.execute("DELETE from stocks WHERE quantity = 0")
-        return render_template("sell.html", cash=new_balance, stocks=stocks, owned=new_owned)
+        return render_template("sell.html", cash=new_balance, stocks=stocks)
 
-    return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks, price=price, owned=owned)
+    return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
