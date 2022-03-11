@@ -118,9 +118,10 @@ def history():
 @login_required
 def changepassword():
     if request.method = "POST":
+        old_password = request.form.get("old_password")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
-        if
+        if 
     return render_template("/changepassword.html")
 
 
