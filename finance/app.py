@@ -188,14 +188,13 @@ def sell():
         quantity = float(request.form.get("quantity"))
         quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", to_sell, session["user_id"])
         owned = quantity_owned[0]["quantity"]
-        print(quantity_owned)
-        print(owned)
-        print(quantity)
         # Ensure quantity is positive and less tthan or equal to stock owned
         if not to_sell or ((quantity <= owned) and quantity < 0):
             return apology("Sale Error")
         new_owned = owned - quantity
-        price = float(stock["price"])
+        # Lookup the stock and get the price
+        stock_details = lookup(to_sell)
+        price = float(stock_details["price"])
         sale_price = price * quantity
         print(balance)
         # Update cash balance and stock balance
