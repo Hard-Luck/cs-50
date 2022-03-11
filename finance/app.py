@@ -123,9 +123,13 @@ def changepassword():
         password2 = request.form.get("password2")
         # Get hashed pw from db
         old_pass_hash = db.execute("SELECT hash FROM users where id = ?", session["user_id"])
-        print(old_pass_hash["hash"])
-        # not check_password_hash()
-        return render_template("/index.html")
+        # Check old password is correct
+        if not check_password_hash(old_pass_hash[0]["hash"], old_password):
+             return render_template("/changepasswords.html", message="Incorrect Password")
+        if not password1 = password2:
+             return render_template("/changepasswords.html", message="Passwords do not match!")
+        db.execute("UPDATE)
+        return render_template("/changepasswords.html", message="Password Changed")
     return render_template("/changepassword.html")
 
 
