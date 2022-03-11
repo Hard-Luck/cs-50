@@ -96,7 +96,8 @@ def buy():
             )
             cost = usd(cost)
             message = f"Sale for {cost} completed!"
-            return render_template("buy.html", cash=new_balance, message=message)
+            return render_template("history.html")
+            # return render_template("buy.html", cash=new_balance, message=message)
         else:
             return apology("Stock does not exist")
     else:
