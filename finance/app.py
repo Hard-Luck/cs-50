@@ -209,12 +209,8 @@ def sell():
         db.execute("UPDATE stocks SET quantity = ? where person_id = ? and stock = ?", new_owned, session["user_id"], to_sell)
         # If user sells all stock, delete from db
         stocks = db.execute("SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
+        db.execute("INSERT INTO history (date, person_id, stock, quantity) VALUES(?, ?, ?,?)",stock["symbol"].upper(), session["user_id"], int(quantity))
         return render_template("sell.html", cash=new_balance, stocks=stocks)
 
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
 
-CREATE TABLE history (
-    id INTEGER NOT NULL,
-    name TEXT NOT NULL,
-    FOREIGN KEY (id) REFERENCES person(txID)
-);
