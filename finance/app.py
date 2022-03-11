@@ -53,7 +53,8 @@ def index():
     for j in holdings:
         prices[j["stock"]] = float(lookup(j["stock"])["price"])
         total += float(lookup(j["stock"])["price"]) * j["quantity"]
-    return render_template("index.html", holdings=holdings, prices=prices, total=total,cash=cash)
+    total += cash[0]["cash"]
+    return render_template("index.html", holdings=holdings, prices=prices, total=total,cash=cash[0]["cash"])
 
 
 @app.route("/buy", methods=["GET", "POST"])
