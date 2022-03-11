@@ -191,7 +191,7 @@ def sell():
         # Ensure quantity is positive and less tthan or equal to stock owned
         if not stock or (quantity <= quantity_owned and quantity < 0):
             return apology("Sale Error")
-        new_owned = 
+        new_owned =
         price = float(stock["price"])
         sale_price = price * quantity
         print(balance)
