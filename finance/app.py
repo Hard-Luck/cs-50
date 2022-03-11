@@ -68,9 +68,9 @@ def buy():
         if stock:
             price = float(stock["price"])
             quantity = request.form.get("shares")
-            if type(quantity) is not int:
+            if not quantity.isdigit():
                 return apology("Buy not")
-            cost = price * quantity
+            cost = price * int(quantity)
             print(balance)
             # check balance
             if not cost < float(balance[0]["cash"]):
@@ -95,7 +95,7 @@ def buy():
                 "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
             )
             cost = usd(cost)
-            message = f"sale for {cost} completed"
+            message = f"Sale for {cost} completed!"
             return render_template("buy.html", cash=new_balance, message=message)
         else:
             return apology("Stock does not exist")
