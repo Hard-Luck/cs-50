@@ -200,7 +200,7 @@ def sell():
         # Update cash balance and stock balance
         new_balance = float(balance[0]["cash"]) + sale_price
         db.execute("UPDATE users SET cash = ? where id = ?", new_balance, session["user_id"])
-        db.execute("UPDATE stocks SET quantity = ? where person_id = ?", new_owned, session["user_id"])
+        db.execute("UPDATE stocks SET quantity = ? where person_id = ? and stock = ?", new_owned, session["user_id"], to_sell)
         # If user sells all stock, delete from db
         db.execute("DELETE from stocks WHERE quantity = 0")
 
