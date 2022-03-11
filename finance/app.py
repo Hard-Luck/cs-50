@@ -214,3 +214,6 @@ def sell():
 
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
 
+
+ALTER TABLE history
+ADD buysale text not null;
