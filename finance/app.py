@@ -99,9 +99,11 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
+    # Query all details from history table except user id
     tx_history = db.execute("SELECT date, buysell, stock, quantity, price FROM history WHERE person_id = ? ORDER BY date", session["user_id"])
     print(tx_history)
     total = 0
+    # Loop and change buys to negative value
     for i in tx_history:
         if i["buysell"] == "BUY":
             i["price"] *= -1
