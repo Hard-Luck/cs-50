@@ -22,13 +22,14 @@
                     <td>{{prices[i.stock]}}</td>
                     <td>{{(i.quantity * prices[i.stock]) | usd}}</td>
                 </tr>
-                <tr>
-                </tr>
-                    <td></td><td></td>
-                    <td>Cash Holding:</td>
-                    <td>{{ cash | usd }} </td>
-                <tr>
+
             {% endfor %}
+                <tr>
+                    <td></td><td></td>
+                    <td class="headings">Cash Holdings:</td>
+                    <td>{{ cash | usd }}</td>
+                </tr>
+                <tr>
                     <td></td><td></td>
                     <td class="headings">Total:</td>
                     <td>{{ total | usd }}</td>
