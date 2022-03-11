@@ -101,7 +101,13 @@ def buy():
 def history():
     tx_history = db.execute("SELECT date, buysell, stock, quantity, price FROM history WHERE person_id = ? ORDER BY date", session["user_id"])
     print(tx_history)
-    return render_template("history.html", tx_history=tx_history)
+    total = 0
+    for i in tx_history:
+        if i["buysell"] == "BUY":
+            i["price"] *= -1
+        total += i["price"]
+
+    return render_template("history.html", total=total, tx_history=tx_history)
 
 
 @app.route("/login", methods=["GET", "POST"])
