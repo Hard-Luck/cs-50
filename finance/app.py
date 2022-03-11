@@ -117,11 +117,15 @@ def history():
 @app.route("/changepassword", methods=["GET", "POST"])
 @login_required
 def changepassword():
-    if request.method = "POST":
+    if request.method == "POST":
         old_password = request.form.get("old_password")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
-        if 
+        # Get hashed pw from db
+        old_pass_hash = db.execute("SELECT hash FROM users where id = ?", session["user_id"])
+        print(old_pass_hash["hash"])
+        # not check_password_hash()
+        return render_template("/index.html")
     return render_template("/changepassword.html")
 
 
