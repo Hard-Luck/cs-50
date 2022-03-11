@@ -95,9 +95,8 @@ def buy():
                 "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
             )
             cost = usd(cost)
-            message = f"Sale for {cost} completed!"
-            return redirect("history.html")
-            # return render_template("buy.html", cash=new_balance, message=message)
+            message = f"Sale for {cost} completed"
+            return render_template("buy.html", cash=new_balance, message=message)
         else:
             return apology("Stock does not exist")
     else:
