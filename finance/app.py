@@ -68,6 +68,7 @@ def buy():
         if stock:
             price = float(stock["price"])
             quantity = float(request.form.get("shares"))
+            
             cost = price * quantity
             print(balance)
             # check balance
