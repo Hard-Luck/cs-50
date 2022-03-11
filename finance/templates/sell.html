@@ -9,7 +9,7 @@
         <label for="cars">Choose a Stock to sell:</label>
 
             <select name="stocks" id="stocks">
-                {% for stock in stocks%}
+                {% for stock in stocks %}
                 <option value = {{ stock }}>{{ stock }} </option
                 {%endfor%}
             </select>
