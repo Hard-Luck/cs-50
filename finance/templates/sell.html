@@ -8,14 +8,21 @@
         <h3>Your balance: {{ cash | usd }}<h3>
         <label for="cars">Choose a Stock to sell:</label>
             <table class="table">
-                <th>Stock</th>
-                <th>Quantity</th>
-                    <td><select name="sell">
-                         {% for stock in stocks %}
-                             <option value = {{ stock }}> {{ stock.stock }} </option>
-                         {%endfor%}
+                <tr>
+                    <th>Stock</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="sell">
+                        {% for stock in stocks %}
+                            <option value = {{ stock }}> {{ stock.stock }} </option>
+                        {%endfor%}
                     </td>
-                    <td><input value="quantity" type="text"><td>
+                    <td>
+                        <input name="quantity" type="text" placeholder="quantity">
+                    </td>
+                </tr>
             </select>
 
     </form>
