@@ -87,8 +87,7 @@ def buy():
                 quantity) + current[0]["quantity"], session["user_id"])
             db.execute(
                 "INSERT INTO history (date, buysell, person_id, stock, quantity) VALUES(DATETIME(), ?, ?, ?,?)",
-                "BUY", session["user_id"], stock["symbol"].upper(), int(
-                    quantity), price
+                "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
             )
             return render_template("buy.html", cash=new_balance)
         else:
