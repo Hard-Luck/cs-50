@@ -7,10 +7,11 @@
     <form action="/sell" method="post">
         <h3>Your balance: {{ cash | usd }}<h3>
         <label for="cars">Choose a Stock to sell:</label>
-            <table class="table">
+            <table class="table table-striped">
                 <tr>
-                    <th>Stock</th>
-                    <th>Quantity</th>
+                    <th class="headings">Stock</th>
+                    <th  class="headings">Quantity</th>
+                    <th> </th>
                 </tr>
                 <tr>
                     <td>
@@ -22,6 +23,9 @@
                     <td>
                         <input name="quantity" type="text" placeholder="quantity">
                     </td>
+                    <td>
+                        <input type="submit" value="Sell">
+                    <td>
                 </tr>
             </select>
 
