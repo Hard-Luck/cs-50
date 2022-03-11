@@ -117,7 +117,9 @@ def history():
 @app.route("/changepassword", methods=["GET", "POST"])
 @login_required
 def changepassword():
-    if request.method = "POST"
+    if request.method = "POST":
+        password1 = request.form.get("password1")
+        password2 = request.form.get("password2")
     return render_template("/changepassword.html")
 
 
