@@ -187,9 +187,13 @@ def sell():
         to_sell = request.form.get("sell")
         if not to_sell:
             return apology("Sale Error")
-        quantity = float(request.form.get("quantity"))
-        quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", to_sell, session["user_id"])
-        owned = quantity_owned[0]["quantity"]
+        try:
+            quantity = float(request.form.get("quantity"))
+            quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", to_sell, session["user_id"])
+            owned = quantity_owned[0]["quantity"]
+        except:
+               return apology("Sale Error")
+
         # Ensure quantity is positive and less tthan or equal to stock owned
         if (quantity > owned) or quantity < 0:
             return apology("Sale Error")
