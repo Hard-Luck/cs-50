@@ -186,6 +186,7 @@ def sell():
 
     if request.method == "POST":
         stocks = lookup(request.form.get("stocks"))
+        print(stocks)
         quantity = float(request.form.get("quantity"))
         quantity_owned = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
         new_owned
