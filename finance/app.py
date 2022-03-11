@@ -117,7 +117,7 @@ def history():
 @app.route("/changepassword")
 @login_required
 def changepassword():
-    
+    return render_template("/changepassword")
 
 
 @app.route("/login", methods=["GET", "POST"])
