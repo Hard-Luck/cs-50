@@ -120,6 +120,7 @@ def changepassword():
     if request.method = "POST":
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
+        if
     return render_template("/changepassword.html")
 
 
