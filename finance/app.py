@@ -78,7 +78,7 @@ def buy():
             # Query how many stock already owned
             current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
             db.execute("UPDATE stocks set quantity = ? WHERE person_id = ?", int(quantity) + current[0]["quantity"], session["user_id"])
-            db.execute("INSERT INTO history (date, buysell, person_id, stock, quantity) VALUES(DATETIME(), BUY, ?, ?,?)", session["user_id"],to_sell, int(quantity))
+            db.execute("INSERT INTO history (date, buysell, person_id, stock, quantity) VALUES(DATETIME(), BUY, ?, ?,?)", session["user_id"],stock["symbol"].upper(), int(quantity))
             return render_template("buy.html", cash=new_balance)
         else:
             return apology("Stock does not exist")
