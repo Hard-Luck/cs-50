@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>Current Holdings</h1>
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <tr>
+                <th class="headings">Date</th>
+                <th class="headings">BUY/SELL</th>
+                <th class="headings">Stock</th>
+                <th class="headings">Quantity</th>
+                <th class="headings">Price</th>
+                <th class="headings">Value</th>
+
+            </tr>
+
+            {% for i in tx_history %}
+                <tr>
+                    <td>{{i.date}}</td>
+                    <td>{{i.buysell}}</td>
+                    <td>{{i.stock}}</td>
+                    <td>{{i.quantity}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{(i.quantity * i.price]) | usd}}</td>
+                </tr>
+                <tr>
+            {% endfor %}
+                    <td></td><td></td>
+                    <td>Total</td>
+                    <td>{{ total | usd }}</td>
+
+        </table>
+    </div>
+{% endblock %}

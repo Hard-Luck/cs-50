@@ -99,8 +99,9 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    """Show history of transactions"""
-    return apology("TODO")
+    tx_history = db.execute("SELECT date, buysell, stock, quantity, price FROM history WHERE person_id = ? ORDER BY date", session["user_id"])
+    print(tx_history)
+    return render_template("history.html", tx_history=tx_history)
 
 
 @app.route("/login", methods=["GET", "POST"])
