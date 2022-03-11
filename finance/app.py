@@ -44,14 +44,16 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     holdings = db.execute(
-        "SELECT stock, quantity FROM stocks where person_id = ?", session["user_id"])
+        "SELECT stock, quantity FROM stocks where person_id = ? and quantity > 0", session["user_id"])
+    cash = db.execute("SELECT cash from users where id = ?", session["user_id"])
+    print(cash)
     prices = {}
     total = 0
     # Loop through holdings for tickers and price calculations
     for j in holdings:
         prices[j["stock"]] = float(lookup(j["stock"])["price"])
         total += float(lookup(j["stock"])["price"]) * j["quantity"]
-    return render_template("index.html", holdings=holdings, prices=prices, total=total)
+    return render_template("index.html", holdings=holdings, prices=prices, total=total,cash=cash)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -183,12 +185,14 @@ def register():
         password2 = request.form.get("password2")
         password = generate_password_hash(
             password1, method='pbkdf2:sha256', salt_length=8)
+        # Check both passwords are the same and not empty
         if not name or not password2 or not (password1 == password2):
             return apology("Form not entered correctly")
-        # is name in database
+        # Is name in database
         name_check = db.execute(
             "SELECT username FROM users where UPPER(username) = ?", name.upper())
         print(name_check)
+        # Insert new user if name doesnt already exist
         if not name_check:
             db.execute(
                 "INSERT INTO users (username, hash) VALUES (?,?)", name, password)
@@ -203,15 +207,18 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    # Check cash balance
     balance = db.execute(
         "SELECT cash FROM users WHERE id = ?", session["user_id"])
     stocks = db.execute(
         "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
 
     if request.method == "POST":
+        # Check stock is currently owned by user
         to_sell = request.form.get("sell")
         if not to_sell:
             return apology("Sale Error")
+        # Ensure the sale can go through or render apology
         try:
             quantity = float(request.form.get("quantity"))
             quantity_owned = db.execute(
@@ -235,9 +242,10 @@ def sell():
                    new_balance, session["user_id"])
         db.execute("UPDATE stocks SET quantity = ? where person_id = ? and stock = ?",
                    new_owned, session["user_id"], to_sell)
-        # If user sells all stock, delete from db
+        # Only show stocks non-zero balance
         stocks = db.execute(
             "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
+        # Add new tx into history
         db.execute(
             "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
             "SELL", session["user_id"], to_sell, int(quantity), price
