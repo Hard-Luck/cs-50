@@ -7,11 +7,15 @@
     <form action="/sell" method="post">
         <h3>Your balance: {{ cash | usd }}<h3>
         <label for="cars">Choose a Stock to sell:</label>
-
-            <select name="sell">
-                {% for stock in stocks %}
-                <option value = {{ stock }}> {{ stock.stock }} </option>
-                {%endfor%}
+            <table class="table">
+                <th>Stock</th>
+                <th>Quantity</th>
+                    <td><select name="sell">
+                         {% for stock in stocks %}
+                             <option value = {{ stock }}> {{ stock.stock }} </option>
+                         {%endfor%}
+                    </td>
+                    <td><input value="quantity" type="text"><td>
             </select>
 
     </form>
