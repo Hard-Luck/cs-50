@@ -215,3 +215,10 @@ def sell():
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
 
 
+CREATE TABLE history (
+    OrderID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    t int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
