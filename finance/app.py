@@ -114,6 +114,10 @@ def history():
 
     return render_template("history.html", total=total, tx_history=tx_history)
 
+@app.route("/changepassword")
+@login_required
+def history():
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
