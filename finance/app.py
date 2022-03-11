@@ -200,8 +200,8 @@ def register():
     if request.method == "POST":
         """Register user"""
         name = request.form.get("username").rstrip()
-        password = request.form.get("password1")
-        password1 = request.form.get("password2")
+        password1 = request.form.get("password")
+        password2 = request.form.get("confirmation")
         password = generate_password_hash(
             password1, method='pbkdf2:sha256', salt_length=8)
         # Check both passwords are the same and not empty
