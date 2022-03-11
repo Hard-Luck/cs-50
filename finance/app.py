@@ -230,7 +230,7 @@ def sell():
         stocks = db.execute(
             "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
         db.execute(
-            "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
+            "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?)",
             "SELL", session["user_id"], to_sell, int(quantity), price
         )
         return render_template("sell.html", cash=new_balance, stocks=stocks)
