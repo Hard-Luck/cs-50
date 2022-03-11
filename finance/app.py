@@ -209,6 +209,7 @@ def sell():
         db.execute("UPDATE stocks SET quantity = ? where person_id = ? and stock = ?", new_owned, session["user_id"], to_sell)
         # If user sells all stock, delete from db
         db.execute("DELETE from stocks WHERE quantity = 0")
+        stocks = db.execute("SELECT stock FROM stocks where person_id = ?",  session["user_id"])
         return render_template("sell.html", cash=new_balance, stocks=stocks)
 
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
