@@ -8,7 +8,7 @@
         <h3>Your balance: {{ cash | usd }}<h3>
         <label for="cars">Choose a Stock to sell:</label>
 
-            <select name="stocks" id="stocks">
+            <select name="sell">
                 {% for stock in stocks %}
                 <option value = {{ stock }}> {{ stock.stock }} </option>
                 {%endfor%}
