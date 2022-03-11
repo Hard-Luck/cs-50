@@ -199,7 +199,7 @@ def quote():
 def register():
     if request.method == "POST":
         """Register user"""
-        name = request.form.get("name").rstrip()
+        name = request.form.get("username").rstrip()
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
         password = generate_password_hash(
