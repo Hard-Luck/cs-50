@@ -212,3 +212,9 @@ def sell():
         return render_template("sell.html", cash=new_balance, stocks=stocks)
 
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
+
+CREATE TABLE history (
+    id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    FOREIGN KEY (id) REFERENCES person(txID)
+);
