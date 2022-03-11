@@ -183,6 +183,7 @@ def sell():
     balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     stocks = []
     print(stocks)
+
     if request.method == "POST":
         stocks = lookup(request.form.get("stocks"))
         quantity = float(request.form.get("quantity"))
@@ -200,7 +201,5 @@ def sell():
         db.execute("UPDATE stocks SET quantity = ? where person_id = ?", new_owned, session["user_id"])
         # If user sells all stock, delete from db
         db.execute("DELETE from stocks WHERE quantity = 0")
-        return render_template("buy.html", cash=new_balance)
 
-    else:
-        return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
+    return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
