@@ -125,11 +125,11 @@ def changepassword():
         old_pass_hash = db.execute("SELECT hash FROM users where id = ?", session["user_id"])
         # Check old password is correct
         if not check_password_hash(old_pass_hash[0]["hash"], old_password):
-             return render_template("/changepasswords.html", message="Incorrect Password")
-        if not password1 = password2:
-             return render_template("/changepasswords.html", message="Passwords do not match!")
-        db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(password1), session["user"])
-        return render_template("/changepasswords.html", message="Password Changed")
+             return render_template("/changepassword.html", message="Incorrect Password!")
+        if password1 != password2:
+             return render_template("/changepassword.html", message="Passwords do not match!")
+        db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(password1), session["user_id"])
+        return render_template("/changepassword.html", message="Password Changed!")
     return render_template("/changepassword.html")
 
 

@@ -39,3 +39,8 @@ nav .navbar-brand .green
     text-decoration: underline;
     font-weight: bold;
 }
+
+.promt-message{
+    font-size: large;
+    font-weight: bold;
+}
