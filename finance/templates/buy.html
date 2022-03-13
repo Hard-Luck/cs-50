@@ -3,7 +3,7 @@
 {% block main %}
 
     <h1> Buy Stock </h1>
-    <br><h6>112.00</h6>
+    <br>
     <form action="/buy" method="post">
         <h3>Your balance: {{ cash | usd }}</h3>
         <input type="text" name="symbol" placeholder="Stock to buy" autofocus autocomplete="off">
