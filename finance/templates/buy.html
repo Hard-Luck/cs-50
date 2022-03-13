@@ -6,7 +6,7 @@
     <br>
     <form action="/buy" method="post">
         <h3>Your balance: {{ cash | usd }}</h3>
-        <input type="text" name="symbol" placeholder="Stock to buy" autofocus autocomplete="off">
+        <input type="text" name="shares" placeholder="Stock to buy" autofocus autocomplete="off">
         <input type="number" min=0 step=1 name="shares" placeholder="Quantity" autocomplete="off">
         <button type="submit">Buy</button>
     </form>
