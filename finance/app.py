@@ -99,10 +99,11 @@ def buy():
             return render_template("buy.html", cash=new_balance, message=message)'''
             return redirect("/")
         else:
-            #return apology("Stock does not exist")
-            return redirect('/')
+            return apology("Stock does not exist")
+
     else:
-        return render_template("buy.html", cash=balance[0]["cash"])
+        #return render_template("buy.html", cash=balance[0]["cash"])
+        return redirect('/')
 
 
 @app.route("/history")
