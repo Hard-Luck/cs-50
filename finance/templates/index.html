@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{i.stock}}</td>
                     <td>{{i.quantity}}</td>
-                    <td>{{prices[i.stock]}}</td>
+                    <td>{{prices[i.stock] | usd}}</td>
                     <td>{{(i.quantity * prices[i.stock]) | usd}}</td>
                 </tr>
 
