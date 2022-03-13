@@ -3,9 +3,9 @@
 <script>
     el = document.getElementById('sale_price')
     function doMath() {
-        var numOne = document.getElementById('num1').value;
+        var numOne = document.getElementById('stock_price').value;
         var numTwo = document.getElementById('num2').value;
-        var theProduct = parseInt(my_input1) * parseInt(my_input2);
+        var theProduct = parseInt(numOne) * parseInt(numTwo);
         el.innerHTML = theProduct;
 }
 
@@ -34,7 +34,7 @@
                         {%endfor%}
                         </select>
                     </td>
-                    <td id="sale_price"></td>
+                    <td id="stock_price">2</td>
                     <td>
                         <input id="num2" name="quantity" type="text" placeholder="quantity" oninput="doMath()">
                     </td>
