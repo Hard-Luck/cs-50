@@ -237,6 +237,8 @@ def sell():
     stocks = db.execute(
         "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
     stock_details = {}
+    for stock in stocks:
+        stock_details[stock["stock"]] = lookup(stock["stock"])["price"]
     print(stocks)
     print(stock_details)
     if request.method == "POST":
