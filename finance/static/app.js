@@ -6,6 +6,6 @@
                 document.querySelector('ul').innerHTML = html;
             });
 */
-document.getElementById('stock').addEventListener('change', function() {
+document.getElementById('sell').addEventListener('change', function() {
     console.log('You selected: ', this.value);
   });
