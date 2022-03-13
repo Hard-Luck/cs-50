@@ -23,24 +23,20 @@
             <table class="table table-striped">
                 <tr>
                     <th class="headings">Stock</th>
-                    <th class="headings">Stock Price</th>
                     <th class="headings">Quantity</th>
-                    <th class="headings">Sale Price</th>
                     <th> </th>
                 </tr>
                 <tr>
                     <td>
                         <select id ="sell" name="sell">
                         {% for stock in stocks %}
-                            <option> {{ stock }} </option>
+                            <option> {{ stock.stock }} </option>
                         {%endfor%}
                         </select>
                     </td>
-                    <td id="stock_price">2</td>
                     <td>
-                        <input id="num2" name="quantity" type="text" placeholder="quantity">
+                        <input id="quanitity" name="quantity" type="text" placeholder="quantity">
                     </td>
-                    <td id="sale_price"></td>
                     <td>
                         <input type="submit" value="Sell">
                     <td>
