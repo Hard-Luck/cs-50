@@ -1,8 +1,18 @@
 {% extends "layout.html"%}
 
+<script>
 
+      function doMath() {
+          var numOne = document.getElementById('num1').value;
+          var numTwo = document.getElementById('num2').value;
+          var theProduct = parseInt(my_input1) * parseInt(my_input2);  document.write(theProduct);
+          document.write(theProduct);
+}
+
+  </script>
 
 {% block main %}
+
     <h1> Buy Stock </h1>
     <br>
     <form action="/sell" method="post">
@@ -24,7 +34,7 @@
                         </select>
                     </td>
                     <td>
-                        <input name="quantity" type="text" placeholder="quantity">
+                        <input id="num2name="quantity" type="text" placeholder="quantity" oninput="doMath()">>
                     </td>
                     <td>{{ sale_price }}</td>
                     <td>
