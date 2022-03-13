@@ -75,7 +75,7 @@ def buy():
             # check balance
             if not cost < float(balance[0]["cash"]):
                 return apology("Not enough funds")
-            new_balance = float(balance[0]["cash"]) - cost
+            new_balance = balance[0]["cash"] - cost
             stock_check = db.execute(
                 "SELECT stock FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
             db.execute("UPDATE users SET cash = ? where id = ?",
