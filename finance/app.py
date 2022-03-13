@@ -99,7 +99,8 @@ def buy():
             return render_template("buy.html", cash=new_balance, message=message)'''
             return redirect("/")
         else:
-            return apology("Stock does not exist")
+            #return apology("Stock does not exist")
+            return redirect('/')
     else:
         return render_template("buy.html", cash=balance[0]["cash"])
 
