@@ -1,14 +1,14 @@
 {% extends "layout.html"%}
 
 <script>
-    el = document.getElementById('sale_price')
-    
-    function doMath() {
+    el = document.getElementById('sale_price');
+    num_two = document.getElementById('num2');
+    num_two.oninput(function doMath() {
         var numOne = document.getElementById('stock_price').value;
-        var numTwo = document.getElementById('num2').value;
+        var numTwo = numTwo.value;
         var theProduct = parseInt(numOne) * parseInt(numTwo);
         el.innerHTML = theProduct;
-}
+});
 
   </script>
 
