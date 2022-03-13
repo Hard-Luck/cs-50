@@ -88,8 +88,8 @@ def buy():
             # Query how many stock already owned
             current = db.execute("SELECT quantity FROM stocks WHERE stock = ? AND person_id =?",
                                  stock["symbol"].upper(), session["user_id"])
-            db.execute("UPDATE stocks set quantity = ? WHERE person_id = ?", int(
-                quantity) + current[0]["quantity"], session["user_id"])
+            db.execute("UPDATE stocks set quantity = ? WHERE person_id = ? AND stock = ?", int(
+                quantity) + current[0]["quantity"], session["user_id"], stock["symbol"].upper())
             db.execute(
                 "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
                 "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
