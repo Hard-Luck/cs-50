@@ -21,6 +21,7 @@
             <table class="table table-striped">
                 <tr>
                     <th class="headings">Stock</th>
+                    <th class="headings">Stock Price</th>
                     <th class="headings">Quantity</th>
                     <th class="headings">Sale Price</th>
                     <th> </th>
@@ -34,9 +35,12 @@
                         </select>
                     </td>
                     <td>
-                        <input id="num2name="quantity" type="text" placeholder="quantity" oninput="doMath()">>
+                        <input id="num2" name="quantity" type="text" placeholder="quantity" oninput="doMath()">
                     </td>
-                    <td>{{ sale_price }}</td>
+                    <td>
+                        <input id="num2" name="quantity" type="text" placeholder="quantity" oninput="doMath()">
+                    </td>
+                    <td id="sale_price"></td>
                     <td>
                         <input type="submit" value="Sell">
                     <td>
