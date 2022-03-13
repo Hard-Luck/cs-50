@@ -237,9 +237,8 @@ def sell():
     stocks = db.execute(
         "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
     stock_details = {}
-    for stock in stocks:
-        stock_details[stock] = 
-
+    print(stocks)
+    print(stock_details)
     if request.method == "POST":
         # Check stock is currently owned by user
         to_sell = request.form.get("sell")
