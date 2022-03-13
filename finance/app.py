@@ -70,7 +70,7 @@ def buy():
             quantity = request.form.get("shares")
             if not quantity.isdigit():
                 return apology("Buy not")
-            cost = price * int(quantity)
+            cost = price * quantity
             print(balance)
             # check balance
             if not cost < float(balance[0]["cash"]):
