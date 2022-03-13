@@ -102,8 +102,7 @@ def buy():
             return apology("Stock does not exist")
 
     else:
-        #return render_template("buy.html", cash=balance[0]["cash"])
-        return redirect('/')
+        return render_template("buy.html", cash=balance[0]["cash"])
 
 
 @app.route("/history")
