@@ -259,7 +259,6 @@ def sell():
         stock_details = lookup(to_sell)
         price = float(stock_details["price"])
         sale_price = price * quantity
-        print(balance)
         # Update cash balance and stock balance
         new_balance = float(balance[0]["cash"]) + sale_price
         db.execute("UPDATE users SET cash = ? where id = ?",
