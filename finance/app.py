@@ -94,10 +94,11 @@ def buy():
                 "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
                 "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
             )
-            cost = usd(cost)
-            print(new_balance)
-            message = f"Sale for {cost} completed {new_balance} remaining"
-            return render_template("buy.html", cash=new_balance, message=message)
+            #cost = usd(cost)
+            #print(new_balance)
+            #message = f"Sale for {cost} completed {new_balance} remaining"
+            #return render_template("buy.html", cash=new_balance, message=message)
+            return redirect("/")
 
         else:
             return apology("Stock does not exist")
