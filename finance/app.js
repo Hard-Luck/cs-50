@@ -1,0 +1,1 @@
+?filter=symbol,volume,lastSalePrice
