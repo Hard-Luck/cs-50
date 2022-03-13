@@ -236,9 +236,7 @@ def sell():
         "SELECT cash FROM users WHERE id = ?", session["user_id"])
     stocks = db.execute(
         "SELECT stock FROM stocks where person_id = ? AND quantity > 0",  session["user_id"])
-    stock_details = {}
-    for stock in stocks:
-        stock_details[stock["stock"]] = lookup(stock["stock"])["price"]
+
     if request.method == "POST":
         # Check stock is currently owned by user
         to_sell = request.form.get("sell")
@@ -277,4 +275,4 @@ def sell():
         )
         return render_template("sell.html", cash=new_balance, stocks=stocks)
 
-    return render_template("sell.html", cash=balance[0]["cash"], stocks=stock_details)
+    return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
