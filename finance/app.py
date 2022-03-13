@@ -239,8 +239,6 @@ def sell():
     stock_details = {}
     for stock in stocks:
         stock_details[stock["stock"]] = lookup(stock["stock"])["price"]
-    print(stocks)
-    print(stock_details)
     if request.method == "POST":
         # Check stock is currently owned by user
         to_sell = request.form.get("sell")
@@ -279,4 +277,4 @@ def sell():
         )
         return render_template("sell.html", cash=new_balance, stocks=stocks)
 
-    return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
+    return render_template("sell.html", cash=balance[0]["cash"], stocks=stock_details)
