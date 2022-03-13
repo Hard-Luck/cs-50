@@ -5,8 +5,8 @@
       function doMath() {
           var numOne = document.getElementById('num1').value;
           var numTwo = document.getElementById('num2').value;
-          var theProduct = parseInt(my_input1) * parseInt(my_input2);  document.write(theProduct);
-          document.write(theProduct);
+          var theProduct = parseInt(my_input1) * parseInt(my_input2);
+          el.innerHTML = theProduct;
 }
 
   </script>
@@ -40,7 +40,7 @@
                     <td>
                         <input id="num2" name="quantity" type="text" placeholder="quantity" oninput="doMath()">
                     </td>
-                    <td id="sale_price"></td>
+                    <td id="sale_price" name="el"></td>
                     <td>
                         <input type="submit" value="Sell">
                     <td>
