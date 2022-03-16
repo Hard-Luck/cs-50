@@ -19,7 +19,7 @@
     <br>
     <form action="/sell" method="post">
         <h3>Your balance: {{ cash | usd }}</h3>
-        <label for="cars">Choose a Stock to sell:</label>
+        <label id="stocks">Choose a Stock to sell:</label>
             <table class="table table-striped">
                 <tr>
                     <th class="headings">Stock</th>
@@ -28,17 +28,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <select id ="sell" name="sell">
+                        <select id ="sell" name="symbol">
                         {% for stock in stocks %}
                             <option> {{ stock.stock }} </option>
                         {%endfor%}
                         </select>
                     </td>
                     <td>
-                        <input id="quanitity" name="quantity" type="text" placeholder="quantity">
+                        <input id="quanitity" name="shares" type="text" placeholder="quantity">
                     </td>
                     <td>
-                        <input type="submit" value="Sell">
+                        <button type="submit">Sell</button>
                     <td>
                 </tr>
                 <ul></ul>

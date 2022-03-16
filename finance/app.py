@@ -54,7 +54,7 @@ def index():
         prices[j["stock"]] = float(lookup(j["stock"])["price"])
         total += float(lookup(j["stock"])["price"]) * j["quantity"]
     total += cash[0]["cash"]
-    return render_template("index.html", holdings=holdings, prices=prices, total=total,cash=cash[0]["cash"])
+    return render_template("index.html", holdings=holdings, prices=prices, total=total, cash=cash[0]["cash"])
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -70,12 +70,11 @@ def buy():
             quantity = request.form.get("shares")
             if not quantity.isdigit():
                 return apology("Buy not")
-            cost = price * quantity
-            print(balance)
+            cost = price * float(quantity)
             # check balance
             if not cost < float(balance[0]["cash"]):
                 return apology("Not enough funds")
-            new_balance = balance[0]["cash"] - cost
+            new_balance = float(balance[0]["cash"]) - cost
             stock_check = db.execute(
                 "SELECT stock FROM stocks WHERE stock = ? AND person_id =?", stock["symbol"].upper(), session["user_id"])
             db.execute("UPDATE users SET cash = ? where id = ?",
@@ -94,8 +93,8 @@ def buy():
                 "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
                 "BUY", session["user_id"], stock["symbol"].upper(), int(quantity), price
             )
-            message = "Sale, Remaining: "
-            return render_template("buy.html", cost=cost, cash=new_balance, message=message)
+            flash(f"Sale {usd(cost)} Remaining: {usd(new_balance)}")
+            return redirect("/")
 
         else:
             return apology("Stock does not exist")
@@ -108,7 +107,8 @@ def buy():
 @login_required
 def history():
     # Query all details from history table except user id
-    tx_history = db.execute("SELECT date, buysell, stock, quantity, price FROM history WHERE person_id = ? ORDER BY date", session["user_id"])
+    tx_history = db.execute(
+        "SELECT date, buysell, stock, quantity, price FROM history WHERE person_id = ? ORDER BY date", session["user_id"])
     print(tx_history)
     total = 0
     # Loop and change buys to negative value
@@ -118,6 +118,7 @@ def history():
         total += i["price"]
 
     return render_template("history.html", total=total, tx_history=tx_history)
+
 
 @app.route("/changepassword", methods=["GET", "POST"])
 @login_required
@@ -130,9 +131,9 @@ def changepassword():
         old_pass_hash = db.execute("SELECT hash FROM users where id = ?", session["user_id"])
         # Check old password is correct
         if not check_password_hash(old_pass_hash[0]["hash"], old_password):
-             return render_template("/changepassword.html", message="Incorrect Password!")
+            return render_template("/changepassword.html", message="Incorrect Password!")
         if password1 != password2:
-             return render_template("/changepassword.html", message="Passwords do not match!")
+            return render_template("/changepassword.html", message="Passwords do not match!")
         db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(password1), session["user_id"])
         return render_template("/changepassword.html", message="Password Changed!")
     return render_template("/changepassword.html")
@@ -239,12 +240,12 @@ def sell():
 
     if request.method == "POST":
         # Check stock is currently owned by user
-        to_sell = request.form.get("sell")
+        to_sell = request.form.get("symbol")
         if not to_sell:
             return apology("Sale Error")
         # Ensure the sale can go through or render apology
         try:
-            quantity = float(request.form.get("quantity"))
+            quantity = float(request.form.get("shares"))
             quantity_owned = db.execute(
                 "SELECT quantity FROM stocks WHERE stock = ? AND person_id =?", to_sell, session["user_id"])
             owned = quantity_owned[0]["quantity"]
@@ -273,6 +274,6 @@ def sell():
             "INSERT INTO history (date, buysell, person_id, stock, quantity, price) VALUES(DATETIME(), ?, ?, ?, ?, ?)",
             "SELL", session["user_id"], to_sell, int(quantity), price
         )
-        return render_template("sell.html", cash=new_balance, stocks=stocks)
+        return redirect("/")
 
     return render_template("sell.html", cash=balance[0]["cash"], stocks=stocks)
