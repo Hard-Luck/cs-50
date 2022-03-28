@@ -8,10 +8,10 @@ int main(int argc, char *argv[])
 {
 
     // Ensure arv length is 2
-    if (len(argv) != 2)
+    if (argc != 2)
     {
-        printf("Error, too many arguments")
-        return 1
+        printf("Error, too many arguments");
+        return 1;
     }
         // Remember filenames
     char *f = argv[1];
