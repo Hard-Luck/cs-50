@@ -13,10 +13,10 @@ int main(int argc, char *argv[])
         printf("Error, too many arguments");
         return 1;
     }
-        // Remember filenames
+    // Remember filenames
     char *file_name = argv[1];
 
-        // Open input file
+    // Open input file
     FILE *f = fopen(file_name, "r");
     if (f == NULL)
     {
@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 512, 1, f) == 1)
     {
+        //Check the first 4 bytes of the string 
         if (buffer[0] == 0xff &&
             buffer[1] == 0xd8  &&
             buffer[2] == 0xff &&
@@ -40,18 +41,19 @@ int main(int argc, char *argv[])
             {
                 fclose(img_ptr);
             }
+            // Generate file name string
             sprintf(filename, "%03i.jpg", count);
             img_ptr = fopen(filename, "w");
             count++;
         }
         // If JPEG has been found, write to file
-            if (!(count == 0))
-            {
-                fwrite(&buffer, 512, 1, img_ptr);
-            }
+        if (count != 0)
+        {
+            fwrite(&buffer, 512, 1, img_ptr);
         }
-        fclose(f);
-        fclose(img_ptr);
-        return 0;
-
     }
+    fclose(f);
+    fclose(img_ptr);
+    return 0;
+
+}
