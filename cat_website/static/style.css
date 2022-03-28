@@ -1,0 +1,30 @@
+/* Composition */
+.text-container {
+  max-width: 75ch;
+}
+.login-container {
+  padding: 2rem;
+}
+.list-container {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.facts-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Block */
+.image-std {
+  height: 50vh;
+  width: 50vh;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 30%;
+}
+
+.text-right {
+  display: flex;
+}

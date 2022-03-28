@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Try it out
+{% endblock %}
+
+
+
+{% block main %}
+<h4>You are currently {{ status }} for daily emails.</h4>
+<h4>do you sure you want to {{ change }}?</h4>
+<form method="post" action="subscribe">
+<button type="submit">{{ message }}</button>
+</form>
+
+{% endblock %}

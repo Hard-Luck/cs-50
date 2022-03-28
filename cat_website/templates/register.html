@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Home Page
+{% endblock %}
+
+
+
+{% block main %}
+<p>
+    <h1> Enter details to register. </h1>
+    <br>
+    <form action="/register" method="post">
+
+        <ul style="list-style: none">
+            <li class="reg-form">
+                <input type="text" name="username" placeholder="Username" autofocus autocomplete="off">
+            </li>
+            <li class="reg-form">
+                <input type="text" name="email" placeholder="email" autofocus autocomplete="off">
+            </li>
+            <li class="reg-form">
+                <input type="password" name="password" placeholder="Password" autocomplete="off">
+            </li >
+            <li class="reg-form">
+                <input type="password" name="confirmation" placeholder="Confirm Password" autocomplete="off">
+            </li>
+            <li>
+                <button type="submit">Submit</button>
+            </li>
+        </ul>
+    </form>
+</p>
+
+{% endblock %}
