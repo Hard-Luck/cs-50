@@ -14,13 +14,13 @@ int main(int argc, char *argv[])
         return 1;
     }
         // Remember filenames
-    char *f = argv[1];
+    char *file_name = argv[1];
 
         // Open input file
-    FILE *f = fopen(rawfile, "r");
-    if (inptr == NULL)
+    FILE *f = fopen(file_name, "r");
+    if (f == NULL)
     {
-        printf("Could not open %s.\n", f);
+        printf("Could not open %s.\n", file_name);
         return 1;
     }
 
@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
             buffer[2] == 0xff &&
             (buffer[3] & 0xf0) == 0xe0)
         {
-            if (count != 0):
+            if (count != 0)
             {
-                fclose(img_ptr)
+                fclose(img_ptr);
             }
             sprintf(filename, "%03i.jpg", count);
             img_pointer = fopen(filename, "w");
