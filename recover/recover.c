@@ -41,17 +41,17 @@ int main(int argc, char *argv[])
                 fclose(img_ptr);
             }
             sprintf(filename, "%03i.jpg", count);
-            img_pointer = fopen(filename, "w");
+            img_ptr = fopen(filename, "w");
             count++;
         }
         // If JPEG has been found, write to file
             if (!(count == 0))
             {
-                fwrite(&buffer, 512, 1, img_pointer);
+                fwrite(&buffer, 512, 1, img_ptr);
             }
         }
-        fclose(input_pointer);
-        fclose(img_pointer);
+        fclose(f);
+        fclose(img_ptr);
         return 0;
 
     }
