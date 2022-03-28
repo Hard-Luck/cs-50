@@ -24,9 +24,14 @@ int main(int argc, char *argv[])
     }
     // Allocate memory for the buffer
     char *buffer = malloc(512 * sizeof(byte))
-    while (fread(buffer, 1, sizeof(BYTE), f) == BLOCK_SIZE)
+    while (fread(buffer, 1, 512, f) == BLOCK_SIZE)
     {
-        if buffer[1] == 
+        if (
+            buffer[0] == 0xff &&
+            buffer[1] == 0xd8  &&
+            buffer[2] == 0xff &&
+            buffer[3] == 0xff
+        )
 
     }
 }
