@@ -1,4 +1,5 @@
 """ Flask built Website that provides users with random facts"""
+import os
 import atexit
 import re
 from functools import wraps
@@ -17,6 +18,10 @@ app = Flask(
     static_folder="static",
     template_folder="templates",
 )
+
+# Make sure Gmail Passwork is set
+if not os.environ.get("GPASS"):
+    raise RuntimeError("GPASS not set")
 
 # initialise scheduler
 scheduler = BackgroundScheduler()
