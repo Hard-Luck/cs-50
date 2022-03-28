@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Try it out
+{% endblock %}
+
+
+
+{% block main %}
+<div >
+    <image class="image-std" src="static\images\cat _glasses.jpg" alt="Cat with glasses">
+</div>
+<div class="facts-container">
+    <form method="post">
+        <button type="submit" class="btn btn-success">Click for random cat fact</button>
+    </form>
+
+    {% if random_fact %}
+    <div class="fact">
+        <p>
+        {{ random_fact }}
+        </p>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

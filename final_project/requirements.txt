@@ -1,0 +1,5 @@
+APScheduler==3.9.1
+cs50==9.0.0
+Flask==2.0.3
+requests==2.27.1
+Werkzeug==2.0.3
