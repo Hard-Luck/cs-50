@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
             buffer[2] == 0xff &&
             (buffer[3] & 0xf0) == 0xe0)
         {
-            if count != 0:
+            if (count != 0):
             {
                 fclose(img_ptr)
             }
@@ -44,6 +44,15 @@ int main(int argc, char *argv[])
             img_pointer = fopen(filename, "w");
             count++;
         }
-        
+        // If JPEG has been found, write to file
+            if (!(count == 0))
+            {
+                fwrite(&buffer, 512, 1, img_pointer);
+            }
+        }
+        fclose(input_pointer);
+        fclose(img_pointer);
+        return 0;
+
     }
 }
