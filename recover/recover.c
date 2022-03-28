@@ -36,8 +36,14 @@ int main(int argc, char *argv[])
             buffer[2] == 0xff &&
             (buffer[3] & 0xf0) == 0xe0)
         {
-
+            if count != 0:
+            {
+                fclose(img_ptr)
+            }
+            sprintf(filename, "%03i.jpg", count);
+            img_pointer = fopen(filename, "w");
+            count++;
         }
-
+        
     }
 }
