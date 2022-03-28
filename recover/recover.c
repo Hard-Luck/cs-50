@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
         return 1;
     }
     // Allocate memory for the buffer
-    char *buffer = malloc(sizeof(byte))
-    while (fread(buffer, 1, 512 * sizeof(BYTE), infile) == BLOCK_SIZE)
+    char *buffer = malloc(512 * sizeof(byte))
+    while (fread(buffer, 1, sizeof(BYTE), f) == BLOCK_SIZE)
     {
 
 
