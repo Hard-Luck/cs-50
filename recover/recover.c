@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef uint8_t BYTE;
 
@@ -26,12 +27,13 @@ int main(int argc, char *argv[])
     char *buffer = malloc(512 * sizeof(byte))
     while (fread(buffer, 1, 512, f) == BLOCK_SIZE)
     {
-        if (
-            buffer[0] == 0xff &&
+        if (buffer[0] == 0xff &&
             buffer[1] == 0xd8  &&
             buffer[2] == 0xff &&
-            (buffer[3] & 0xf0) == 0xff
-        )
+            (buffer[3] & 0xf0) == 0xe0)
+        {
+            
+        }
 
     }
 }
