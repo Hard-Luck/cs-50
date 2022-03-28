@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     char *buffer = malloc(512 * sizeof(byte))
     while (fread(buffer, 1, sizeof(BYTE), f) == BLOCK_SIZE)
     {
-
+        if buffer[1] == 
 
     }
 }
