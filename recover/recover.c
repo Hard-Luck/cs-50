@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         return 1
     }
         // Remember filenames
-    char *rawfile = argv[1];
+    char *f = argv[1];
 
         // Open input file
     FILE *f = fopen(rawfile, "r");
@@ -23,16 +23,20 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", f);
         return 1;
     }
-    // Allocate memory for the buffer
-    char *buffer = malloc(512 * sizeof(byte))
-    while (fread(buffer, 1, 512, f) == BLOCK_SIZE)
+
+    BYTE buffer[512];
+    int count = 0;
+    FILE *img_ptr = NULL;
+    char filename[8];
+
+    while (fread(buffer, 512, 1, f) == 1)
     {
         if (buffer[0] == 0xff &&
             buffer[1] == 0xd8  &&
             buffer[2] == 0xff &&
             (buffer[3] & 0xf0) == 0xe0)
         {
-            
+
         }
 
     }
