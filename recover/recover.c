@@ -13,20 +13,20 @@ int main(int argc, char *argv[])
         return 1
     }
         // Remember filenames
-    char *infile = argv[1];
+    char *rawfile = argv[1];
 
         // Open input file
-    FILE *inptr = fopen(infile, "r");
+    FILE *f = fopen(rawfile, "r");
     if (inptr == NULL)
     {
-        printf("Could not open %s.\n", infile);
+        printf("Could not open %s.\n", f);
         return 1;
     }
     // Allocate memory for the buffer
     char *buffer = malloc(sizeof(byte))
     while (fread(buffer, 1, 512 * sizeof(BYTE), infile) == BLOCK_SIZE)
     {
-        
+
 
     }
 }
