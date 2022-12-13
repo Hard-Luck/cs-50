@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.html": "jinja-html",
-        "string": "c",
-        "typeinfo": "c",
-        "array": "c",
-        "cmath": "c"
-    }
-}
